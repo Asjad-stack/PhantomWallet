@@ -6,7 +6,7 @@ import { Fonts } from '../constants/fonts'
 import { colors } from '../constants/colors'
 import { TouchableOpacity } from 'react-native'
 import PoppinsText from './PoppinsText'
-
+// 1234567890
 export const MainHeader = ({ onPressLeftImage, leftImage, title, rightImage }) => {
     return (
         <View style={{ ...appStyles.row, width: wp(92) }}>
