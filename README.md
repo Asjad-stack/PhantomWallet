@@ -1,6 +1,6 @@
-# CoreWallet
+# PhantomWallet
 
-CoreWallet is a React Native cryptocurrency wallet application with a complete navigation flow including splash screen, onboarding, PIN setup, biometric authentication, and main wallet interface.
+PhantomWallet is a React Native cryptocurrency wallet application with a complete navigation flow including splash screen, onboarding, PIN setup, biometric authentication, and main wallet interface.
 
 ## Features
 
