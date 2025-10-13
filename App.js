@@ -4,7 +4,7 @@
  *
  * @format
  */
-// phantom
+
 import React, { useEffect, useState } from 'react';
 import { StatusBar, ActivityIndicator, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
