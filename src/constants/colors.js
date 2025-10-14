@@ -1,25 +1,34 @@
 export const colors = {
 
     // Back_Ground
-    bgColor: '#040033',
-    white: '#FFFFFF',
-    gray1: '#82849E',
-    gray2: '#7175A2',
-    gray3: '#7074A1',
-    gray4: '#81839B',
-    gray5: '#81849B',
-    gray6: '#81819A',
-    gray7: '#88889F',
-    gray8: '#949494',
-    textInputBgColor: '#111441',
-    borderClor: '#A3A6D3',
-    bottomTabsBgColor: '#23224D',
-    bottomTabsBorderColor: '#C4C4EE',
-    green: '#00F026',
-    red: '#FF3333',
-    borderColor: '#A0A0CF',
-    borderColor1: '#5C5C8A',
-    blueBgColor: "#0D0C38"
+    bgColor: "#101010",
+    btnColor: "#A89CE2",
+    btnDisableColor: "#2A2A2A",
 
+    black: "#000000",
+    white: "#FFFFFF",
 
+    gray1: '#A9A9A9',
+    gray2: "#363349",
+    gray3: "#919191",
+    gray4: "#5D5D5D",
+    gray5: "#CACACA",
+    gray6: "#8B8B8B",
+    gray7: "#B6B6B6",
+    gray8: "#858585",
+    gray9: "#909090",
+    gray10: "#8D8D8D",
+    gray11: "#1D1C24",
+    gray12: "#AAAAAA",
+    gray13: "#D5D5D5",
+    gray14: "#212121",
+    gray15: "#AFAFAF",
+    gray16: "#888888",
+    gray17: "#D1D1D1",
+
+    yellow: "#AEA622",
+    red: "#FF4444",
+
+    purple: "#9288C1",
+    lightPurple: "#4E4A6B",
 }

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { wp } from '../../../components/ResponsiveComponent'
+import { hp, wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
 import { colors } from '../../../constants/colors'
 
@@ -17,24 +17,37 @@ export const styles = StyleSheet.create({
     pinDesc: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray4,
+        color: colors.gray6,
         textAlign: 'center'
     },
-    badge: {
-        width: wp(92),
-        height: wp(92),
-        alignSelf: 'center'
-    },
-    congratulationText: {
-        fontSize: 24,
-        fontFamily: Fonts.Poppins.Medium,
-        color: colors.white,
-        textAlign: 'center'
-    },
-    congratulationDesc: {
+    pinDesc1: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray5,
+        color: colors.yellow,
         textAlign: 'center'
     },
+    btnView: {
+        paddingHorizontal: wp(4),
+        paddingBottom: hp(4)
+    },
+    btnSyles: {
+        width: wp(92),
+        height: hp(5.5),
+        alignSelf: 'center',
+        borderRadius: 12,
+        justifyContent: 'center',
+    },
+    btnTitleStyles: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray11,
+        textAlign: 'center',
+    },
+    errorText: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.red,
+        textAlign: 'center',
+    }
+
 })

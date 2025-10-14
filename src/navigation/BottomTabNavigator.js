@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HistoryScreen, HomeScreen, Reward, Settings } from '../screens/App';
 import { routes } from '../constants/routes';
-import { StyleSheet, TouchableOpacity, View, Image, } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Image, Platform, } from 'react-native';
 import { hp, wp } from '../components/ResponsiveComponent';
 import { Images } from '../Images';
 import { appStyles } from '../utilities/appStyles';
@@ -34,6 +34,7 @@ function BottomTabBarNav({ navigation }) {
             borderColor: colors.bottomTabsBorderColor,
             borderRadius: 24,
             alignSelf: 'center',
+            marginBottom: Platform.OS == 'android' ? hp(3) : 0
           }
         }}>
 

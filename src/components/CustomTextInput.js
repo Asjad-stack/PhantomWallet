@@ -11,77 +11,31 @@ import { Fonts } from '../constants/fonts'
 import { Images } from '../Images'
 
 
-export const CustomTextInput = ({ numberOfLines, leftImage, autoCapitalize, secureTextEntry, rightText, dropDown, onPressRightText,
-    value, error, onPress, onPressIcon, placeholderTextColor, editable, keyboardType, multiline, placeholder, dollarAmount, coinLogo,
-    onChangeText, iconName, iconType, iconColor, iconSize, containerStyle, inputStyle, iconStyle, rightImage, onPressRightImage, title }) => {
+export const CustomTextInput = ({ numberOfLines, autoCapitalize, secureTextEntry, value, onPress,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
 
     return (
         <View style={{}}>
-
-            <ImageBackground source={Images.authMainRoundBox} resizeMode='contain' style={[styles.authMainRoundBox]}>
-                <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
-                    <View>
-                        {title ?
-                            <View style={{ height: hp(2.6), marginBottom: hp(0.4) }}>
-                                <Spacer />
-                                <PoppinsText style={styles.titleText}>{title}</PoppinsText>
-                            </View>
-                            : null}
-
-                        <View style={appStyles.rowBasic}>
-                            {leftImage ?
-                                <Image source={leftImage} resizeMode='contain' style={styles.leftImage} />
-                                : null}
-
-                            <TextInput
-                                value={value}
-                                editable={editable ?? !onPress}
-                                multiline={multiline}
-                                placeholder={placeholder}
-                                onChangeText={onChangeText}
-                                keyboardType={keyboardType}
-                                cursorColor={colors.white}
-                                autoCapitalize={autoCapitalize ?? 'none'}
-                                numberOfLines={numberOfLines}
-                                secureTextEntry={secureTextEntry}
-                                style={[styles.input, inputStyle]}
-                                placeholderTextColor={placeholderTextColor ?? colors?.gray1
-                                }
-                            />
-
-                        </View>
-                    </View>
-
-
-                    {rightText ?
-                        <TouchableOpacity activeOpacity={0.8} onPress={onPressRightText} style={appStyles.row}>
-                            {coinLogo ?
-                                <Image source={coinLogo} resizeMode='contain' style={styles.coinLogo} />
-                                : null}
-                            <PoppinsText style={styles.rightText}>{rightText}</PoppinsText>
-                            <Image source={dropDown} resizeMode='contain' style={styles.dropDown} />
-                        </TouchableOpacity>
-                        : null}
-
-                    {rightImage ?
-                        <TouchableOpacity activeOpacity={0.5} onPress={onPressRightImage} style={{ alignSelf: 'center' }}>
-                            <Image source={rightImage} resizeMode='contain' style={{
-                                ...styles.rightImage,
-                            }} />
-                        </TouchableOpacity>
-                        :
-                        iconName ?
-                            <Icon name={iconName} type={iconType} color={iconColor ?? colors?.white} size={iconSize ?? totalSize(2.2)} style={[styles?.icon, iconStyle]} onPress={onPressIcon} />
-                            : null}
-
-                </TouchableOpacity>
-                {error &&
-                    <View >
-                        <Spacer customHeight={height(1)} />
-                        <PoppinsText style={[appStyles?.smallText, { color: colors?.error }]}>{error}</PoppinsText>
-                    </View>
-                }
-            </ImageBackground>
+            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
+                <View style={{ alignSelf: 'center', justifyContent: 'center' }}>
+                    <TextInput
+                        value={value}
+                        editable={editable ?? !onPress}
+                        multiline={multiline}
+                        placeholder={placeholder}
+                        onChangeText={onChangeText}
+                        keyboardType={keyboardType}
+                        cursorColor={colors.white}
+                        autoCapitalize={autoCapitalize ?? 'none'}
+                        numberOfLines={numberOfLines}
+                        secureTextEntry={secureTextEntry}
+                        style={[styles.input, inputStyle]}
+                        placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+                        textAlignVertical="center"
+                        textAlign="center"
+                    />
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -246,9 +200,6 @@ export const CustomTextInput2 = ({ numberOfLines, leftImage, autoCapitalize, sec
 }
 
 
-
-
-
 const styles = StyleSheet.create({
     leftImage: {
         width: wp(4.5),
@@ -262,14 +213,12 @@ const styles = StyleSheet.create({
         color: colors.white,
     },
     inputContainer: {
-        paddingHorizontal: wp(3.5),
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignContent: 'center',
-        borderRadius: 100,
         width: wp(92),
+        borderRadius: 10,
         alignSelf: 'center',
-        paddingVertical: hp(1.5)
+        paddingVertical: hp(0.7),
+        backgroundColor: colors.btnDisableColor,
+        justifyContent: 'center',
 
     },
     authMainRoundBox: {
@@ -287,8 +236,10 @@ const styles = StyleSheet.create({
         paddingVertical: hp(1),
     },
     input: {
-        width: wp(73),
+        width: wp(43),
         color: colors.white,
+        textAlign: 'center',
+        textAlignVertical: 'center',
     },
 
     otpContainer: {

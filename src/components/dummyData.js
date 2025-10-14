@@ -297,3 +297,25 @@ export const tokenDetailsInfoData = [
         desc: "19.92M"
     }
 ]
+
+// New Dummy Data       
+export const createWalletDataList = [
+    {
+        id: 1,
+        logo: Images.seamLessSetup,
+        title: "Seamless setup",
+        desc: "Create a wallet using a Google or Apple account and start exploring web3 with ease"
+    },
+    {
+        id: 2,
+        logo: Images.greenLock,
+        title: "Enhanced security",
+        desc: "Your wallet is stored securely and decentralized across multiple factors"
+    },
+    {
+        id: 3,
+        logo: Images.heart,
+        title: "Easy recovery",
+        desc: "Recover access to your wallet with your Google or Apple account and a 4-digit PIN"
+    }
+]

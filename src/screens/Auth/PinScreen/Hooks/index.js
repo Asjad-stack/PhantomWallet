@@ -13,7 +13,7 @@ const usePinScreen = (props) => {
     const user = useSelector(state => state?.userdataReducer?.getUserData)
 
     const userPin = useSelector(state => state?.userdataReducer?.getPin)
-    
+
     // Check if wallet is already created (from new Redux Toolkit store)
     const isWalletCreated = useSelector(state => state?.auth?.isWalletCreated)
 
@@ -37,7 +37,7 @@ const usePinScreen = (props) => {
 
 
     useEffect(() => {
-        if (newPin.length === 6) {
+        if (newPin.length === 4) {
 
             // Check if user already has a PIN AND wallet is created (changing PIN flow)
             // Only verify existing PIN if wallet is already created
@@ -70,19 +70,21 @@ const usePinScreen = (props) => {
                         // ✅ Check if coming from create wallet flow
                         const fromCreateWallet = props?.route?.params?.fromCreateWallet;
                         const seedPhrase = props?.route?.params?.seedPhrase;
-                        
+
                         if (fromCreateWallet && seedPhrase) {
                             // Navigate to FaceIdEnable for create wallet flow
-                            props?.navigation?.replace(routes.faceIdEnable, { 
+                            props?.navigation?.replace(routes.faceIdEnable, {
                                 seedPhrase: seedPhrase,
-                                newPin: true 
+                                newPin: true
                             });
                         } else {
                             // Navigate to import wallet screen for import flow
-                            props?.navigation?.replace(routes.importWallet, { newPin: true });
+                            // props?.navigation?.replace(routes.importWallet, { newPin: true });
+                            props?.navigation?.replace(routes.protectWallet);
                         }
 
                         // Reset states
+
                         setNewPin('');
                         setConfirm(false);
                         setFirstPin('');
@@ -101,7 +103,7 @@ const usePinScreen = (props) => {
     // handle press any button on keyboard
     const HandleKeyPress = text => {
 
-        if (newPin?.length < 6) {
+        if (newPin?.length < 4) {
             var array1 = [...newPin, text];
             setNewPin(array1?.join(''));
         }
@@ -115,8 +117,9 @@ const usePinScreen = (props) => {
     };
 
     return {
+        errorTitle,
         confirm,
-        newPin,
+        newPin, setNewPin,
         HandleKeyPress,
         handleRemove
     }

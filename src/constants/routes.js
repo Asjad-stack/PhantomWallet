@@ -4,12 +4,11 @@ export const routes = {
     authStack: 'authStack',
     appStack: "appStack",
 
-
     // AuthNavigation
-    splashScreen: "splashScreen",
+    // splashScreen: "splashScreen",
+    // onBoarding: "onBoarding",
     welcome: "welcome",
-    onBoarding: "onBoarding",
-    pinScreen: "pinScreen",
+    // pinScreen: "pinScreen",
     pinVerificationScreen: "PinVerificationScreen",
     confirmPinScreen: "confirmPinScreen",
     importWallet: "ImportWalletScreen",
@@ -19,6 +18,14 @@ export const routes = {
     confirmSeedPhrase: "confirmSeedPhrase",
     faceIdEnable: "faceIdEnable",
     MainTabs: "MainTabs",
+
+    // New Auth
+    splashScreen: "splashScreen",
+    pinScreen: "pinScreen",
+    onBoarding: "onBoarding",
+    createWallet: "createWallet",
+    protectWallet: "protectWallet",
+
 
     // AppNavigation
     homeScreen: "homeScreen",

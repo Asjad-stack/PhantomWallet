@@ -1,15 +1,27 @@
 
-import OnboardingScreen from "./OnBoarding/OnboardingScreen";
 import ImportWalletScreen from "./ImportWalletScreen/ImportWalletScreen";
 import BiometricPopup from "./BiometricPopup/BiometricPopup";
-import PinScreen from "./PinScreen/PinScreen";
 import PinVerificationScreen from "./PinVerificationScreen/PinVerificationScreen";
-import SplashScreen from "./SplashScreen/SplashScreen";
 import CongratulationScreen from "./CongratulationScreen/CongratulationScreen";
 import SeedPhrase from "./SeedPhrase/SeedPhrase";
 import ConfirmSeedPhrase from "./ConfirmSeedPhrase/ConfirmSeedPhrase";
 import FaceIdEnable from "./FaceIdEnable/FaceIdEnable";
 
+
+
+
+import SplashScreen from "./SplashScreen/SplashScreen";
+import OnboardingScreen from "./OnBoarding/OnboardingScreen";
+import CreateWallet from "./CreateWallet/CreateWallet";
+import ProtectWallet from "./ProtectWallet/ProtectWallet";
+import PinScreen from "./PinScreen/PinScreen";
+
+
+
 export {
-    OnboardingScreen, ImportWalletScreen, BiometricPopup, PinScreen, PinVerificationScreen, SplashScreen, CongratulationScreen, SeedPhrase, FaceIdEnable, ConfirmSeedPhrase
+    ImportWalletScreen, BiometricPopup, PinVerificationScreen,
+    CongratulationScreen, SeedPhrase, FaceIdEnable, ConfirmSeedPhrase,
+
+    // New
+    OnboardingScreen, SplashScreen, PinScreen, ProtectWallet, CreateWallet,
 }

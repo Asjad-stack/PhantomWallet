@@ -7,8 +7,7 @@ import { routes } from '../../../constants/routes';
 import { loadAuthSettings } from '../../../store/actions/authActions';
 import { SavePin, SaveFingerPrint } from '../../../redux/actions/WalletActions';
 import database from '../../../services/database';
-import { Images } from '../../../Images';
-import { wp } from '../../../components/ResponsiveComponent';
+import { hp, wp } from '../../../components/ResponsiveComponent';
 
 const SplashScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -35,7 +34,8 @@ const SplashScreen = ({ navigation }) => {
         if (wallet && wallet.solanaAddress && authSettings && authSettings.pin && authSettings.isWalletCreated) {
           console.log('Existing user found - wallet and PIN exist');
           // User exists with wallet and PIN, navigate to PIN verification screen
-          navigation.replace(routes.pinVerificationScreen);
+          // navigation.replace(routes.pinVerificationScreen);
+          navigation.replace(routes.onBoarding);
         } else {
           console.log('New user - wallet or PIN missing');
           // New user, navigate to onboarding
@@ -57,7 +57,7 @@ const SplashScreen = ({ navigation }) => {
   return (
     <MainContainer>
       <View style={{ flex: 1, justifyContent: "center" }}>
-        <Image source={Images.coreWalletLogo} resizeMode='contain' style={styles.coreWalletLogo} />
+        {/* <Image source={Images.splashScreensLogo} resizeMode='contain' style={styles.splashScreensLogo} /> */}
       </View>
     </MainContainer>
   );
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.bgColor,
   },
-  coreWalletLogo: {
-    width: wp(35),
-    height: wp(38),
+  splashScreensLogo: {
+    width: wp(100),
+    height: hp(37),
     alignSelf: 'center'
   }
 });

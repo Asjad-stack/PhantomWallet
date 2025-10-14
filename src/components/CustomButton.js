@@ -1,0 +1,57 @@
+
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { Fonts } from '../constants/fonts'
+import { colors } from '../constants/colors'
+import PoppinsText from './PoppinsText'
+import { hp, wp } from './ResponsiveComponent'
+
+export const CustomButton = ({ title, leftImage, tintColor, titleStyles, onPressBtn, btnSyles, loading, disabled }) => {
+    return (
+        <TouchableOpacity
+            disabled={loading ? loading : disabled}
+            activeOpacity={0.8} style={[{
+                ...styles.btnContainer,
+                backgroundColor: disabled ? colors.btnDisableColor : colors.btnColor
+            }, btnSyles]} onPress={onPressBtn}>
+            <View style={styles.contentContainer}>
+                {leftImage &&
+                    <Image
+                        source={leftImage}
+                        resizeMode='contain'
+                        style={{ ...styles.leftImage, tintColor: tintColor ? tintColor : colors.gray1 }}
+                        tintColor={tintColor ? tintColor : colors.gray1}
+                    />
+                }
+                <PoppinsText style={[styles.title, titleStyles]}>{title}</PoppinsText>
+            </View>
+        </TouchableOpacity>
+    )
+}
+
+
+const styles = StyleSheet.create({
+    btnContainer: {
+        width: wp(90),
+        height: hp(5.5),
+        alignSelf: 'center',
+        borderRadius: 12,
+        justifyContent: 'center',
+    },
+    contentContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    title: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray2,
+        textAlign: 'center',
+    },
+    leftImage: {
+        width: wp(3),
+        height: wp(3),
+        marginRight: wp(2)
+    }
+})

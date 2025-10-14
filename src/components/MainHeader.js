@@ -1,21 +1,38 @@
 import { Image, StyleSheet, View } from 'react-native'
 import React from 'react'
 import { appStyles } from '../utilities/appStyles/index'
-import { wp } from './ResponsiveComponent'
+import { hp, wp } from './ResponsiveComponent'
 import { Fonts } from '../constants/fonts'
 import { colors } from '../constants/colors'
 import { TouchableOpacity } from 'react-native'
 import PoppinsText from './PoppinsText'
 // 1234567890
-export const MainHeader = ({ onPressLeftImage, leftImage, title, rightImage }) => {
+export const MainHeader = ({ onPressLeftImage, leftImage, title, centerImage }) => {
     return (
         <View style={{ ...appStyles.row, width: wp(92) }}>
             <TouchableOpacity activeOpacity={0.8} onPress={onPressLeftImage}>
                 <Image source={leftImage} resizeMode='contain' style={styles.leftImage} />
             </TouchableOpacity>
-            <PoppinsText style={styles.title}>{title}</PoppinsText>
             <TouchableOpacity>
-                <Image source={rightImage} resizeMode='contain' style={styles.leftImage} />
+                <Image source={centerImage} resizeMode='contain' style={styles.centerImage} />
+            </TouchableOpacity>
+            <PoppinsText style={styles.title}>{title}</PoppinsText>
+        </View>
+    )
+}
+
+export const CustomHeader = ({ leftImage, rightImage, rightText, onPressLeftImage, onPressRightImage }) => {
+    return (
+        <View style={{ ...appStyles.row, width: wp(92) }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressLeftImage}>
+                <Image source={leftImage} resizeMode='contain' style={styles.leftCustomImage} />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressRightImage}>
+                {rightImage ?
+                    <Image source={rightImage} resizeMode='contain' style={styles.leftCustomImage} />
+                    :
+                    <PoppinsText style={styles.rightText}>{rightText}</PoppinsText>
+                }
             </TouchableOpacity>
         </View>
     )
@@ -23,12 +40,26 @@ export const MainHeader = ({ onPressLeftImage, leftImage, title, rightImage }) =
 
 const styles = StyleSheet.create({
     leftImage: {
-        width: wp(6),
-        height: wp(6)
+        width: wp(3),
+        height: wp(3)
+    },
+    centerImage: {
+        width: wp(15),
+        height: hp(3)
     },
     title: {
         fontSize: 16,
         fontWeight: Fonts.Poppins.Regular,
         color: colors.white
+    },
+    // CustomHeader
+    leftCustomImage: {
+        width: wp(4),
+        height: wp(4)
+    },
+    rightText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray12
     }
 })
