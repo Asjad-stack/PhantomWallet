@@ -319,3 +319,36 @@ export const createWalletDataList = [
         desc: "Recover access to your wallet with your Google or Apple account and a 4-digit PIN"
     }
 ]
+
+export const networkListData = [
+    {
+        id: 1,
+        logo: Images.tokenLogo,
+        title: "Solana",
+    },
+    {
+        id: 2,
+        logo: Images.ethereum,
+        title: "Ethereum",
+    },
+    {
+        id: 3,
+        logo: Images.base,
+        title: "Base",
+    },
+    {
+        id: 4,
+        logo: Images.sui,
+        title: "Sui",
+    },
+    {
+        id: 5,
+        logo: Images.polygon,
+        title: "Polygon",
+    },
+    {
+        id: 6,
+        logo: Images.bitcoin,
+        title: "Bitcoin",
+    },
+]   

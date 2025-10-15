@@ -26,6 +26,7 @@ export const routes = {
     createWallet: "createWallet",
     protectWallet: "protectWallet",
     importAccounts: "importAccounts",
+    importPrivateKey: "importPrivateKey",
 
 
     // AppNavigation

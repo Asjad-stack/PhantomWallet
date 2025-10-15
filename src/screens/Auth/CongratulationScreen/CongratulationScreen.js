@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Image, ImageBackground, View } from 'react-native'
+import { ImageBackground, View } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { MainContainer } from '../../../components/MainContainer'
 import { Images } from '../../../Images'
-import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
 import PoppinsText from '../../../components/PoppinsText'
 import { loadWalletData } from '../../../store/actions/walletActions'
@@ -13,6 +12,8 @@ import { CustomButton } from '../../../components/CustomButton'
 
 
 const CongratulationScreen = (props) => {
+
+    const previousScreenImportFlow = props?.route?.params?.isImportFlow;
     const dispatch = useDispatch();
     const [isImportFlow, setIsImportFlow] = useState(false);
 
@@ -42,7 +43,7 @@ const CongratulationScreen = (props) => {
             <ImageBackground source={Images.bgImage} resizeMode='contain' style={styles.congratulations}>
                 <PoppinsText style={styles.desc}>@loremipsum</PoppinsText>
                 <View style={{ position: 'absolute', left: 0, right: 0, bottom: hp(6.5) }}>
-                    <CustomButton title="Continue" onPressBtn={() => { }} />
+                    <CustomButton title={previousScreenImportFlow ? "Get Started" : "Continue"} onPressBtn={() => { }} />
                 </View>
             </ImageBackground>
 

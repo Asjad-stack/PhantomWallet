@@ -40,9 +40,8 @@ export const CustomTextInput = ({ numberOfLines, autoCapitalize, secureTextEntry
     )
 }
 
-export const CustomTextInput1 = ({ numberOfLines, leftImage, autoCapitalize, secureTextEntry, rightText, dropDown, onPressRightText,
-    value, error, onPress, onPressIcon, placeholderTextColor, editable, keyboardType, multiline, placeholder, dollarAmount, coinLogo,
-    onChangeText, iconName, iconType, iconColor, iconSize, containerStyle, inputStyle, iconStyle, rightImage, onPressRightImage, title }) => {
+export const CustomTextInput1 = ({ numberOfLines, autoCapitalize, secureTextEntry, value, onPress,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
 
     return (
         <View style={{}}>
@@ -105,7 +104,6 @@ export const CustomTextInput1 = ({ numberOfLines, leftImage, autoCapitalize, sec
         </View>
     )
 }
-
 
 export const CustomTextInput2 = ({ numberOfLines, leftImage, autoCapitalize, secureTextEntry, rightText, dropDown, onPressRightText,
     value, error, onPress, placeholderTextColor, editable, keyboardType, multiline, placeholder, coinLogo,
@@ -188,6 +186,64 @@ export const CustomTextInput2 = ({ numberOfLines, leftImage, autoCapitalize, sec
     )
 }
 
+export const CustomTextInput3 = ({ numberOfLines, autoCapitalize, secureTextEntry, value, onPress,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
+
+    return (
+        <View style={{}}>
+            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
+
+                <TextInput
+                    value={value}
+                    editable={editable ?? !onPress}
+                    multiline={multiline}
+                    placeholder={placeholder}
+                    onChangeText={onChangeText}
+                    keyboardType={keyboardType}
+                    cursorColor={colors.white}
+                    autoCapitalize={autoCapitalize ?? 'none'}
+                    numberOfLines={numberOfLines}
+                    secureTextEntry={secureTextEntry}
+                    style={[styles.input, inputStyle]}
+                    placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+                />
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+export const CustomTextInput4 = ({ numberOfLines, autoCapitalize, secureTextEntry, value, onPress, onPressPaste,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
+
+    return (
+        <View style={{}}>
+            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
+
+                <View style={{ ...appStyles.row, paddingHorizontal: wp(3) }}>
+                    <TextInput
+                        value={value}
+                        editable={editable ?? !onPress}
+                        multiline={multiline}
+                        placeholder={placeholder}
+                        onChangeText={onChangeText}
+                        keyboardType={keyboardType}
+                        cursorColor={colors.white}
+                        autoCapitalize={autoCapitalize ?? 'none'}
+                        numberOfLines={numberOfLines}
+                        secureTextEntry={secureTextEntry}
+                        style={[styles.input, inputStyle]}
+                        placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+                    />
+                    <TouchableOpacity activeOpacity={0.8} onPress={onPressPaste}>
+                        <Image source={Images.pasteImage} resizeMode='contain' style={styles.pasteImage} />
+                    </TouchableOpacity>
+                </View>
+
+            </TouchableOpacity>
+        </View>
+    )
+}
+
 
 const styles = StyleSheet.create({
     leftImage: {
@@ -206,9 +262,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignSelf: 'center',
         paddingVertical: hp(0.7),
-        backgroundColor: colors.btnDisableColor,
+        backgroundColor: colors.gray23,
         justifyContent: 'center',
-
     },
     authMainRoundBox: {
         width: wp(92),
@@ -288,5 +343,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingHorizontal: wp(4)
     },
+    // CustomTextInput4
+    pasteImage: {
+        width: wp(13),
+        height: wp(8)
+    }
 
 })

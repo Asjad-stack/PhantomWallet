@@ -26,5 +26,17 @@ export const Images = {
     slideLine1: require('./slideLine1.png'),
     slideLine2: require('./slideLine2.png'),
     bgImage: require('./bgImage.png'),
-
+    importAccountCircle: require('./importAccountCircle.png'),
+    tickGreenCircle: require('./tickGreenCircle.png'),
+    checkBox: require('./checkBox.png'),
+    unCheckBox: require('./unCheckBox.png'),
+    tokenLogo: require('./tokenLogo.png'),
+    arrowDownWithRound: require('./arrowDownWithRound.png'),
+    arrowRight: require('./arrowRight.png'),
+    pasteImage: require('./pasteImage.png'),
+    ethereum: require('./ethereum.png'),
+    base: require('./base.png'),
+    sui: require('./sui.png'),
+    polygon: require('./polygon.png'),
+    bitcoin: require('./bitcoin.png'),
 }

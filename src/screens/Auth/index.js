@@ -16,6 +16,8 @@ import CreateWallet from "./CreateWallet/CreateWallet";
 import ProtectWallet from "./ProtectWallet/ProtectWallet";
 import PinScreen from "./PinScreen/PinScreen";
 import ImportAccounts from "./ImportAccounts/ImportAccounts";
+import ImportPrivateKey from "./ImportPrivateKey/ImportPrivateKey";
+
 
 
 
@@ -25,5 +27,5 @@ export {
 
     // New
     OnboardingScreen, SplashScreen, PinScreen, ProtectWallet, CreateWallet,
-    ImportAccounts,
+    ImportAccounts, ImportPrivateKey,
 }
