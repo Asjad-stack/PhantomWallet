@@ -6,7 +6,7 @@ import { Fonts } from '../constants/fonts'
 import { colors } from '../constants/colors'
 import { TouchableOpacity } from 'react-native'
 import PoppinsText from './PoppinsText'
-// 1234567890
+
 export const MainHeader = ({ onPressLeftImage, leftImage, title, centerImage }) => {
     return (
         <View style={{ ...appStyles.row, width: wp(92) }}>
@@ -27,6 +27,28 @@ export const CustomHeader = ({ leftImage, rightImage, rightText, onPressLeftImag
             <TouchableOpacity activeOpacity={0.8} onPress={onPressLeftImage}>
                 <Image source={leftImage} resizeMode='contain' style={styles.leftCustomImage} />
             </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressRightImage}>
+                {rightImage ?
+                    <Image source={rightImage} resizeMode='contain' style={styles.leftCustomImage} />
+                    :
+                    <PoppinsText style={styles.rightText}>{rightText}</PoppinsText>
+                }
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+export const SeedPhraseCustomHeader = ({ leftImage, centerImage, rightImage, rightText, onPressLeftImage, onPressRightImage, onPressCenterImage }) => {
+    return (
+        <View style={{ ...appStyles.row, width: wp(92) }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressLeftImage}>
+                <Image source={leftImage} resizeMode='contain' style={styles.leftArrowImage} />
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressCenterImage}>
+                <Image source={centerImage} resizeMode='contain' style={styles.centerImage1} />
+            </TouchableOpacity>
+
             <TouchableOpacity activeOpacity={0.8} onPress={onPressRightImage}>
                 {rightImage ?
                     <Image source={rightImage} resizeMode='contain' style={styles.leftCustomImage} />
@@ -61,5 +83,14 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontFamily: Fonts.Poppins.Regular,
         color: colors.gray12
+    },
+    // SeedPhraseHeader
+    leftArrowImage: {
+        width: wp(3),
+        height: wp(3)
+    },
+    centerImage1: {
+        width: wp(55),
+        height: wp(3)
     }
 })

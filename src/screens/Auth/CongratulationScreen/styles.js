@@ -11,35 +11,15 @@ export const styles = StyleSheet.create({
     congratulations: {
         flex: 1,
         width: wp(100),
-        height: hp(150),
+        height: hp(100),
     },
-    hiText: {
-        fontSize: 40,
-        fontFamily: Fonts.Poppins.Bold,
-        color: colors.white,
-        textAlign: 'center'
-    },
+
     desc: {
         fontSize: 39,
         fontFamily: Fonts.Poppins.Medium,
         color: colors.white,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: hp(23)
     },
-    enjoyYourWallet: {
-        width: wp(63.25),
-        height: hp(26.12),
-        alignSelf: 'center'
-    },
-    enjoyYourWalletText: {
-        fontSize: 22,
-        fontFamily: Fonts.Poppins.Medium,
-        color: colors.gray17,
-        textAlign: 'center'
-    },
-    enjoyYourWalletDesc: {
-        fontSize: 11,
-        fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray10,
-        textAlign: 'center'
-    }
+
 })

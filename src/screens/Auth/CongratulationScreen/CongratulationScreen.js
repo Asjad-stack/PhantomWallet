@@ -6,7 +6,6 @@ import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
 import PoppinsText from '../../../components/PoppinsText'
-import { RoundLightButton } from '../../../components/RoundLightButton'
 import { loadWalletData } from '../../../store/actions/walletActions'
 import { routes } from '../../../constants/routes'
 import { styles } from './styles'
@@ -40,41 +39,12 @@ const CongratulationScreen = (props) => {
 
     return (
         <MainContainer>
-            <Spacer customHeight={hp(6)} />
-            <View style={styles.mainView}>
-                <ImageBackground source={Images.congratulations} resizeMode='contain' style={styles.congratulations}>
-
-
-                    <PoppinsText style={styles.hiText}>Hi!</PoppinsText>
-                    <PoppinsText style={styles.desc}>@loremipsum</PoppinsText>
-                    <Spacer />
-                    <Image source={Images.enjoyYourWallet} resizeMode='contain' style={styles.enjoyYourWallet} />
-                    <Spacer />
-                    <PoppinsText style={styles.enjoyYourWalletText}>You're all ready!</PoppinsText>
-                    {/* <Spacer /> */}
-                    <PoppinsText style={styles.enjoyYourWalletDesc}>You can now fully enjoy your wallet.</PoppinsText>
-
-
-                    {/* <View style={styles.mainView}>
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <Image source={Images.badge} resizeMode='contain' style={styles.badge} />
-                    <Spacer />
-                    <PoppinsText style={styles.congratulationText}>{'Congratulations!\nYour Wallet is ' + (isImportFlow ? 'Import' : 'Created')}</PoppinsText>
-                    <Spacer customHeight={hp(1)} />
-                    <PoppinsText style={styles.congratulationDesc}>
-                        {isImportFlow 
-                            ? 'You have successfully import your wallet using seed phrase.' 
-                            : 'You have successfully create your wallet.'
-                        }
-                    </PoppinsText>
+            <ImageBackground source={Images.bgImage} resizeMode='contain' style={styles.congratulations}>
+                <PoppinsText style={styles.desc}>@loremipsum</PoppinsText>
+                <View style={{ position: 'absolute', left: 0, right: 0, bottom: hp(6.5) }}>
+                    <CustomButton title="Continue" onPressBtn={() => { }} />
                 </View>
-            </View> */}
-                    <View style={{ paddingBottom: hp(3) }}>
-                        <CustomButton title="Continue" onPressBtn={() => { }} />
-                    </View>
-                </ImageBackground>
-            </View>
-
+            </ImageBackground>
 
         </MainContainer>
     )

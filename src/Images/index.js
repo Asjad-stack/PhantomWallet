@@ -21,5 +21,10 @@ export const Images = {
     toggleOff: require('./toggleOff.png'),
     congratulations: require('./congratulations.png'),
     enjoyYourWallet: require('./enjoyYourWallet.png'),
+    plusWithBox: require('./plusWithBox.png'),
+    key: require('./key.png'),
+    slideLine1: require('./slideLine1.png'),
+    slideLine2: require('./slideLine2.png'),
+    bgImage: require('./bgImage.png'),
 
 }

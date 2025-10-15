@@ -4,6 +4,8 @@ export const colors = {
     bgColor: "#101010",
     btnColor: "#A89CE2",
     btnDisableColor: "#2A2A2A",
+    bottomSheetBgColor: "#191919",
+
 
     black: "#000000",
     white: "#FFFFFF",
@@ -25,6 +27,7 @@ export const colors = {
     gray15: "#AFAFAF",
     gray16: "#888888",
     gray17: "#D1D1D1",
+    gray18: "#1C1B23",
 
     yellow: "#AEA622",
     red: "#FF4444",

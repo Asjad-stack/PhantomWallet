@@ -7,14 +7,14 @@ import { hp } from '../../../components/ResponsiveComponent'
 import { CustomHeader } from '../../../components/MainHeader'
 import { Images } from '../../../Images'
 import PoppinsText from '../../../components/PoppinsText'
-import { CreateWalletEmailBottomSheet, CreateWalletSetupList } from './Components'
+import { CreateWalletEmailBottomSheet, CreateWalletSetupList, ImportOptionsBottomSheet } from './Components'
 import { CustomButton } from '../../../components/CustomButton'
 import useCreateWallet from './Hooks'
 import { routes } from '../../../constants/routes'
 
 const CreateWallet = (props) => {
 
-    const { emailBottomSheet } = useCreateWallet(props);
+    const { emailBottomSheet, isImportFlow, importOptionsBottomSheet } = useCreateWallet(props);
 
     return (
         <MainContainer>
@@ -34,11 +34,12 @@ const CreateWallet = (props) => {
             <View style={styles.btnView}>
                 <CustomButton title={'Continue with Email'} onPressBtn={() => emailBottomSheet.current?.open()} />
                 <Spacer />
-                <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => { }}>
-                    <PoppinsText style={styles.bottomText}>Create a seed phrase wallet</PoppinsText>
+                <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => importOptionsBottomSheet.current?.open()}>
+                    <PoppinsText style={styles.bottomText}>{isImportFlow ? 'Other Import Options' : "Create a seed phrase wallet"}</PoppinsText>
                 </TouchableOpacity>
             </View>
-            <CreateWalletEmailBottomSheet emailBottomSheet={emailBottomSheet}
+            <CreateWalletEmailBottomSheet
+                emailBottomSheet={emailBottomSheet}
                 onPressBtn1={() => {
                     emailBottomSheet?.current?.close()
                     setTimeout(() => {
@@ -49,6 +50,21 @@ const CreateWallet = (props) => {
                     emailBottomSheet?.current?.close()
                     setTimeout(() => {
                         props?.navigation.navigate(routes.pinScreen)
+                    }, 500);
+                }}
+            />
+            <ImportOptionsBottomSheet
+                importOptionsBottomSheet={importOptionsBottomSheet}
+                onPressBtn1={() => {
+                    importOptionsBottomSheet?.current?.close()
+                    setTimeout(() => {
+                        props?.navigation.navigate(routes.seedPhrase)
+                    }, 500);
+                }}
+                onPressBtn2={() => {
+                    importOptionsBottomSheet?.current?.close()
+                    setTimeout(() => {
+                        props?.navigation.navigate(routes.seedPhrase)
                     }, 500);
                 }}
             />

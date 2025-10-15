@@ -1,12 +1,17 @@
 import { useRef } from "react";
 
 
-const useCreateWallet = () => {
+const useCreateWallet = (props) => {
+
+    const isImportFlow = props?.route?.params?.isImportFlow
 
     const emailBottomSheet = useRef(null);
+    const importOptionsBottomSheet = useRef(null);
 
     return {
-        emailBottomSheet
+        isImportFlow,
+        emailBottomSheet,
+        importOptionsBottomSheet
     }
 }
 

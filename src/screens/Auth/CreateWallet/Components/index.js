@@ -36,7 +36,7 @@ export const CreateWalletSetupList = () => {
 
 export const CreateWalletEmailBottomSheet = ({ emailBottomSheet, onPressBtn1, onPressBtn2 }) => {
     return (
-        <SimpleRBSheet refRBSheet={emailBottomSheet} backgroundColor={colors.black} height={hp(30)}>
+        <SimpleRBSheet refRBSheet={emailBottomSheet} height={hp(30)}>
             <PoppinsText style={styles.bottomSheetTitle}>Select Your Email</PoppinsText>
             <Spacer customHeight={hp(1)} />
             <PoppinsText style={styles.bottomSheetDesc}>Add a wallet with your Apple or Google account</PoppinsText>
@@ -47,6 +47,21 @@ export const CreateWalletEmailBottomSheet = ({ emailBottomSheet, onPressBtn1, on
         </SimpleRBSheet>
     )
 }
+
+export const ImportOptionsBottomSheet = ({ importOptionsBottomSheet, onPressBtn1, onPressBtn2 }) => {
+    return (
+        <SimpleRBSheet refRBSheet={importOptionsBottomSheet} height={hp(30)}>
+            <PoppinsText style={styles.bottomSheetTitle}>Import Options</PoppinsText>
+            <Spacer customHeight={hp(1)} />
+            <PoppinsText style={styles.bottomSheetDesc}>Import an existing wallet with your email, seedphrase, private key or hardware wallet</PoppinsText>
+            <Spacer />
+            <CustomButton leftImage={Images.plusWithBox} leftImageStyle={{ width: wp(4), height: wp(4) }} title={'Import Seed Phrase'} btnSyles={styles.btnStyles1} titleStyles={styles.btnTitleStyles} onPressBtn={onPressBtn1} />
+            <Spacer customHeight={hp(1)} />
+            <CustomButton leftImage={Images.key} leftImageStyle={{ width: wp(4), height: wp(4) }} title={'Import Private Key'} btnSyles={styles.btnStyles2} titleStyles={styles.btnTitleStyles} onPressBtn={onPressBtn2} />
+        </SimpleRBSheet>
+    )
+}
+
 
 const styles = StyleSheet.create({
     logo: {

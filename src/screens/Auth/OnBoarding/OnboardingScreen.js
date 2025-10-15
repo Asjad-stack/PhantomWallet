@@ -45,7 +45,7 @@ const OnboardingScreen = (props) => {
           onPressBtn={() => props?.navigation.navigate(routes.createWallet)}
         />
         <Spacer />
-        <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => props?.navigation.navigate(routes.importWallet)}>
+        <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => props?.navigation.navigate(routes.createWallet, { isImportFlow: true })}>
           <PoppinsText style={styles.bottomText}>I already have a wallet</PoppinsText>
         </TouchableOpacity>
       </View>

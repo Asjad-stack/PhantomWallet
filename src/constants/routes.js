@@ -25,6 +25,7 @@ export const routes = {
     onBoarding: "onBoarding",
     createWallet: "createWallet",
     protectWallet: "protectWallet",
+    importAccounts: "importAccounts",
 
 
     // AppNavigation

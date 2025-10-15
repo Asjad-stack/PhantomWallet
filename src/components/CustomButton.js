@@ -6,7 +6,7 @@ import { colors } from '../constants/colors'
 import PoppinsText from './PoppinsText'
 import { hp, wp } from './ResponsiveComponent'
 
-export const CustomButton = ({ title, leftImage, tintColor, titleStyles, onPressBtn, btnSyles, loading, disabled }) => {
+export const CustomButton = ({ title, leftImage, leftImageStyle, tintColor, titleStyles, onPressBtn, btnSyles, loading, disabled }) => {
     return (
         <TouchableOpacity
             disabled={loading ? loading : disabled}
@@ -19,7 +19,7 @@ export const CustomButton = ({ title, leftImage, tintColor, titleStyles, onPress
                     <Image
                         source={leftImage}
                         resizeMode='contain'
-                        style={{ ...styles.leftImage, tintColor: tintColor ? tintColor : colors.gray1 }}
+                        style={[{ ...styles.leftImage, tintColor: tintColor ? tintColor : colors.gray1 }, leftImageStyle]}
                         tintColor={tintColor ? tintColor : colors.gray1}
                     />
                 }
@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray2,
         textAlign: 'center',
+        marginLeft: wp(3)
     },
     leftImage: {
         width: wp(3),
         height: wp(3),
-        marginRight: wp(2)
     }
 })

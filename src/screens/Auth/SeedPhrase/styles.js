@@ -9,32 +9,22 @@ export const styles = StyleSheet.create({
         paddingHorizontal: wp(4)
     },
     recoveryPhraseText: {
-        fontSize: 24,
-        fontFamily: Fonts.Poppins.Medium,
+        fontSize: 22,
+        fontFamily: Fonts.Poppins.Bold,
         color: colors.white,
+        textAlign: 'center'
     },
     recoveryPhraseDsec: {
-        fontSize: 14,
+        fontSize: 13,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray6,
+        color: colors.gray9,
+        textAlign: 'center'
     },
-    blurImage: {
+    btnSyles: {
         width: wp(92),
-        height: hp(40),
-        alignSelf: 'center'
+        height: hp(5.5),
+        alignSelf: 'center',
+        borderRadius: 12,
+        justifyContent: 'center',
     },
-    simpleRoundBox: {
-        width: wp(88),
-        padding: wp(4)
-    },
-    copyLogo: {
-        width: wp(6),
-        height: wp(6),
-        marginRight: wp(3)
-    },
-    copyText: {
-        fontSize: 16,
-        fontFamily: Fonts.Poppins.Regular,
-        color: colors.white
-    }
 })

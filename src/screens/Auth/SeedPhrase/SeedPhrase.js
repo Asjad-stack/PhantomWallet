@@ -1,19 +1,20 @@
-import { Image, View, ImageBackground, TouchableOpacity } from 'react-native'
+import { View, } from 'react-native'
 import React from 'react'
 import { MainContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
-import { AlertView, SeedPhraseCard, SeedPhraseHeader } from './Components'
 import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
-import PoppinsText from '../../../components/PoppinsText'
-import SwipeUnlock from '../../../components/SwipeUnlock'
 import useSeedPhrase from './Hooks'
-import { appStyles } from '../../../utilities/appStyles'
-import { copyPaste } from '../../../utilities/helperFunction'
+import { SeedPhraseCustomHeader, } from '../../../components/MainHeader'
+import PoppinsText from '../../../components/PoppinsText'
+import { CustomTextInput1 } from '../../../components/CustomTextInput'
+import { CustomButton } from '../../../components/CustomButton'
+import { colors } from '../../../constants/colors'
+import { routes } from '../../../constants/routes'
 
 const SeedPhrase = (props) => {
-    const { showSeed, mnemonic, handleRevealSeed, isLoading } = useSeedPhrase(props)
+    const { showSeed, mnemonic, setMnemonic, isLoading } = useSeedPhrase(props)
 
     console.log('SeedPhrase Screen - showSeed:', showSeed, 'mnemonic length:', mnemonic?.length);
 
@@ -21,36 +22,34 @@ const SeedPhrase = (props) => {
         <MainContainer>
             <Spacer customHeight={hp(6)} />
             <View style={styles.mainView}>
-                <SeedPhraseHeader centerImage={Images.stepper} onPressLeftImage={() => props?.navigation.goBack()} />
-                <Spacer customHeight={hp(3)} />
-                <PoppinsText style={styles.recoveryPhraseText}>Recovery Phrase</PoppinsText>
-                <Spacer customHeight={hp(1)} />
-                <PoppinsText style={styles.recoveryPhraseDsec}>Your recovery phrase is your only backup. Write it down and keep it safe — no one can recover it for you.</PoppinsText>
-                <Spacer />
-                {!showSeed ?
-                    <Image source={Images.blurImage} resizeMode='contain' style={styles.blurImage} />
-                    :
-                    <SeedPhraseCard mnemonic={mnemonic} />
-                }
+                <SeedPhraseCustomHeader leftImage={Images.goBackArrow} centerImage={Images.slideLine1} rightText={'Next'} onPressLeftImage={() => props?.navigation.goBack()} />
+                <View style={{ flex: 1, justifyContent: 'center' }}>
+                    <PoppinsText style={styles.recoveryPhraseText}>Recovery Phrase</PoppinsText>
+                    <Spacer customHeight={hp(1)} />
+                    <PoppinsText style={styles.recoveryPhraseDsec}>Restore an existing wallet with your 12 or 24-word recovery phrase</PoppinsText>
+                    <Spacer />
+                    <CustomTextInput1
+                        placeholder='Recovery Phrase'
+                        value={mnemonic}
+                        onChangeText={(text) => setMnemonic(text)}
+                        secureTextEntry={false}
+                        editable={true}
+                    />
+                    <Spacer />
+                    <CustomButton
+                        loading={isLoading}
+                        title='Import Recovery Phrase'
+                        disabled={mnemonic.length <= 0}
+                        titleStyles={{ ...styles.btnTitleStyles, color: colors.gray18 }}
+                        btnSyles={{
+                            ...styles.btnSyles,
+                            backgroundColor: mnemonic <= 0 ? colors.lightPurple : colors.btnColor
+                        }}
+                        onPressBtn={() => props?.navigation?.navigate(routes.importAccounts)}
+                    />
+                </View>
+            </View>
 
-                <Spacer customHeight={hp(1)} />
-            </View>
-            <View style={{ paddingBottom: hp(3) }}>
-                {!showSeed ?
-                    <AlertView />
-                    :
-                    <>
-                        <ImageBackground source={Images.simpleRoundBox} resizeMode='contain' style={styles.simpleRoundBox}>
-                            <TouchableOpacity activeOpacity={0.8} onPress={() => copyPaste.copy(mnemonic.join(" "))} style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
-                                <Image source={Images.copyLogo} resizeMode='contain' style={styles.copyLogo} />
-                                <PoppinsText style={styles.copyText}>Copy to Clipboard</PoppinsText>
-                            </TouchableOpacity>
-                        </ImageBackground>
-                        <Spacer customHeight={hp(1)} />
-                    </>
-                }
-                <SwipeUnlock onUnlock={handleRevealSeed} navigation={props.navigation} seedPhrase={mnemonic} />
-            </View>
         </MainContainer>
     )
 }
