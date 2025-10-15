@@ -23,18 +23,17 @@ function BottomTabBarNav({ navigation }) {
           headerShown: false,
 
           tabBarStyle: {
-            width: wp(92),
-            height: hp(10),
+            width: wp(100),
             backgroundColor: colors.bottomTabsBgColor,
             borderTopWidth: 0,
             elevation: 0,
             shadowOpacity: 0,
             paddingHorizontal: wp(4),
-            borderWidth: 1.5,
-            borderColor: colors.bottomTabsBorderColor,
-            borderRadius: 24,
             alignSelf: 'center',
-            marginBottom: Platform.OS == 'android' ? hp(3) : 0
+            borderTopWidth: 1,
+            borderTopColor: colors.black,
+            marginBottom: Platform.OS == 'android' ? hp(1.5) : 0,
+            paddingBottom: hp(5),
           }
         }}>
 
@@ -47,9 +46,7 @@ function BottomTabBarNav({ navigation }) {
                 {...props}
                 activeOpacity={1}
                 style={{
-                  justifyContent: 'center',
                   padding: wp(4),
-                  height: hp(10),
                   alignSelf: 'center',
                 }}
               />
@@ -57,7 +54,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <Image
-                  source={focused ? Images.homeActiveTab : Images.homeUnActiveTab}
+                  source={focused ? Images.homeActiveBtn : Images.homeUnActiveBtn}
                   style={focused ? styles.activeTab : styles.unActiveTab}
                   resizeMode={'contain'}
                 />
@@ -74,9 +71,7 @@ function BottomTabBarNav({ navigation }) {
                 {...props}
                 activeOpacity={1}
                 style={{
-                  justifyContent: 'center',
                   padding: wp(4),
-                  height: hp(10),
                   alignSelf: 'center',
 
                 }}
@@ -85,7 +80,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.historyActiveTab : Images.historyUnActiveTab} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.wifiUnActiveBtn : Images.wifiUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}
@@ -100,9 +95,7 @@ function BottomTabBarNav({ navigation }) {
                 {...props}
                 activeOpacity={1}
                 style={{
-                  justifyContent: 'center',
                   padding: wp(4),
-                  height: hp(10),
                   alignSelf: 'center',
                 }}
               />
@@ -110,7 +103,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.rewardActiveTab : Images.rewardUnActiveTab} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.swapUnActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}
@@ -125,9 +118,7 @@ function BottomTabBarNav({ navigation }) {
                 {...props}
                 activeOpacity={1}
                 style={{
-                  justifyContent: 'center',
                   padding: wp(4),
-                  height: hp(10),
                   alignSelf: 'center',
 
                 }}
@@ -136,11 +127,35 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.settingActiveTab : Images.settingUnActiveTab} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}
         />
+
+        {/* <Tab.Screen
+          name={routes.settingScreen}
+          component={Settings}
+          options={{
+            tabBarButton: (props) => (
+              <TouchableOpacity
+                {...props}
+                activeOpacity={1}
+                style={{
+                    padding: wp(4),
+                  alignSelf: 'center',
+
+                }}
+              />
+            ),
+            tabBarIcon: ({ focused }) =>
+              <View style={{}}>
+                <View style={{}}>
+                  <Image source={focused ? Images.searchActiveBtn : Images.seacrhUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                </View>
+              </View>
+          }}
+        /> */}
 
       </Tab.Navigator>
     </View>
@@ -157,16 +172,16 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     backgroundColor: colors.bgColor,
     alignSelf: 'center',
-    paddingBottom: hp(3),
+    // paddingBottom: hp(3),
   },
   activeTab: {
-    width: wp(22),
-    height: wp(10),
+    width: wp(5),
+    height: wp(5),
     alignSelf: 'center'
   },
   unActiveTab: {
-    width: wp(22),
-    height: wp(6),
+    width: wp(5),
+    height: wp(5),
     alignSelf: 'center'
   }
 });

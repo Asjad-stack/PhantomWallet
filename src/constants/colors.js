@@ -5,6 +5,7 @@ export const colors = {
     btnColor: "#A89CE2",
     btnDisableColor: "#2A2A2A",
     bottomSheetBgColor: "#191919",
+    bottomTabsBgColor: "#10100f",
 
 
     black: "#000000",
@@ -46,9 +47,18 @@ export const colors = {
     gray34: "#312F43",
     gray35: "#5F5F5F",
     gray36: "#B4B4B4",
+    gray37: "#959595",
+    gray38: "#C0C0C0",
+    gray39: "#E0E0E0",
+    gray40: "#212121FE",
+    gray41: "#A2A2A2",
+    gray42: "#C4C4C4",
+    gray43: "#646464",
 
     yellow: "#AEA622",
     red: "#FF4444",
+    green: "#2C9060",
+    greenShadow: "#14271D",
 
     purple: "#9288C1",
     lightPurple: "#4E4A6B",

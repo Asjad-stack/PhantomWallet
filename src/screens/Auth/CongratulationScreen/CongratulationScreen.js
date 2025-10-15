@@ -43,7 +43,7 @@ const CongratulationScreen = (props) => {
             <ImageBackground source={Images.bgImage} resizeMode='contain' style={styles.congratulations}>
                 <PoppinsText style={styles.desc}>@loremipsum</PoppinsText>
                 <View style={{ position: 'absolute', left: 0, right: 0, bottom: hp(6.5) }}>
-                    <CustomButton title={previousScreenImportFlow ? "Get Started" : "Continue"} onPressBtn={() => { }} />
+                    <CustomButton title={previousScreenImportFlow ? "Get Started" : "Continue"} onPressBtn={() => props?.navigation.replace(routes.appStack)} />
                 </View>
             </ImageBackground>
 

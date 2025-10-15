@@ -4,29 +4,21 @@ import { Images } from "../Images";
 export const HomeTabs = [
     {
         id: 1,
-        tabLogo: Images.sendArrow,
-        text: 'Send'
+        tabLogo: Images.receiveTab,
     },
     {
         id: 2,
-        tabLogo: Images.receiveArrow,
-        text: 'Receive'
+        tabLogo: Images.sendTab,
     },
     {
         id: 3,
-        tabLogo: Images.swapArrow,
-        text: 'Swap'
+        tabLogo: Images.swapTab,
     },
     {
         id: 4,
-        tabLogo: Images.buyArrow,
-        text: 'Buy'
+        tabLogo: Images.buyTab,
     },
-    {
-        id: 5,
-        tabLogo: Images.sellArrow,
-        text: 'Sell'
-    },
+
 ]
 
 export const tokensData = [
@@ -351,4 +343,22 @@ export const networkListData = [
         logo: Images.bitcoin,
         title: "Bitcoin",
     },
-]   
+]
+
+export const HorizontalSrcollList = [
+    {
+        id: 1,
+        tokenLogo: Images.tokenLogo,
+        title: 'Earn up to 8% APY by staking your SOL',
+    },
+    {
+        id: 2,
+        tokenLogo: Images.tokenLogo,
+        title: 'Earn up to 8% APY by staking your SOL',
+    },
+    {
+        id: 3,
+        tokenLogo: Images.tokenLogo,
+        title: 'Earn up to 8% APY by staking your SOL',
+    },
+]

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
-import { colors } from 'react-native-elements'
+import { colors } from '../../../constants/colors'
 
 export const styles = StyleSheet.create({
 
@@ -23,5 +23,10 @@ export const styles = StyleSheet.create({
         width: wp(4),
         height: wp(4),
         marginRight: wp(3)
+    },
+    prepTitle: {
+        fontSize: 17,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray42
     }
 })

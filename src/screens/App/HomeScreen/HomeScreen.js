@@ -1,17 +1,20 @@
-import { Image, TouchableOpacity, View } from 'react-native'
+import { View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
-import { Images } from '../../../Images'
 import { MainContainerApp } from '../../../components/MainContainer'
-import { BalanceCrad, RowTabs, TokensCard } from './Components'
-import PoppinsText from '../../../components/PoppinsText'
-import { appStyles } from '../../../utilities/appStyles'
+import { AccountCard, BalanceCard, HorizontalSrcoll, PrepView, RowTabs, TokensCard, TokensTabs } from './Components'
 import { routes } from '../../../constants/routes'
 import tokenDataService from '../../../services/tokenDataService'
+import { Images } from '../../../Images'
+import PoppinsText from '../../../components/PoppinsText'
+import useHomeScreen from './Hooks'
 
 const HomeScreen = (props) => {
+
+    const { selectedTab, setSelectedTab } = useHomeScreen();
+
     const [tokenData, setTokenData] = useState([]);
     const [totalBalance, setTotalBalance] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -60,15 +63,18 @@ const HomeScreen = (props) => {
         <MainContainerApp>
             <Spacer customHeight={hp(6)} />
             <View style={styles.mainView}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.notifications)}>
-                    <Image source={Images.notificationLogo} resizeMode='contain' style={styles.notificationLogo} />
-                </TouchableOpacity>
                 <Spacer />
-                <BalanceCrad
-                    totalBalane={formattedTotalBalance}
-                    dollarAmount={'$0.00'}
-                    percentageText={'+ 0.0%'}
+                <AccountCard
+                    profile={Images.profile1}
+                    accountName="@FreshWallet7" accountNumber={'Account 1'}
+                    rightImage1={Images.clock} rightImage2={Images.searchWhite}
+                    onPressRightImage1={() => { }} onPressRightImage2={() => { }}
                 />
+
+                <Spacer />
+                <BalanceCard />
+
+
                 <Spacer />
                 <RowTabs onPressTab={(item) => {
                     if (item.text === 'Receive') {
@@ -77,30 +83,19 @@ const HomeScreen = (props) => {
                         props?.navigation.navigate(routes.sendTokens)
                     }
                 }} />
+
                 <Spacer />
-                <View style={{ ...appStyles.row }}>
-                    <PoppinsText style={styles.tokensText}>Tokens</PoppinsText>
+                <HorizontalSrcoll onPress={(item) => { }} onPressCross={(item) => { }} />
 
-                    <View style={appStyles.rowBasic}>
-                        <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.importTokens)}>
-                            <Image source={Images.threeVerticalDots} resizeMode='contain' style={styles.threeVerticalDots} />
-                        </TouchableOpacity>
+                <Spacer />
+                <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
+                <Spacer customHeight={hp(1)} />
+                <PrepView />
 
-                        <TouchableOpacity activeOpacity={0.8} onPress={fetchTokenData}>
-                            <Image source={Images.refresh} resizeMode='contain' style={styles.threeVerticalDots} />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                {isLoading && (
-                    <View style={{ alignItems: 'center', paddingVertical: hp(0.3) }}>
-                        <PoppinsText style={{ color: 'white' }}>Loading token data...</PoppinsText>
-                    </View>
-                )}
-                {error && (
-                    <View style={{ alignItems: 'center', paddingVertical: hp(2) }}>
-                        <PoppinsText style={{ color: 'red' }}>Error: {error}</PoppinsText>
-                    </View>
-                )}
+                <Spacer customHeight={hp(3)} />
+                <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+
+                <Spacer />
                 <TokensCard
                     tokenData={tokenData}
                     isLoading={isLoading}

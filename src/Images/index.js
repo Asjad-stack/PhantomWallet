@@ -39,4 +39,26 @@ export const Images = {
     sui: require('./sui.png'),
     polygon: require('./polygon.png'),
     bitcoin: require('./bitcoin.png'),
+
+    // BottomTabs
+    homeActiveBtn: require('./homeActiveBtn.png'),
+    homeUnActiveBtn: require('./homeUnActiveBtn.png'),
+    wifiUnActiveBtn: require('./wifiUnActiveBtn.png'),
+    swapUnActiveBtn: require('./swapUnActiveBtn.png'),
+    historyUnActiveBtn: require('./historyUnActiveBtn.png'),
+    searchActiveBtn: require('./searchActiveBtn.png'),
+    seacrhUnActiveBtn: require('./seacrhUnActiveBtn.png'),
+
+    // AppFlow
+    profile1: require('./profile1.png'),
+    clock: require('./clock.png'),
+    searchWhite: require('./searchWhite.png'),
+    sendTab: require('./sendTab.png'),
+    receiveTab: require('./receiveTab.png'),
+    swapTab: require('./swapTab.png'),
+    buyTab: require('./buyTab.png'),
+    cross: require('./cross.png'),
+    prepLogo: require('./prepLogo.png'),
+    horizontallyDots: require('./horizontallyDots.png'),
+
 }
