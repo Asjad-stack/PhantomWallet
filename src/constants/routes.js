@@ -28,9 +28,12 @@ export const routes = {
     importAccounts: "importAccounts",
     importPrivateKey: "importPrivateKey",
 
+    // New App
+    homeScreen: "homeScreen",
+    searchScreen: "searchScreen",
+
 
     // AppNavigation
-    homeScreen: "homeScreen",
     historyScreen: "historyScreen",
     rewardScreen: "rewardScreen",
     settingScreen: "settingScreen",

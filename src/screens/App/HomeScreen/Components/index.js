@@ -156,7 +156,9 @@ export const TokensTabs = ({ selectedTab, setSelectedTab }) => {
                     }}>Collectibles</PoppinsText>
                 </TouchableOpacity>
             </View>
-            <Image source={Images.horizontallyDots} resizeMode='contain' style={styles.horizontallyDots} />
+            <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                <Image source={Images.horizontallyDots} resizeMode='contain' style={styles.horizontallyDots} />
+            </TouchableOpacity>
         </View>
     )
 }
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
     rightImage1: {
         width: wp(5),
         height: wp(5),
-        marginRight: wp(3),
+        marginRight: wp(5),
     },
     rightImage2: {
         width: wp(5),

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HistoryScreen, HomeScreen, Reward, Settings } from '../screens/App';
+import { HistoryScreen, HomeScreen, Reward, SearchScreen, Settings } from '../screens/App';
 import { routes } from '../constants/routes';
 import { StyleSheet, TouchableOpacity, View, Image, Platform, } from 'react-native';
 import { hp, wp } from '../components/ResponsiveComponent';
@@ -133,16 +133,16 @@ function BottomTabBarNav({ navigation }) {
           }}
         />
 
-        {/* <Tab.Screen
-          name={routes.settingScreen}
-          component={Settings}
+        <Tab.Screen
+          name={routes.searchScreen}
+          component={SearchScreen}
           options={{
             tabBarButton: (props) => (
               <TouchableOpacity
                 {...props}
                 activeOpacity={1}
                 style={{
-                    padding: wp(4),
+                  padding: wp(4),
                   alignSelf: 'center',
 
                 }}
@@ -155,7 +155,7 @@ function BottomTabBarNav({ navigation }) {
                 </View>
               </View>
           }}
-        /> */}
+        />
 
       </Tab.Navigator>
     </View>

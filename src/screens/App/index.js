@@ -18,7 +18,14 @@ import SendTokensAmount from "./SendTokensAmount/SendTokensAmount";
 import SendConfirmation from "./SendConfirmation/SendConfirmation";
 import TokenDetails from "./TokenDetails/TokenDetails";
 
+
+// New Screens
+import SearchScreen from "./SearchScreen/SearchScreen";
+
 export {
     HomeScreen, HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
-    Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails
+    Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
+
+    // New Screens
+    SearchScreen
 }
