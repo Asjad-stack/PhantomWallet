@@ -10,16 +10,16 @@ import { HomeTabs, HorizontalSrcollList, tokensData } from '../../../../componen
 import { HorizontalSpacer } from '../../../../components/Spacer'
 
 
-export const AccountCard = ({ profile, accountName, accountNumber, rightImage1, rightImage2, onPressRightImage1, onPressRightImage2 }) => {
+export const AccountCard = ({ profile, accountName, accountNumber, rightImage1, rightImage2, onPressRightImage1, onPressRightImage2, onPressAccount }) => {
     return (
         <View style={appStyles.row}>
-            <View style={appStyles.rowBasic}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressAccount} style={appStyles.rowBasic}>
                 <Image source={profile} resizeMode='contain' style={styles.profile} />
                 <View>
                     <PoppinsText style={styles.accountName}>{accountName}</PoppinsText>
                     <PoppinsText style={styles.accountBalance}>{accountNumber}</PoppinsText>
                 </View>
-            </View>
+            </TouchableOpacity>
             <View style={appStyles.rowBasic}>
                 <TouchableOpacity activeOpacity={0.8} onPress={onPressRightImage1}>
                     <Image source={rightImage1} resizeMode='contain' style={styles.rightImage1} />
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     },
     // TokensCard
     tokenCardBgView: {
-        width: wp(92),
+        width: wp(90),
         paddingHorizontal: wp(3),
         backgroundColor: colors.gray23,
         paddingVertical: hp(1.2),
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     },
     // HorizontalSrcoll
     horizontalBgView: {
-        width: wp(88),
+        width: wp(90),
         height: hp(8),
         backgroundColor: colors.gray40,
         borderRadius: 12,

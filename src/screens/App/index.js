@@ -17,6 +17,7 @@ import SendTokenAddress from "./SendTokenAddress/SendTokenAddress";
 import SendTokensAmount from "./SendTokensAmount/SendTokensAmount";
 import SendConfirmation from "./SendConfirmation/SendConfirmation";
 import TokenDetails from "./TokenDetails/TokenDetails";
+import AddAccount from "./AddAccount/AddAcount";
 
 
 // New Screens
@@ -27,5 +28,6 @@ export {
     Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
 
     // New Screens
-    SearchScreen
+    SearchScreen,
+    AddAccount
 }

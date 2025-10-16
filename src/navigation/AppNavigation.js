@@ -2,7 +2,8 @@ import React from 'react'
 import { routes } from '../constants/routes';
 import {
     HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect, Notifications, ImportTokens,
-    Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails
+    Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
+    AddAccount
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -35,7 +36,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.sendTokensAmont} component={SendTokensAmount} />
             <Stack.Screen name={routes.sendConfirmation} component={SendConfirmation} />
             <Stack.Screen name={routes.tokenDetails} component={TokenDetails} />
-
+            <Stack.Screen name={routes.addAccount} component={AddAccount} />
         </Stack.Navigator>
     );
 }

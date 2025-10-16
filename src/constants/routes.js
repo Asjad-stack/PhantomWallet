@@ -31,6 +31,7 @@ export const routes = {
     // New App
     homeScreen: "homeScreen",
     searchScreen: "searchScreen",
+    addAccount: "addAccount",
 
 
     // AppNavigation

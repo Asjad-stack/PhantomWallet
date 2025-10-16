@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
-import { MainContainerApp } from '../../../components/MainContainer'
+import { MainContainer, MainContainerApp } from '../../../components/MainContainer'
 import { AccountCard, BalanceCard, HorizontalSrcoll, PrepView, RowTabs, TokensCard, TokensTabs } from './Components'
 import { routes } from '../../../constants/routes'
 import tokenDataService from '../../../services/tokenDataService'
@@ -69,6 +69,7 @@ const HomeScreen = (props) => {
                     accountName="@FreshWallet7" accountNumber={'Account 1'}
                     rightImage1={Images.clock} rightImage2={Images.searchWhite}
                     onPressRightImage1={() => { }} onPressRightImage2={() => { }}
+                    onPressAccount={() => props?.navigation.navigate(routes.addAccount)}
                 />
 
                 <Spacer />

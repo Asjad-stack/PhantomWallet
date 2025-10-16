@@ -54,6 +54,11 @@ export const colors = {
     gray41: "#A2A2A2",
     gray42: "#C4C4C4",
     gray43: "#646464",
+    gray44: "#BEBEBE",
+    gray45: "#909090",
+    gray46: "#1E1E1E",
+    gray47: "#989898",
+    gray48: "#BDBDBD",
 
     yellow: "#AEA622",
     red: "#FF4444",
