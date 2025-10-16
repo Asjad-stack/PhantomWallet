@@ -5,6 +5,7 @@ export const routes = {
     appStack: "appStack",
 
     // AuthNavigation
+
     // splashScreen: "splashScreen",
     // onBoarding: "onBoarding",
     welcome: "welcome",
@@ -18,21 +19,6 @@ export const routes = {
     confirmSeedPhrase: "confirmSeedPhrase",
     faceIdEnable: "faceIdEnable",
     MainTabs: "MainTabs",
-
-    // New Auth
-    splashScreen: "splashScreen",
-    pinScreen: "pinScreen",
-    onBoarding: "onBoarding",
-    createWallet: "createWallet",
-    protectWallet: "protectWallet",
-    importAccounts: "importAccounts",
-    importPrivateKey: "importPrivateKey",
-
-    // New App
-    homeScreen: "homeScreen",
-    searchScreen: "searchScreen",
-    addAccount: "addAccount",
-
 
     // AppNavigation
     historyScreen: "historyScreen",
@@ -52,6 +38,26 @@ export const routes = {
     sendTokensAddress: "sendTokensAddress",
     sendTokensAmont: "sendTokensAmont",
     sendConfirmation: "sendConfirmation",
-    tokenDetails: "tokenDetails"
+    tokenDetails: "tokenDetails",
+
+    // New Auth
+    splashScreen: "splashScreen",
+    pinScreen: "pinScreen",
+    onBoarding: "onBoarding",
+    createWallet: "createWallet",
+    protectWallet: "protectWallet",
+    importAccounts: "importAccounts",
+    importPrivateKey: "importPrivateKey",
+
+    // New App
+    homeScreen: "homeScreen",
+    searchScreen: "searchScreen",
+    addAccount: "addAccount",
+    editProfile: "editProfile",
+    manageProfile: "manageProfile",
+    editUserName: "editUserName",
+    followersScreen: "followersScreen",
+    privacyScreen: "privacyScreen",
+
 
 }

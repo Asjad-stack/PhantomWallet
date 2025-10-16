@@ -1,4 +1,3 @@
-import HomeScreen from "./HomeScreen/HomeScreen";
 import HistoryScreen from "./HistoryScreen/HistoryScreen";
 import Settings from "./Settings/Settings";
 import Reward from "./Reward/Reward";
@@ -21,13 +20,26 @@ import AddAccount from "./AddAccount/AddAcount";
 
 
 // New Screens
+import HomeScreen from "./HomeScreen/HomeScreen";
 import SearchScreen from "./SearchScreen/SearchScreen";
+import EditProfile from "./EditProfile/EditProfile";
+import ManageProfile from "./ManageProfile/ManageProfile";
+import EditUserName from "./EditUserName/EditUserName";
+import FollowersScreen from "./FollowersScreen/FollowersScreen";
+import PrivacyScreen from "./Privacycreen/PrivacyScreen";
+
 
 export {
-    HomeScreen, HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
+    HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
     Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
 
     // New Screens
+    HomeScreen,
     SearchScreen,
-    AddAccount
+    AddAccount,
+    EditProfile,
+    ManageProfile,
+    EditUserName,
+    FollowersScreen,
+    PrivacyScreen
 }

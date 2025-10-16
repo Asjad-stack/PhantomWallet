@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
     },
     leftImage: {
         width: wp(3),
-        height: hp(3),
-
+        height: wp(3),
     },
     title: {
         fontSize: 14,

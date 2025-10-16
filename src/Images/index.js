@@ -62,5 +62,17 @@ export const Images = {
     horizontallyDots: require('./horizontallyDots.png'),
     onePerson: require('./onePerson.png'),
     settngs: require('./settngs.png'),
+    accountLogo: require('./accountLogo.png'),
+    tickWithRound: require('./tickWithRound.png'),
+    pencilWithRound: require('./pencilWithRound.png'),
+    backArrow: require('./backArrow.png'),
+    noActivity: require('./noActivity.png'),
+    pencilWithBlackRound: require('./pencilWithBlackRound.png'),
+    world: require('./world.png'),
+    radioCheckRound: require('./radioCheckRound.png'),
+    radioUncheckRound: require('./radioUncheckRound.png'),
+    worldPurple: require('./worldPurple.png'),
+    lockPurple: require('./lockPurple.png'),
+    eyeSlashPurple: require('./eyeSlashPurple.png'),
 
 }

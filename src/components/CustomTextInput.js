@@ -244,6 +244,51 @@ export const CustomTextInput4 = ({ numberOfLines, autoCapitalize, secureTextEntr
     )
 }
 
+export const CustomTextInput5 = ({ leftImage, numberOfLines, autoCapitalize, secureTextEntry, value, onPress, rightImage, onPressRightImage,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
+
+    return (
+        <View style={{}}>
+            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
+                <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
+
+                    <View style={appStyles.rowBasic}>
+                        {leftImage ?
+                            <Image source={leftImage} resizeMode='contain' style={{ width: wp(4), height: wp(4), tintColor: colors.lightPurple1 }} />
+                            : null}
+                        <TextInput
+                            value={value}
+                            editable={editable ?? !onPress}
+                            multiline={multiline}
+                            placeholder={placeholder}
+                            onChangeText={onChangeText}
+                            keyboardType={keyboardType}
+                            cursorColor={colors.white}
+                            autoCapitalize={autoCapitalize ?? 'none'}
+                            numberOfLines={numberOfLines}
+                            secureTextEntry={secureTextEntry}
+                            style={[styles.input, inputStyle]}
+                            placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+
+                        />
+                    </View>
+
+
+                    <TouchableOpacity activeOpacity={0.5} onPress={onPressRightImage} style={{ alignSelf: 'center' }}>
+                        <Image source={rightImage} resizeMode='contain' style={{
+                            width: wp(3),
+                            height: wp(3),
+
+                        }} />
+                    </TouchableOpacity>
+                </View>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+
+
 
 const styles = StyleSheet.create({
     leftImage: {

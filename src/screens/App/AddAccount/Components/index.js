@@ -46,12 +46,19 @@ export const RowTabs = ({ }) => {
     )
 }
 
-export const AccountsCard = ({ }) => {
+export const AccountsCard = ({ onPressEdit }) => {
     return (
         <View style={[styles.accountsCardBgView, appStyles.row]}>
             <View style={appStyles.rowBasic}>
-                <Image />
+                <View style={{ marginRight: wp(3) }}>
+                    <Image source={Images.accountLogo} resizeMode='contain' style={styles.accountLogo} />
+                    <Image source={Images.tickWithRound} resizeMode='contain' style={styles.tickWithRound} />
+                </View>
+                <PoppinsText style={styles.accountName}>Account 1</PoppinsText>
             </View>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressEdit}>
+                <Image source={Images.pencilWithRound} resizeMode='contain' style={styles.pencilWithRound} />
+            </TouchableOpacity>
         </View>
     )
 }
@@ -116,6 +123,26 @@ const styles = StyleSheet.create({
         padding: wp(4),
         borderRadius: 13,
         backgroundColor: colors.gray23
+    },
+    accountLogo: {
+        width: wp(10.5),
+        height: wp(10.5),
+    },
+    tickWithRound: {
+        width: wp(4.5),
+        height: wp(4.5),
+        position: 'absolute',
+        right: 0,
+        bottom: 0,
+    },
+    accountName: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray27
+    },
+    pencilWithRound: {
+        width: wp(9),
+        height: wp(9),
     }
 
 

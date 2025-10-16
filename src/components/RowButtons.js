@@ -25,12 +25,16 @@ export const RowButtons = ({
     disable,
     disablebtn2,
     secondLoading,
+    titlebtn1,
+    titlebtn2,
+    titleColor1,
+    titleColor2,
 }) => {
     return (
         <View style={[styles.btnRow, wrapperStyle]}>
 
 
-            <ImageBackground source={Images.rowLeftButton} resizeMode='contain' style={styles.simpleRoundBox}>
+            {/* <ImageBackground source={Images.rowLeftButton} resizeMode='contain' style={styles.simpleRoundBox}>
                 <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, justifyContent: 'center' }} onPress={onPressBtn1}>
                     <PoppinsText style={styles.btn1Title}>{btn1title}</PoppinsText>
                 </TouchableOpacity>
@@ -42,10 +46,10 @@ export const RowButtons = ({
                 <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, justifyContent: 'center' }} onPress={onPressBtn2}>
                     <PoppinsText style={styles.btn1Title}>{btn2title}</PoppinsText>
                 </TouchableOpacity>
-            </ImageBackground>
+            </ImageBackground> */}
 
 
-            {/* <SimpleButton
+            <SimpleButton
                 source={btnImage1}
                 Loading={secondLoading}
 
@@ -53,22 +57,24 @@ export const RowButtons = ({
                 title={titlebtn1 ? titlebtn1 : 'Cancel'}
                 onPress={onPressBtn1}
                 btntitle={btntitle}
+                titleColor={titleColor1}
 
                 disabled={disablebtn2}
                 outerBox={[{ width: wp(45), backgroundColor: colors.white, borderColor: colors.appButtonColor1, borderWidth: 1, borderRadius: 80 }, style]}
-            /> */}
+            />
 
 
-            {/* <SimpleButton
+            <SimpleButton
                 source={btnImage2}
                 tintColor={tintColor2}
                 title={titlebtn2 ? titlebtn2 : 'Activate'}
                 onPress={onPressBtn2}
                 btntitle={btntitle1}
                 Loading={Loading}
+                titleColor={titleColor2}
                 disabled={disable}
                 outerBox={[{ width: wp(45), backgroundColor: colors.appButtonColor1, borderColor: colors.appButtonColor1, borderWidth: 1, borderRadius: 80 }, styleBtn]}
-            /> */}
+            />
 
 
         </View>

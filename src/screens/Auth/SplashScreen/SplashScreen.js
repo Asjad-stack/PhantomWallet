@@ -35,11 +35,11 @@ const SplashScreen = ({ navigation }) => {
           console.log('Existing user found - wallet and PIN exist');
           // User exists with wallet and PIN, navigate to PIN verification screen
           // navigation.replace(routes.pinVerificationScreen);
-          navigation.replace(routes.onBoarding);
+          navigation.replace(routes.appStack);
         } else {
           console.log('New user - wallet or PIN missing');
           // New user, navigate to onboarding
-          navigation.replace(routes.onBoarding);
+          navigation.replace(routes.appStack);
         }
       } catch (error) {
         // No wallet or auth settings found, treat as new user
@@ -47,7 +47,7 @@ const SplashScreen = ({ navigation }) => {
 
         // Wait for minimum splash time
         await new Promise(resolve => setTimeout(resolve, 3000));
-        navigation.replace(routes.onBoarding);
+        navigation.replace(routes.appStack);
       }
     };
 

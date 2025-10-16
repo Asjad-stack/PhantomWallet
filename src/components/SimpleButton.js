@@ -5,7 +5,7 @@ import { colors } from '../constants/colors';
 import PoppinsText from './PoppinsText';
 import { Fonts } from '../constants/fonts';
 
-const SimpleButton = ({ title, source, onPress, outerBox, btntitle, tintColor, Loading, loadingColor, disabled }) => {
+const SimpleButton = ({ title, source, onPress, outerBox, btntitle, tintColor, Loading, loadingColor, disabled, titleColor }) => {
     return (
         <TouchableOpacity
             disabled={Loading ? Loading : disabled}
@@ -22,10 +22,10 @@ const SimpleButton = ({ title, source, onPress, outerBox, btntitle, tintColor, L
                 {Loading ?
                     <ActivityIndicator
                         size="large"
-                        color={loadingColor ? loadingColor : colors.supportWhite}
+                        color={loadingColor ? loadingColor : colors.white}
                     />
                     :
-                    <PoppinsText style={[styles.titletext, { color: disabled ? '#505050' : colors.white }, btntitle,]}>{title}</PoppinsText>
+                    <PoppinsText style={[styles.titletext, { color: disabled ? '#505050' : titleColor ? titleColor : colors.gray28 }, btntitle,]}>{title}</PoppinsText>
                 }
             </View>
         </TouchableOpacity>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     titletext: {
         fontSize: 16,
         fontFamily: Fonts.Poppins.SemiBold,
-        color: colors.appButtonColor1,
+        color: colors.gray52,
     },
     rowView: {
         flexDirection: 'row',
