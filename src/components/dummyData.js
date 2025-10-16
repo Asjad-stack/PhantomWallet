@@ -24,12 +24,52 @@ export const HomeTabs = [
 export const tokensData = [
     {
         id: 1,
-        tokenLogo: Images.solana,
+        tokenLogo: Images.solanaLogo,
         tokenName: 'Solana',
-        tokenSymbol: 'SOL',
-        tokenPrice: '15,000',
-        dollarPrice: '$14,987.50'
-    }
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 2,
+        tokenLogo: Images.polygonLogo,
+        tokenName: 'Polygon',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 3,
+        tokenLogo: Images.bitcoinLogo,
+        tokenName: 'Bitcoin',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 4,
+        tokenLogo: Images.ethereumLogo,
+        tokenName: 'Ethereum',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 5,
+        tokenLogo: Images.suiLogo,
+        tokenName: 'Sui',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 6,
+        tokenLogo: Images.baseLogo,
+        tokenName: 'Base',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 7,
+        tokenLogo: Images.polygonLogo,
+        tokenName: 'Polygon',
+        tokenAddress: 'EXrs...P4ok',
+    },
+    {
+        id: 8,
+        tokenLogo: Images.bitcoinLogo,
+        tokenName: 'Bitcoin',
+        tokenAddress: 'EXrs...P4ok',
+    },
 ]
 
 export const historyData = [
@@ -362,3 +402,76 @@ export const HorizontalSrcollList = [
         title: 'Earn up to 8% APY by staking your SOL',
     },
 ]
+
+export const transactionData = [
+    {
+        date: 'Today',
+        data: [
+            {
+                id: 1,
+                type: 'received',
+                title: 'Received',
+                subtitle: 'From CtcB...A8r2',
+                amount: '+0.01103 SOL',
+                amountColor: '#4CAF50', // green
+                icon: Images.solanaLogo,
+                status: 'success',
+            },
+            {
+                id: 2,
+                type: 'sent',
+                title: 'Sent',
+                subtitle: 'To CtcB...A8r2',
+                amount: '-2.41 SOL',
+                amountColor: '#FFFFFF', // white or gray
+                icon: Images.solanaLogo,
+                status: 'success',
+            },
+            {
+                id: 3,
+                type: 'failed',
+                title: 'Failed app interaction',
+                subtitle: 'Unknown',
+                amount: null,
+                amountColor: '#FFFFFF',
+                icon: Images.solanaLogo,
+                status: 'failed',
+            },
+        ],
+    },
+    {
+        date: 'Jan 17, 2025',
+        data: [
+            {
+                id: 4,
+                type: 'received',
+                title: 'Received',
+                subtitle: 'From CtcB...A8r2',
+                amount: '+0.01103 SOL',
+                amountColor: '#4CAF50',
+                icon: ' Images.solanaLogo',
+                status: 'success',
+            },
+            {
+                id: 5,
+                type: 'sent',
+                title: 'Sent',
+                subtitle: 'To CtcB...A8r2',
+                amount: '-2.41 SOL',
+                amountColor: '#FFFFFF',
+                icon: Images.solanaLogo,
+                status: 'success',
+            },
+            {
+                id: 6,
+                type: 'interaction',
+                title: 'App interaction',
+                subtitle: 'Unknown',
+                amount: null,
+                amountColor: '#FFFFFF',
+                icon: Images.tickGreenCircle,
+                status: 'success',
+            },
+        ],
+    },
+];

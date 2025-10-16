@@ -74,5 +74,14 @@ export const Images = {
     worldPurple: require('./worldPurple.png'),
     lockPurple: require('./lockPurple.png'),
     eyeSlashPurple: require('./eyeSlashPurple.png'),
+    solanaLogo: require('./solanaLogo.png'),
+    polygonLogo: require('./polygonLogo.png'),
+    bitcoinLogo: require('./bitcoinLogo.png'),
+    baseLogo: require('./baseLogo.png'),
+    ethereumLogo: require('./ethereumLogo.png'),
+    suiLogo: require('./suiLogo.png'),
+    scannerLogo: require('./scannerLogo.png'),
+    copyWithRound: require('./copyWithRound.png'),
+    copy: require('./copy.png'),
 
 }

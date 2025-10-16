@@ -8,7 +8,7 @@ import { Fonts } from '../../../../constants/fonts'
 import { colors } from '../../../../constants/colors'
 import Spacer from '../../../../components/Spacer'
 
-export const AddAccountHeader = () => {
+export const AddAccountHeader = ({ onPressCross }) => {
     return (
         <View style={appStyles.row}>
             <View style={appStyles.rowBasic}>
@@ -18,7 +18,7 @@ export const AddAccountHeader = () => {
                     <PoppinsText style={styles.address}>O followers</PoppinsText>
                 </View>
             </View>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressCross}>
                 <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
             </TouchableOpacity>
         </View>

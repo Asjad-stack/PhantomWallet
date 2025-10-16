@@ -18,7 +18,7 @@ const EditProfile = (props) => {
             <View style={styles.mainView}>
                 <Spacer />
                 <View style={appStyles.rowBasic}>
-                    <TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.goBack()}>
                         <Image source={Images.backArrow} resizeMode='contain' style={styles.backArrow} />
                     </TouchableOpacity>
                     <PoppinsText style={styles.userName}>@oldbanana1997</PoppinsText>

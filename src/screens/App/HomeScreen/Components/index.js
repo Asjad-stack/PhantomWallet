@@ -7,7 +7,7 @@ import { Fonts } from '../../../../constants/fonts'
 import { colors } from '../../../../constants/colors'
 import { appStyles } from '../../../../utilities/appStyles/index'
 import { HomeTabs, HorizontalSrcollList, tokensData } from '../../../../components/dummyData'
-import { HorizontalSpacer } from '../../../../components/Spacer'
+import Spacer, { HorizontalSpacer } from '../../../../components/Spacer'
 
 
 export const AccountCard = ({ profile, accountName, accountNumber, rightImage1, rightImage2, onPressRightImage1, onPressRightImage2, onPressAccount }) => {

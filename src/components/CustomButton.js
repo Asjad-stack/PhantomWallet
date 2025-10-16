@@ -6,7 +6,7 @@ import { colors } from '../constants/colors'
 import PoppinsText from './PoppinsText'
 import { hp, wp } from './ResponsiveComponent'
 
-export const CustomButton = ({ title, leftImage, leftImageStyle, tintColor, titleStyles, onPressBtn, btnSyles, loading, disabled }) => {
+export const CustomButton = ({ title, leftImage, rightImage, leftImageStyle, rightImageStyle, tintColor, titleStyles, onPressBtn, btnSyles, loading, disabled }) => {
     return (
         <TouchableOpacity
             disabled={loading ? loading : disabled}
@@ -24,6 +24,14 @@ export const CustomButton = ({ title, leftImage, leftImageStyle, tintColor, titl
                     />
                 }
                 <PoppinsText style={[styles.title, titleStyles]}>{title}</PoppinsText>
+                {rightImage &&
+                    <Image
+                        source={rightImage}
+                        resizeMode='contain'
+                        style={[{ ...styles.rightImage, tintColor: tintColor ? tintColor : colors.gray1 }, rightImageStyle]}
+                        tintColor={tintColor ? tintColor : colors.gray1}
+                    />
+                }
             </View>
         </TouchableOpacity>
     )
@@ -53,5 +61,11 @@ const styles = StyleSheet.create({
     leftImage: {
         width: wp(3),
         height: wp(3),
+    },
+    rightImage: {
+        width: wp(3.5),
+        height: wp(3.5),
+        marginLeft: wp(3),
+        marginTop: hp(0.2)
     }
 })

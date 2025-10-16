@@ -12,7 +12,7 @@ const AddAcount = (props) => {
         <AppContainer>
             <View style={styles.mainView}>
                 <Spacer />
-                <AddAccountHeader />
+                <AddAccountHeader onPressCross={() => props?.navigation.goBack()} />
                 <Spacer />
                 <RowTabs />
                 <Spacer />

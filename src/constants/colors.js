@@ -70,12 +70,16 @@ export const colors = {
     gray57: "#3A3750",
     gray58: "#9B9B9B",
     gray59: "#6F6F6F",
+    gray60: "#B1B1B1",
+    gray61: "#929292",
+    gray62: "#999999",
 
     lineColor: "#454545",
 
     yellow: "#AEA622",
     red: "#FF4444",
     green: "#2C9060",
+    green1: "#2E8F61",
     greenShadow: "#14271D",
     purple: "#9288C1",
     lightPurple: "#4E4A6B",

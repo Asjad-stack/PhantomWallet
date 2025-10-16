@@ -1,18 +1,16 @@
-import { View, Image, ImageBackground, Share } from 'react-native'
+import { View, Share, Platform } from 'react-native'
 import React from 'react'
-import { MainContainerApp } from '../../../components/MainContainer'
+import { AppContainer } from '../../../components/MainContainer'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
-import { MainHeader } from '../../../components/MainHeader'
 import { Images } from '../../../Images'
 import { styles } from './styles'
-import { appStyles } from '../../../utilities/appStyles'
 import PoppinsText from '../../../components/PoppinsText'
-import { RoundLightButton } from '../../../components/RoundLightButton'
-import { RoundDarkButton } from '../../../components/RoundDarkButton'
 import QRCodeStyled from 'react-native-qrcode-styled'
 import { colors } from 'react-native-elements'
 import { copyPaste } from '../../../utilities/helperFunction'
+import { AppHeader } from '../../../components/AppHeader'
+import { CustomButton } from '../../../components/CustomButton'
 
 const TokenAddress = (props) => {
 
@@ -29,23 +27,11 @@ const TokenAddress = (props) => {
     };
 
     return (
-        <MainContainerApp>
-            <Spacer customHeight={hp(6)} />
+        <AppContainer>
+            <AppHeader leftImage={Images.backArrow} title={'Your Solana Address'} onPressBack={() => props?.navigation.goBack()} />
             <View style={styles.mainView}>
-                <MainHeader leftImage={Images.backArrow} title={'SOL Address'} onPressLeftImage={() => props?.navigation.goBack()} />
-                <Spacer customHeight={hp(4)} />
-                <View style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
-                    <Image source={Images.solana} resizeMode='contain' style={styles.tokenLogo} />
-                    <View>
-                        <PoppinsText style={styles.tokenSymbol}>SOL</PoppinsText>
-                        <PoppinsText style={styles.tokenName}>Solana</PoppinsText>
-                    </View>
-                </View>
-                <Spacer />
-
-                <ImageBackground source={Images.scannerBgImage} style={styles.scannerView}>
+                <View style={styles.scannerView}>
                     <View style={styles.qrview}>
-
                         <QRCodeStyled
                             data={'TTBJhV6Db8jl2B...P8tPkG1p5'}
                             style={{ backgroundColor: colors }}
@@ -54,17 +40,19 @@ const TokenAddress = (props) => {
                         />
                     </View>
                     <Spacer height={hp(1)} />
-                </ImageBackground>
+                    <Spacer />
+                    <PoppinsText style={styles.resText}>Your Solana Address</PoppinsText>
+                    <Spacer customHeight={hp(1)} />
+                    <PoppinsText style={styles.resText}>Use this address to receive tokens and collectibles on Solana.</PoppinsText>
+                </View>
+            </View>
 
-                <Spacer />
-                <PoppinsText style={styles.resText}>Use this address to receive{"\n"}tokens on Solana</PoppinsText>
-            </View>
-            <View style={{ paddingBottom: hp(3) }}>
-                <RoundDarkButton title={'TTBJhV6Db8jl2B...P8tPkG1p5'} copyLogo={Images.copyLogo} onPressBtn={() => copyPaste.copy('TTBJhV6Db8jl2B...P8tPkG1p5')} />
+            <View style={{ paddingBottom: Platform.OS == 'ios' ? hp(5) : hp(3) }}>
+                <CustomButton title={'EXrsze...Q8P4ok'} rightImage={Images.copy} titleStyles={styles.titleStyles} btnSyles={styles.customeBtn1} onPressBtn={() => copyPaste.copy('TTBJhV6Db8jl2B...P8tPkG1p5')} />
                 <Spacer customHeight={hp(1)} />
-                <RoundLightButton title={'Share Address'} onPressBtn={() => shareAddress()} />
+                <CustomButton title={'Share'} onPressBtn={() => shareAddress()} />
             </View>
-        </MainContainerApp>
+        </AppContainer>
     )
 }
 

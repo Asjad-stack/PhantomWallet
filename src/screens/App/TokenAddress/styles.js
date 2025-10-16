@@ -1,12 +1,12 @@
 import { StyleSheet, } from 'react-native'
-import { wp } from '../../../components/ResponsiveComponent'
+import { hp, wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
 import { colors } from '../../../constants/colors'
 
 export const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        paddingHorizontal: wp(4)
+        // paddingHorizontal: wp(4)
     },
     tokenLogo: {
         width: wp(10),
@@ -32,14 +32,27 @@ export const styles = StyleSheet.create({
     qrview: {
         alignSelf: 'center',
         backgroundColor: colors.white,
-        // borderWidth: 2,
-        // borderColor: colors.supportWhite,
     },
     scannerView: {
         width: wp(62.5),
         height: wp(62.5),
+        flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    customeBtn1: {
+        width: wp(92),
+        alignSelf: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.gray51,
+        borderRadius: 12,
+        paddingHorizontal: wp(3),
+        paddingVertical: hp(2),
+    },
+    titleStyles: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray44,
+    }
 })

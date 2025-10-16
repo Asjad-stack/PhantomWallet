@@ -68,7 +68,7 @@ const HomeScreen = (props) => {
                     profile={Images.profile1}
                     accountName="@FreshWallet7" accountNumber={'Account 1'}
                     rightImage1={Images.clock} rightImage2={Images.searchWhite}
-                    onPressRightImage1={() => { }} onPressRightImage2={() => { }}
+                    onPressRightImage1={() => props?.navigation.navigate(routes.activities)} onPressRightImage2={() => { }}
                     onPressAccount={() => props?.navigation.navigate(routes.addAccount)}
                 />
 
@@ -78,7 +78,8 @@ const HomeScreen = (props) => {
 
                 <Spacer />
                 <RowTabs onPressTab={(item) => {
-                    if (item.text === 'Receive') {
+                    console.log('RowTabs item:', item);
+                    if (item.id === 1) {
                         props?.navigation.navigate(routes.receive)
                     } else if (item.text === 'Send') {
                         props?.navigation.navigate(routes.sendTokens)
@@ -97,11 +98,11 @@ const HomeScreen = (props) => {
                 <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
                 <Spacer />
-                <TokensCard
+                {/* <TokensCard
                     tokenData={tokenData}
                     isLoading={isLoading}
                     onPressToken={(item) => props?.navigation.navigate(routes.tokenDetails, { tokenData: item })}
-                />
+                /> */}
             </View>
         </MainContainerApp>
     )

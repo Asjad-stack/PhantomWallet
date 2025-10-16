@@ -58,6 +58,7 @@ export const routes = {
     editUserName: "editUserName",
     followersScreen: "followersScreen",
     privacyScreen: "privacyScreen",
+    activities: "activities",
 
 
 }

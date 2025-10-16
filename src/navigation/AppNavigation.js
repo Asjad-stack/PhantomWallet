@@ -4,6 +4,7 @@ import {
     HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect, Notifications, ImportTokens,
     Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
     AddAccount, EditProfile, ManageProfile, EditUserName, FollowersScreen, PrivacyScreen,
+    Activities,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -44,6 +45,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.editUserName} component={EditUserName} />
             <Stack.Screen name={routes.followersScreen} component={FollowersScreen} />
             <Stack.Screen name={routes.privacyScreen} component={PrivacyScreen} />
+            <Stack.Screen name={routes.activities} component={Activities} />
         </Stack.Navigator>
     );
 }
