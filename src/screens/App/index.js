@@ -28,6 +28,7 @@ import EditUserName from "./EditUserName/EditUserName";
 import FollowersScreen from "./FollowersScreen/FollowersScreen";
 import PrivacyScreen from "./Privacycreen/PrivacyScreen";
 import Activities from "./Activities/Activities";
+import ActivitiesDetails from "./ActivitiesDetails/ActivitiesDetails";
 
 
 export {
@@ -43,5 +44,6 @@ export {
     EditUserName,
     FollowersScreen,
     PrivacyScreen,
-    Activities
+    Activities,
+    ActivitiesDetails,
 }

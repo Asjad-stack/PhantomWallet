@@ -78,9 +78,12 @@ export const colors = {
 
     yellow: "#AEA622",
     red: "#FF4444",
+
     green: "#2C9060",
     green1: "#2E8F61",
+    green2: "#31A46D",
     greenShadow: "#14271D",
+
     purple: "#9288C1",
     lightPurple: "#4E4A6B",
     lightPurple1: "#8980B0",

@@ -8,7 +8,7 @@ import { colors } from '../../../../constants/colors'
 import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
 
-export const ActivitiesList = () => {
+export const ActivitiesList = ({ onPress }) => {
 
     const flatData = transactionData.flatMap(section =>
         section.data.map(item => ({ ...item, date: section.date }))
@@ -36,7 +36,7 @@ export const ActivitiesList = () => {
                         <View>
                             <TouchableOpacity
                                 activeOpacity={0.8}
-                                onPress={() => { }}
+                                onPress={() => onPress(item)}
                                 style={[appStyles.row, styles.activityItem]}>
                                 <View style={appStyles.rowBasic}>
                                     <Image

@@ -59,6 +59,6 @@ export const routes = {
     followersScreen: "followersScreen",
     privacyScreen: "privacyScreen",
     activities: "activities",
-
+    activitiesDetails: "activitiesDetails",
 
 }
