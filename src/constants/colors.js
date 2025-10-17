@@ -105,6 +105,7 @@ export const colors = {
     green: "#2C9060",
     green1: "#2E8F61",
     green2: "#31A46D",
+    green3: "#2D875C",
     greenShadow: "#14271D",
 
     purple: "#9288C1",
@@ -113,4 +114,6 @@ export const colors = {
     lightPurple2: "#A195DF",
     lightPurple3: "#C1B2F9",
     lightPurple4: "#8F85BB",
+    lightPurple5: "#887EB1",
+    lightPurple6: "#8980B2",
 }

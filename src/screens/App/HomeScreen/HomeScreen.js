@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
@@ -10,6 +10,7 @@ import tokenDataService from '../../../services/tokenDataService'
 import { Images } from '../../../Images'
 import PoppinsText from '../../../components/PoppinsText'
 import useHomeScreen from './Hooks'
+import { appStyles } from '../../../utilities/appStyles'
 
 const HomeScreen = (props) => {
 
@@ -92,7 +93,12 @@ const HomeScreen = (props) => {
                 <HorizontalSrcoll onPress={(item) => { }} onPressCross={(item) => { }} />
 
                 <Spacer />
-                <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
+                <View style={appStyles.row}>
+                    <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)}>
+                        <PoppinsText style={styles.manageText}>Manage</PoppinsText>
+                    </TouchableOpacity>
+                </View>
                 <Spacer customHeight={hp(1)} />
                 <PrepView />
 

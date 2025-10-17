@@ -475,3 +475,34 @@ export const transactionData = [
         ],
     },
 ];
+
+
+export const cryptoPairs = [
+    {
+        id: 1,
+        icon: Images.solanaLogo,
+        tokenName: 'BTC-USD',
+        leverage: '40x',
+        dollarPrice: '$123,363.00',
+        change: '+0.52%',
+        changeColor: '#4CAF50', // green
+    },
+    {
+        id: 2,
+        icon: Images.solanaLogo,
+        tokenName: 'ETH-USD',
+        leverage: '25x',
+        dollarPrice: '$4,391.00',
+        change: '-2.11%',
+        changeColor: '#E53935', // red
+    },
+    {
+        id: 3,
+        icon: Images.solanaLogo,
+        tokenName: 'SOL-USD',
+        leverage: '20x',
+        dollarPrice: '$225.14',
+        change: '+1.20%',
+        changeColor: '#4CAF50', // green
+    },
+];

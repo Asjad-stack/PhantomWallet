@@ -17,7 +17,7 @@ const SendTokens = (props) => {
         <AppContainer>
             <View style={styles.container}>
                 <View style={[appStyles.row,]}>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
                         <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
                     </TouchableOpacity>
                     <PoppinsText style={styles.title}>{'Select Token'}</PoppinsText>

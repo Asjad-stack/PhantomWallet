@@ -93,5 +93,6 @@ export const Images = {
     maxWithRound: require('./maxWithRound.png'),
     rightPurpleArrow: require('./rightPurpleArrow.png'),
     alertInfoTriangle: require('./alertInfoTriangle.png'),
+    perpImage1: require('./perpImage1.png'),
 
 }

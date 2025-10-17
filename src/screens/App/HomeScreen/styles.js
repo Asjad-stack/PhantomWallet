@@ -28,5 +28,10 @@ export const styles = StyleSheet.create({
         fontSize: 17,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray42
+    },
+    manageText: {
+        fontSize: 12,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.lightPurple5
     }
 })

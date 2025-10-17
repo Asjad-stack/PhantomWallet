@@ -65,6 +65,7 @@ export const routes = {
     scanQrCode: "scanQrCode",
     enterSendingAmount: "enterSendingAmount",
     sendSummaryScreen: "sendSummaryScreen",
-    sendSuccess: "sendSuccess"
+    sendSuccess: "sendSuccess",
+    prepMain: "prepMain"
 
 }

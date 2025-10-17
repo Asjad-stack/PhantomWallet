@@ -35,7 +35,7 @@ import ScanQrCode from "./ScanQrCode/ScanQrCode";
 import EnterSendingAmount from "./EnterSendingAmount/EnterSendingAmount";
 import SendSummaryScreen from "./SendSummaryScreen/SendSummaryScreen";
 import SendSuccess from "./SendSuccess/SendSuccess";
-
+import PrepMain from "./PrepMain/PrepMain";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -58,4 +58,5 @@ export {
     EnterSendingAmount,
     SendSummaryScreen,
     SendSuccess,
+    PrepMain
 }
