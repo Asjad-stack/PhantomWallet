@@ -27,7 +27,7 @@ const PrivacyScreen = (props) => {
                     desc3={'Your profile and public addresses are hidden and undiscoverable everywhere'}
                 />
                 <Spacer />
-                <CustomTextInput5 placeholder={'Public Addresses'} leftImage={Images.seacrhUnActiveBtn} inputStyle={{ width: wp(65), color: colors.white }} rightImage={Images.arrowRight} />
+                <CustomTextInput5 placeholder={'Public Addresses'} leftImage={Images.seacrhUnActiveBtn} tintColor={colors.lightPurple3} inputStyle={{ width: wp(72), alignSelf: 'center', textAlign: 'left', paddingHorizontal: wp(3) }} rightImage={Images.arrowRight} />
             </View>
         </AppContainer>
     )

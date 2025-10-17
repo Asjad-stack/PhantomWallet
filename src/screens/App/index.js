@@ -16,11 +16,11 @@ import SendTokenAddress from "./SendTokenAddress/SendTokenAddress";
 import SendTokensAmount from "./SendTokensAmount/SendTokensAmount";
 import SendConfirmation from "./SendConfirmation/SendConfirmation";
 import TokenDetails from "./TokenDetails/TokenDetails";
-import AddAccount from "./AddAccount/AddAcount";
 
 
 // New Screens
 import HomeScreen from "./HomeScreen/HomeScreen";
+import AccountDetails from "./AccountDetails/AccountDetails";
 import SearchScreen from "./SearchScreen/SearchScreen";
 import EditProfile from "./EditProfile/EditProfile";
 import ManageProfile from "./ManageProfile/ManageProfile";
@@ -29,6 +29,12 @@ import FollowersScreen from "./FollowersScreen/FollowersScreen";
 import PrivacyScreen from "./Privacycreen/PrivacyScreen";
 import Activities from "./Activities/Activities";
 import ActivitiesDetails from "./ActivitiesDetails/ActivitiesDetails";
+import BuyFromHome from "./BuyFromHome/BuyFromHome";
+import BuyTokenAmount from "./BuyTokenAmount/BuyTokenAmount";
+import ScanQrCode from "./ScanQrCode/ScanQrCode";
+import EnterSendingAmount from "./EnterSendingAmount/EnterSendingAmount";
+import SendSummaryScreen from "./SendSummaryScreen/SendSummaryScreen";
+import SendSuccess from "./SendSuccess/SendSuccess";
 
 
 export {
@@ -38,7 +44,7 @@ export {
     // New Screens
     HomeScreen,
     SearchScreen,
-    AddAccount,
+    AccountDetails,
     EditProfile,
     ManageProfile,
     EditUserName,
@@ -46,4 +52,10 @@ export {
     PrivacyScreen,
     Activities,
     ActivitiesDetails,
+    BuyFromHome,
+    BuyTokenAmount,
+    ScanQrCode,
+    EnterSendingAmount,
+    SendSummaryScreen,
+    SendSuccess,
 }

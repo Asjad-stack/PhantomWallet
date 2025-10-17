@@ -15,7 +15,7 @@ const ActivitiesDetails = (props) => {
     return (
         <AppContainer>
             <View style={styles.mainView}>
-                <AppHeader leftImage={Images.backArrow} title={'Activities Details'} onPressBack={() => props?.navigation.goBack()} />
+                <AppHeader leftImage={Images.cross} title={'Activities Details'} onPressBack={() => props?.navigation.goBack()} />
                 <Spacer customHeight={hp(3)} />
                 <Image source={Images.solanaLogo} resizeMode='contain' style={styles.tokenLogo} />
                 <Spacer />

@@ -52,7 +52,7 @@ export const routes = {
     // New App
     homeScreen: "homeScreen",
     searchScreen: "searchScreen",
-    addAccount: "addAccount",
+    accountDetails: "accountDetails",
     editProfile: "editProfile",
     manageProfile: "manageProfile",
     editUserName: "editUserName",
@@ -60,5 +60,11 @@ export const routes = {
     privacyScreen: "privacyScreen",
     activities: "activities",
     activitiesDetails: "activitiesDetails",
+    buyFromHome: "buyFromHome",
+    buyTokenAmount: "buyTokenAmount",
+    scanQrCode: "scanQrCode",
+    enterSendingAmount: "enterSendingAmount",
+    sendSummaryScreen: "sendSummaryScreen",
+    sendSuccess: "sendSuccess"
 
 }

@@ -3,9 +3,15 @@ import { routes } from '../constants/routes';
 import {
     HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect, Notifications, ImportTokens,
     Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
-    AddAccount, EditProfile, ManageProfile, EditUserName, FollowersScreen, PrivacyScreen,
+    AccountDetails, EditProfile, ManageProfile, EditUserName, FollowersScreen, PrivacyScreen,
     Activities,
     ActivitiesDetails,
+    BuyFromHome,
+    BuyTokenAmount,
+    ScanQrCode,
+    EnterSendingAmount,
+    SendSummaryScreen,
+    SendSuccess,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -40,7 +46,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.tokenDetails} component={TokenDetails} />
 
             {/* // New */}
-            <Stack.Screen name={routes.addAccount} component={AddAccount} />
+            <Stack.Screen name={routes.accountDetails} component={AccountDetails} />
             <Stack.Screen name={routes.editProfile} component={EditProfile} />
             <Stack.Screen name={routes.manageProfile} component={ManageProfile} />
             <Stack.Screen name={routes.editUserName} component={EditUserName} />
@@ -48,6 +54,12 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.privacyScreen} component={PrivacyScreen} />
             <Stack.Screen name={routes.activities} component={Activities} />
             <Stack.Screen name={routes.activitiesDetails} component={ActivitiesDetails} />
+            <Stack.Screen name={routes.buyFromHome} component={BuyFromHome} />
+            <Stack.Screen name={routes.buyTokenAmount} component={BuyTokenAmount} />
+            <Stack.Screen name={routes.scanQrCode} component={ScanQrCode} />
+            <Stack.Screen name={routes.enterSendingAmount} component={EnterSendingAmount} />
+            <Stack.Screen name={routes.sendSummaryScreen} component={SendSummaryScreen} />
+            <Stack.Screen name={routes.sendSuccess} component={SendSuccess} />
         </Stack.Navigator>
     );
 }

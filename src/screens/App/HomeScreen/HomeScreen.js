@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
 import { hp } from '../../../components/ResponsiveComponent'
-import { MainContainer, MainContainerApp } from '../../../components/MainContainer'
+import { MainContainerApp } from '../../../components/MainContainer'
 import { AccountCard, BalanceCard, HorizontalSrcoll, PrepView, RowTabs, TokensCard, TokensTabs } from './Components'
 import { routes } from '../../../constants/routes'
 import tokenDataService from '../../../services/tokenDataService'
@@ -69,7 +69,7 @@ const HomeScreen = (props) => {
                     accountName="@FreshWallet7" accountNumber={'Account 1'}
                     rightImage1={Images.clock} rightImage2={Images.searchWhite}
                     onPressRightImage1={() => props?.navigation.navigate(routes.activities)} onPressRightImage2={() => { }}
-                    onPressAccount={() => props?.navigation.navigate(routes.addAccount)}
+                    onPressAccount={() => props?.navigation.navigate(routes.accountDetails)}
                 />
 
                 <Spacer />
@@ -79,10 +79,12 @@ const HomeScreen = (props) => {
                 <Spacer />
                 <RowTabs onPressTab={(item) => {
                     console.log('RowTabs item:', item);
-                    if (item.id === 1) {
+                    if (item?.id === 1) {
                         props?.navigation.navigate(routes.receive)
-                    } else if (item.text === 'Send') {
+                    } else if (item?.id === 2) {
                         props?.navigation.navigate(routes.sendTokens)
+                    } else if (item?.id === 4) {
+                        props?.navigation.navigate(routes.buyFromHome)
                     }
                 }} />
 

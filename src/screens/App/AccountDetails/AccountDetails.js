@@ -7,7 +7,7 @@ import Spacer from '../../../components/Spacer'
 import PoppinsText from '../../../components/PoppinsText'
 import { routes } from '../../../constants/routes'
 
-const AddAcount = (props) => {
+const AccountDetails = (props) => {
     return (
         <AppContainer>
             <View style={styles.mainView}>
@@ -24,4 +24,4 @@ const AddAcount = (props) => {
     )
 }
 
-export default AddAcount
+export default AccountDetails

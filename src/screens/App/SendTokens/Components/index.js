@@ -7,32 +7,33 @@ import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
 import { Fonts } from '../../../../constants/fonts'
 import { colors } from '../../../../constants/colors'
+import Spacer from '../../../../components/Spacer'
 
-export const SendTokensList = ({ onPressToken }) => {
+export const SendTokensList = ({ onPressToken, searchText }) => {
+    const filteredTokens = tokensData.filter((token) => token?.tokenName?.toLowerCase().includes(searchText?.toLowerCase()))
     return (
         <FlatList
-            data={tokensData}
+            data={filteredTokens}
             showsVerticalScrollIndicator={false}
             removeClippedSubviews={false}
+            ItemSeparatorComponent={() => <Spacer customHeight={hp(1)} />}
             contentContainerStyle={{ paddingBottom: hp(70) }}
             renderItem={({ item, index }) => {
                 return (
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => onPressToken(item)} style={{}}>
-                        <ImageBackground source={Images.authMainRoundBox} resizeMode='contain' style={styles.authMainRoundBox}>
-                            <View style={appStyles.row}>
-                                <View style={appStyles.rowBasic}>
-                                    <Image source={item?.tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
-                                    <View>
-                                        <PoppinsText style={styles.tokenName}>{item?.tokenName}</PoppinsText>
-                                        <PoppinsText style={styles.tokenSymbol}>{item?.tokenSymbol}</PoppinsText>
-                                    </View>
-                                </View>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => onPressToken(item)} style={styles.tokenCardBgView}>
+                        <View style={appStyles.row}>
+                            <View style={appStyles.rowBasic}>
+                                <Image source={item?.tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
                                 <View>
-                                    <PoppinsText style={styles.tokenPrice}>{item?.tokenPrice}</PoppinsText>
-                                    <PoppinsText style={styles.dollarPrice}>{item?.dollarPrice}</PoppinsText>
+                                    <PoppinsText style={styles.tokenName}>{item?.tokenName}</PoppinsText>
+                                    <PoppinsText style={styles.tokenSymbol}>{'0 BTC'}</PoppinsText>
                                 </View>
                             </View>
-                        </ImageBackground>
+                            <View>
+                                <PoppinsText style={styles.tokenPrice}>{item?.tokenPrice}</PoppinsText>
+                                <PoppinsText style={styles.dollarPrice}>{item?.dollarPrice}</PoppinsText>
+                            </View>
+                        </View>
                     </TouchableOpacity>
 
                 )
@@ -44,17 +45,20 @@ export const SendTokensList = ({ onPressToken }) => {
 
 
 const styles = StyleSheet.create({
-    authMainRoundBox: {
+    tokenCardBgView: {
         width: wp(92),
-        height: wp(18),
+        // height: wp(18),
         paddingHorizontal: wp(3),
-        paddingVertical: hp(2),
-        borderRadius: 32,
+        paddingVertical: hp(1.4),
+        borderRadius: 13,
+        backgroundColor: colors.gray14,
+        alignSelf: 'center',
     },
     tokenLogo: {
         width: wp(10),
         height: wp(10),
-        marginRight: wp(3)
+        marginRight: wp(3),
+        borderRadius: 100
     },
     tokenName: {
         fontSize: 14,

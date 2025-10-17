@@ -83,5 +83,15 @@ export const Images = {
     scannerLogo: require('./scannerLogo.png'),
     copyWithRound: require('./copyWithRound.png'),
     copy: require('./copy.png'),
+    keyboardArrow: require('./keyboardArrow.png'),
+    cardWithRound: require('./cardWithRound.png'),
+    arrowDown: require('./arrowDown.png'),
+    simpleScannerLogo: require('./simpleScannerLogo.png'),
+    pencilWithBottomLine: require('./pencilWithBottomLine.png'),
+    crossWithBorder: require('./crossWithBorder.png'),
+    switchWithRound: require('./switchWithRound.png'),
+    maxWithRound: require('./maxWithRound.png'),
+    rightPurpleArrow: require('./rightPurpleArrow.png'),
+    alertInfoTriangle: require('./alertInfoTriangle.png'),
 
 }

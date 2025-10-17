@@ -64,7 +64,7 @@ const CustomKeyboard = ({ handleRemove, HandleKeyPress, isPinCode }) => {
                     <PoppinsText style={styles.numberText}>0</PoppinsText>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.8} onPress={handleRemove} style={styles.buttonStyle}>
-                    <Image source={Images.crossKey} resizeMode='cover' tintColor={colors.white} style={{ width: wp(28), height: hp(8) }} />
+                    <Image source={Images.keyboardArrow} resizeMode='cover' tintColor={colors.white} style={{ width: wp(3), height: wp(3) }} />
                 </TouchableOpacity>
             </View>
 

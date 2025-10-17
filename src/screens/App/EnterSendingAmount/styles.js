@@ -54,5 +54,39 @@ export const styles = StyleSheet.create({
         width: wp(100),
         alignSelf: 'center',
         color: colors.gray69,
+    },
+    inputStyle1: {
+        textAlign: 'left',
+        fontSize: 42,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray77,
+        textAlign: 'center',
+        width: wp(30),
+        // backgroundColor: 'green',
+    },
+    inputContainer1: {
+        width: wp(30),
+        borderRadius: 0,
+        borderWidth: 0,
+        backgroundColor: 'transparent',
+    },
+    symbol: {
+        fontSize: 43,
+        fontFamily: Fonts.Poppins.Bold,
+        color: colors.gray77,
+        marginLeft: wp(5)
+    },
+    switchWithRound: {
+        width: wp(7),
+        height: wp(7),
+        // marginRight: wp(3)
+
+    },
+    dollarAmount: {
+        fontSize: 18,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray78,
+        textAlign: 'center'
     }
+
 })

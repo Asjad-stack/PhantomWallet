@@ -245,7 +245,7 @@ export const CustomTextInput4 = ({ numberOfLines, autoCapitalize, secureTextEntr
 }
 
 export const CustomTextInput5 = ({ leftImage, numberOfLines, autoCapitalize, secureTextEntry, value, onPress, rightImage, onPressRightImage,
-    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, tintColor, rightImageStyle }) => {
 
     return (
         <View style={{}}>
@@ -254,7 +254,7 @@ export const CustomTextInput5 = ({ leftImage, numberOfLines, autoCapitalize, sec
 
                     <View style={appStyles.rowBasic}>
                         {leftImage ?
-                            <Image source={leftImage} resizeMode='contain' style={{ width: wp(4), height: wp(4), tintColor: colors.lightPurple1 }} />
+                            <Image source={leftImage} resizeMode='contain' style={{ width: wp(3.5), height: wp(3.5), tintColor: tintColor ? tintColor : colors.white }} />
                             : null}
                         <TextInput
                             value={value}
@@ -275,19 +275,18 @@ export const CustomTextInput5 = ({ leftImage, numberOfLines, autoCapitalize, sec
 
 
                     <TouchableOpacity activeOpacity={0.5} onPress={onPressRightImage} style={{ alignSelf: 'center' }}>
-                        <Image source={rightImage} resizeMode='contain' style={{
-                            width: wp(3),
-                            height: wp(3),
-
-                        }} />
+                        <Image source={rightImage} resizeMode='contain'
+                            style={[{
+                                width: wp(3),
+                                height: wp(3),
+                            }, rightImageStyle]}
+                        />
                     </TouchableOpacity>
                 </View>
             </TouchableOpacity>
         </View>
     )
 }
-
-
 
 
 const styles = StyleSheet.create({
