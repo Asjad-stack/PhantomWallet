@@ -37,6 +37,12 @@ import SendSummaryScreen from "./SendSummaryScreen/SendSummaryScreen";
 import SendSuccess from "./SendSuccess/SendSuccess";
 import PrepMain from "./PrepMain/PrepMain";
 import AddFunds from "./AddFunds/AddFunds";
+import MasterPerpetualFuture from "./MasterPerpetualFuture/MasterPerpetualFuture";
+import GoLong from "./GoLong/GoLong";
+import GoShort from "./GoShort/GoShort";
+import AdjustingLeverage from "./AdjustingLeverage/AdjustingLeverage";
+import Liquidation from "./Liquidation/Liquidation";
+import RiskTolerance from "./RiskTolerance/RiskTolerance";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -60,5 +66,11 @@ export {
     SendSummaryScreen,
     SendSuccess,
     PrepMain,
-    AddFunds
+    AddFunds,
+    MasterPerpetualFuture,
+    GoLong,
+    GoShort,
+    AdjustingLeverage,
+    Liquidation,
+    RiskTolerance
 }

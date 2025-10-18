@@ -96,5 +96,17 @@ export const Images = {
     perpImage1: require('./perpImage1.png'),
     shareFeedBack: require('./shareFeedBack.png'),
     infoLogo: require('./infoLogo.png'),
+    horizontallySlider1: require('./horizontallySlider1.png'),
+    horzontallySlider2: require('./horzontallySlider2.png'),
+    horizontallySlider3: require('./horizontallySlider3.png'),
+    horizontallySlider4: require('./horizontallySlider4.png'),
+    horizontallySlider6: require('./horizontallySlider6.png'),
+    goLongImage: require('./goLongImage.png'),
+    goShort: require('./goShort.png'),
+    levereageLogo: require('./levereageLogo.png'),
+    liquidationLogo: require('./liquidationLogo.png'),
+    lowRisk: require('./lowRisk.png'),
+    mediumRisk: require('./mediumRisk.png'),
+    highRisk: require('./highRisk.png'),
 
 }

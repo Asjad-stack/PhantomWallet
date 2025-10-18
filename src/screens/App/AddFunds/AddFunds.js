@@ -9,8 +9,9 @@ import { Images } from '../../../Images'
 import EnterAmount from '../../../components/EnterAmount/EnterAmount'
 import useAddFunds from './Hooks'
 import { FeeBottomSheet } from './Components'
+import { routes } from '../../../constants/routes'
 
-const AddFunds = () => {
+const AddFunds = (props) => {
     const { InfoBottomSheet } = useAddFunds()
     return (
         <AppContainer>
@@ -23,7 +24,12 @@ const AddFunds = () => {
                 <Spacer />
                 <EnterAmount tokenLogo={Images.solanaLogo} tokenName={'Pay SOL'} dollarAmount={'$2.48 available'} feeDollarAmmount={'$0.00'} infoLogo={Images.infoLogo} onPressInfo={() => InfoBottomSheet?.current?.open()} />
             </View>
-            <FeeBottomSheet InfoBottomSheet={InfoBottomSheet} />
+            <FeeBottomSheet InfoBottomSheet={InfoBottomSheet} onPressDone={() => {
+                InfoBottomSheet?.current?.close()
+                setTimeout(() => {
+                    props?.navigation.navigate(routes.masterPerpetualFuture)
+                }, 500);
+            }} />
         </AppContainer>
     )
 }

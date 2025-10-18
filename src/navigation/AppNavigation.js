@@ -14,6 +14,12 @@ import {
     SendSuccess,
     PrepMain,
     AddFunds,
+    MasterPerpetualFuture,
+    GoLong,
+    GoShort,
+    AdjustingLeverage,
+    Liquidation,
+    RiskTolerance,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -64,6 +70,12 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.sendSuccess} component={SendSuccess} />
             <Stack.Screen name={routes.prepMain} component={PrepMain} />
             <Stack.Screen name={routes.addFunds} component={AddFunds} />
+            <Stack.Screen name={routes.masterPerpetualFuture} component={MasterPerpetualFuture} />
+            <Stack.Screen name={routes.goLong} component={GoLong} />
+            <Stack.Screen name={routes.goShort} component={GoShort} />
+            <Stack.Screen name={routes.adjustingLeverage} component={AdjustingLeverage} />
+            <Stack.Screen name={routes.liquidation} component={Liquidation} />
+            <Stack.Screen name={routes.riskTolerance} component={RiskTolerance} />
         </Stack.Navigator>
     );
 }

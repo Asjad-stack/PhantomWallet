@@ -359,7 +359,7 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
     },
     input6: {
-        width: wp(43),
+        width: wp(70),
         color: colors.white,
     },
 

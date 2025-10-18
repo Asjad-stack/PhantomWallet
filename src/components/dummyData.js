@@ -506,3 +506,30 @@ export const cryptoPairs = [
         changeColor: '#4CAF50', // green
     },
 ];
+
+export const riskToleranceOptions = [
+    {
+        id: 1,
+        logo: Images.highRisk,
+        title: "High risk tolerance",
+        description:
+            "I can handle high volatility and I am prepared for large fluctuations in my investment value.",
+        value: "high",
+    },
+    {
+        id: 2,
+        logo: Images.mediumRisk,
+        title: "Medium risk tolerance",
+        description:
+            "I can handle moderate volatility and I am prepared for some ups and downs in my investment value.",
+        value: "medium",
+    },
+    {
+        id: 3,
+        logo: Images.lowRisk,
+        title: "Low risk tolerance",
+        description:
+            "I can handle only a small amount of volatility and prefer stable investments with lower returns.",
+        value: "low",
+    },
+];

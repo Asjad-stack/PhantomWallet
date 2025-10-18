@@ -68,5 +68,11 @@ export const routes = {
     sendSuccess: "sendSuccess",
     prepMain: "prepMain",
     addFunds: "addFunds",
+    masterPerpetualFuture: "masterPerpetualFuture",
+    goLong: "goLong",
+    goShort: "goShort",
+    adjustingLeverage: "adjustingLeverage",
+    liquidation: "liquidation",
+    riskTolerance: "riskTolerance"
 
 }
