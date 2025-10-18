@@ -533,3 +533,134 @@ export const riskToleranceOptions = [
         value: "low",
     },
 ];
+
+export const searchListData = [
+    {
+        id: 1,
+        tokenLogo: Images.tokens,
+        tokenName: 'Tokens',
+    },
+    {
+        id: 2,
+        tokenLogo: Images.perps,
+        tokenName: 'Perps',
+    },
+    {
+        id: 1,
+        tokenLogo: Images.lists,
+        tokenName: 'Lists',
+    },
+    {
+        id: 1,
+        tokenLogo: Images.people,
+        tokenName: 'People',
+    },
+]
+
+export const allSearchListData = [
+    {
+        id: 1,
+        tokenLogo: Images.topGainers,
+        tokenName: 'Top Gainers',
+    },
+    {
+        id: 2,
+        tokenLogo: Images.meme,
+        tokenName: 'Meme',
+    },
+    {
+        id: 1,
+        tokenLogo: Images.tokenized,
+        tokenName: 'Tokenized Stoc',
+    },
+    {
+        id: 1,
+        tokenLogo: Images.people,
+        tokenName: 'People',
+    },
+]
+
+export const trendingTokensData = [
+    {
+        id: 1,
+        name: "PESHI",
+        symbol: "PESHI",
+        price: "$0.00000173",
+        change: "+378.17%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.solanaRound,
+    },
+    {
+        id: 2,
+        name: "SPECTRA",
+        symbol: "SPECTRA",
+        price: "$0.00009764",
+        change: "-45.42%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiRound,
+    },
+    {
+        id: 3,
+        name: "SnakeOfSolana",
+        symbol: "HISS",
+        price: "$0.0000019",
+        change: "+57.08%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.solanaRound,
+    },
+    {
+        id: 4,
+        name: "solle",
+        symbol: "SOLLE",
+        price: "$0.0006007",
+        change: "+324.58%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiRound,
+    },
+    {
+        id: 5,
+        name: "Gremly",
+        symbol: "GREMly",
+        price: "$0.00000001",
+        change: "-31.24%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.bitcoinLogo,
+    },
+    {
+        id: 6,
+        name: "Volt",
+        symbol: "XVM",
+        price: "$0.00225729",
+        change: "+8.04%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiRound,
+    },
+    {
+        id: 7,
+        name: "Pudgy Penguins",
+        symbol: "PENGU",
+        price: "$0.0306",
+        change: "-1.40%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiLogo,
+    },
+    {
+        id: 8,
+        name: "Babel",
+        symbol: "BABEL",
+        price: "$0.00029631",
+        change: "+7.41%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiRound,
+    },
+    {
+        id: 9,
+        name: "Pandu Pandas",
+        symbol: "PANDU",
+        price: "$0.00015391",
+        change: "-3.74%",
+        tokenLogo: Images.solanaLogo,
+        chainLogo: Images.suiRound,
+    },
+];
+

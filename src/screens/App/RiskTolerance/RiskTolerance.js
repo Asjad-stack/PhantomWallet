@@ -8,8 +8,9 @@ import { hp } from '../../../components/ResponsiveComponent'
 import PoppinsText from '../../../components/PoppinsText'
 import { CustomButton } from '../../../components/CustomButton'
 import { RiskToleranceOptions } from './Components'
+import { routes } from '../../../constants/routes'
 
-const RiskTolerance = () => {
+const RiskTolerance = (props) => {
     return (
         <AppContainer>
             <View style={styles.mainView}>
@@ -25,7 +26,7 @@ const RiskTolerance = () => {
                 <RiskToleranceOptions />
             </View>
             <View style={{ paddingBottom: hp(4) }}>
-                <CustomButton title={'Start Trading'} onPressBtn={() => { }} />
+                <CustomButton title={'Start Trading'} onPressBtn={() => props?.navigation.navigate(routes.MainTabs)} />
             </View>
         </AppContainer>
     )

@@ -73,6 +73,7 @@ export const routes = {
     goShort: "goShort",
     adjustingLeverage: "adjustingLeverage",
     liquidation: "liquidation",
-    riskTolerance: "riskTolerance"
+    riskTolerance: "riskTolerance",
+    allSearchTokenList: "allSearchTokenList"
 
 }

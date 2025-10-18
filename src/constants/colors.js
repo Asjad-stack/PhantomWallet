@@ -103,17 +103,23 @@ export const colors = {
     gray90: "#D9D9D9",
     gray91: "#D3D3D3",
     gray92: "#ADADAD",
+    gray93: "#AEAEAE",
+    gray94: "#3B3B3B",
+    gray95: "#ABABAB",
+    gray96: "#313131",
 
     lineColor: "#454545",
 
     yellow: "#AEA622",
     red: "#FF4444",
+    red1: "#B74329",
     alertBgColor: "#342A0C",
 
     green: "#2C9060",
     green1: "#2E8F61",
     green2: "#31A46D",
     green3: "#2D875C",
+    green4: "#287F56",
     greenShadow: "#14271D",
 
     purple: "#9288C1",
@@ -124,4 +130,5 @@ export const colors = {
     lightPurple4: "#8F85BB",
     lightPurple5: "#887EB1",
     lightPurple6: "#8980B2",
+    lightPurple7: "#8F85B8",
 }

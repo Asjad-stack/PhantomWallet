@@ -20,6 +20,7 @@ import {
     AdjustingLeverage,
     Liquidation,
     RiskTolerance,
+    AllSearchTokenList,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -76,6 +77,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.adjustingLeverage} component={AdjustingLeverage} />
             <Stack.Screen name={routes.liquidation} component={Liquidation} />
             <Stack.Screen name={routes.riskTolerance} component={RiskTolerance} />
+            <Stack.Screen name={routes.allSearchTokenList} component={AllSearchTokenList} />
         </Stack.Navigator>
     );
 }

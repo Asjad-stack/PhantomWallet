@@ -43,6 +43,7 @@ import GoShort from "./GoShort/GoShort";
 import AdjustingLeverage from "./AdjustingLeverage/AdjustingLeverage";
 import Liquidation from "./Liquidation/Liquidation";
 import RiskTolerance from "./RiskTolerance/RiskTolerance";
+import AllSearchTokenList from "./AllSearchTokenList/AllSearchTokenList";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -72,5 +73,6 @@ export {
     GoShort,
     AdjustingLeverage,
     Liquidation,
-    RiskTolerance
+    RiskTolerance,
+    AllSearchTokenList
 }

@@ -108,5 +108,17 @@ export const Images = {
     lowRisk: require('./lowRisk.png'),
     mediumRisk: require('./mediumRisk.png'),
     highRisk: require('./highRisk.png'),
+    accountWithRoundLogo: require('./accountWithRoundLogo.png'),
+    plusWithSquareBox: require('./plusWithSquareBox.png'),
+    tokens: require('./tokens.png'),
+    perps: require('./perps.png'),
+    lists: require('./lists.png'),
+    people: require('./people.png'),
+    tokenized: require('./tokenized.png'),
+    meme: require('./meme.png'),
+    topGainers: require('./topGainers.png'),
+    swapWithRound: require('./swapWithRound.png'),
+    solanaRound: require('./solanaRound.png'),
+    suiRound: require('./suiRound.png'),
 
 }
