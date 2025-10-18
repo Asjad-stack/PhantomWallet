@@ -288,6 +288,35 @@ export const CustomTextInput5 = ({ leftImage, numberOfLines, autoCapitalize, sec
     )
 }
 
+export const CustomTextInput6 = ({ dollarAmount, numberOfLines, autoCapitalize, secureTextEntry, value, onPress,
+    placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
+
+    return (
+        <View style={{}}>
+            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
+                <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
+                    <TextInput
+                        value={value}
+                        editable={editable ?? !onPress}
+                        multiline={multiline}
+                        placeholder={placeholder}
+                        onChangeText={onChangeText}
+                        keyboardType={keyboardType}
+                        cursorColor={colors.white}
+                        autoCapitalize={autoCapitalize ?? 'none'}
+                        numberOfLines={numberOfLines}
+                        secureTextEntry={secureTextEntry}
+                        style={[styles.input6, inputStyle]}
+                        placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+
+                    />
+                    <PoppinsText style={{ fontSize: 12, fontFamily: Fonts.Poppins.SemiBold, color: colors.gray45 }}>{dollarAmount}</PoppinsText>
+                </View>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
 
 const styles = StyleSheet.create({
     leftImage: {
@@ -328,6 +357,10 @@ const styles = StyleSheet.create({
         color: colors.white,
         textAlign: 'center',
         textAlignVertical: 'center',
+    },
+    input6: {
+        width: wp(43),
+        color: colors.white,
     },
 
     otpContainer: {

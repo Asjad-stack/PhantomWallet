@@ -98,6 +98,8 @@ export const colors = {
     gray85: "#1F1F1F",
     gray86: "#A4A4A4",
     gray87: "#BBBBBB",
+    gray88: "#B3B3B3",
+    gray89: "#C8C8C8",
 
     lineColor: "#454545",
 

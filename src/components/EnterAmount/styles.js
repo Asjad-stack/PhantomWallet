@@ -49,5 +49,31 @@ export const styles = StyleSheet.create({
     arrowDown: {
         width: wp(2.5),
         height: wp(2.5),
+    },
+    tokenLogo: {
+        width: wp(6),
+        height: wp(6),
+        marginRight: wp(3)
+    },
+    tokenName: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray88,
+    },
+    dollarAmount: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Medium,
+        color: colors.gray62,
+    },
+    feeDollarAmmount: {
+        fontSize: 12,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray10,
+        textAlign: 'center'
+    },
+    infoLogo: {
+        width: wp(4),
+        height: wp(3),
+        marginLeft: wp(2)
     }
 });

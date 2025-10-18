@@ -13,7 +13,7 @@ import { Images } from '../../Images'
 import Spacer from '../Spacer'
 
 
-const EnterAmount = (props) => {
+const EnterAmount = ({ props, tokenLogo, tokenName, dollarAmount, infoLogo, feeDollarAmmount, onPressInfo }) => {
     const {
         selectedToken,
         enteredAmount, setEnteredAmount,
@@ -121,11 +121,26 @@ const EnterAmount = (props) => {
 
             <View style={{ paddingBottom: hp(3) }}>
 
-                <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.rowBasic, }}>
-                    <Image source={Images.cardWithRound} resizeMode='contain' style={styles.cardWithRound} />
-                    <PoppinsText style={styles.cardText}>Debit/Credit Card via Paybis</PoppinsText>
-                    <Image source={Images.arrowDown} resizeMode='contain' style={styles.arrowDown} />
-                </TouchableOpacity>
+
+
+
+                {tokenLogo ?
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.row, }}>
+                        <View style={appStyles.rowBasic}>
+                            <Image source={tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
+                            <PoppinsText style={styles.tokenName}>{tokenName}</PoppinsText>
+                        </View>
+                        <PoppinsText style={styles.dollarAmount}>{dollarAmount}</PoppinsText>
+                    </TouchableOpacity>
+                    :
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.rowBasic, }}>
+                        <Image source={Images.cardWithRound} resizeMode='contain' style={styles.cardWithRound} />
+                        <PoppinsText style={styles.cardText}>Debit/Credit Card via Paybis</PoppinsText>
+                        <Image source={Images.arrowDown} resizeMode='contain' style={styles.arrowDown} />
+                    </TouchableOpacity>
+
+                }
+
                 <Spacer />
                 <RowTabsView selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
@@ -166,7 +181,18 @@ const EnterAmount = (props) => {
                     handleRemove={handleRemove}
                 />
 
-                <CustomButton title={'Continue'} onPress={() => { }} />
+                {feeDollarAmmount ?
+                    <>
+                        <TouchableOpacity activeOpacity={0.8} onPress={onPressInfo} style={{ ...appStyles.rowBasic, justifyContent: 'center' }}>
+                            <PoppinsText style={styles.feeDollarAmmount}>{feeDollarAmmount} fee</PoppinsText>
+                            <Image source={infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                        </TouchableOpacity>
+                        <Spacer customHeight={hp(1)} />
+
+                    </>
+                    :
+                    <CustomButton title={'Continue'} onPress={() => { }} />
+                }
 
             </View>
         </MainContainerApp>

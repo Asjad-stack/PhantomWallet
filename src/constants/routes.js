@@ -66,6 +66,7 @@ export const routes = {
     enterSendingAmount: "enterSendingAmount",
     sendSummaryScreen: "sendSummaryScreen",
     sendSuccess: "sendSuccess",
-    prepMain: "prepMain"
+    prepMain: "prepMain",
+    addFunds: "addFunds",
 
 }

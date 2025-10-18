@@ -8,6 +8,7 @@ import { appStyles } from '../../../utilities/appStyles'
 import { Images } from '../../../Images'
 import PoppinsText from '../../../components/PoppinsText'
 import { ExplorePerps, TradePerpCard } from './Components'
+import { routes } from '../../../constants/routes'
 
 const PrepMain = (props) => {
     return (
@@ -27,8 +28,7 @@ const PrepMain = (props) => {
                 </View>
                 <Spacer />
                 <ScrollView showsVerticalScrollIndicator={false}>
-
-                    <TradePerpCard onPressBtn1={() => { }} onPressBtn2={() => { }} />
+                    <TradePerpCard onPressBtn1={() => props?.navigation?.navigate(routes.addFunds)} onPressBtn2={() => { }} />
                     <Spacer />
                     <View style={appStyles.row}>
                         <PoppinsText style={styles.exploreText}>Explore Perps</PoppinsText>

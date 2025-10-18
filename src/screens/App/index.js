@@ -36,6 +36,7 @@ import EnterSendingAmount from "./EnterSendingAmount/EnterSendingAmount";
 import SendSummaryScreen from "./SendSummaryScreen/SendSummaryScreen";
 import SendSuccess from "./SendSuccess/SendSuccess";
 import PrepMain from "./PrepMain/PrepMain";
+import AddFunds from "./AddFunds/AddFunds";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -58,5 +59,6 @@ export {
     EnterSendingAmount,
     SendSummaryScreen,
     SendSuccess,
-    PrepMain
+    PrepMain,
+    AddFunds
 }

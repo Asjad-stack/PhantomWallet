@@ -13,6 +13,7 @@ import {
     SendSummaryScreen,
     SendSuccess,
     PrepMain,
+    AddFunds,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -62,6 +63,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.sendSummaryScreen} component={SendSummaryScreen} />
             <Stack.Screen name={routes.sendSuccess} component={SendSuccess} />
             <Stack.Screen name={routes.prepMain} component={PrepMain} />
+            <Stack.Screen name={routes.addFunds} component={AddFunds} />
         </Stack.Navigator>
     );
 }
