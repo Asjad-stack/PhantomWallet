@@ -40,13 +40,13 @@ export const ExplorePerps = ({ }) => {
                             <Image source={item?.icon} resizeMode='contain' style={styles.tokenLogo} />
                             <View>
                                 <PoppinsText style={styles.tokenName}>{item?.tokenName}</PoppinsText>
-                                <Spacer customHeight={hp(0.5)} />
+                                <Spacer customHeight={hp(0.2)} />
                                 <PoppinsText style={styles.leverage}>{item?.leverage}</PoppinsText>
                             </View>
                         </View>
                         <View>
                             <PoppinsText style={styles.dollarAmount}>{item?.dollarPrice}</PoppinsText>
-                            <Spacer customHeight={hp(0.5)} />
+                            <Spacer customHeight={hp(0.2)} />
                             <PoppinsText style={styles.percentageAmount}>{item?.change}</PoppinsText>
                         </View>
                     </View>
@@ -117,10 +117,12 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray38,
+        textAlign: 'right'
     },
     percentageAmount: {
         fontSize: 11,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.green3,
+        textAlign: 'right'
     },
 })

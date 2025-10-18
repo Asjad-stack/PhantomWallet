@@ -94,5 +94,6 @@ export const Images = {
     rightPurpleArrow: require('./rightPurpleArrow.png'),
     alertInfoTriangle: require('./alertInfoTriangle.png'),
     perpImage1: require('./perpImage1.png'),
+    shareFeedBack: require('./shareFeedBack.png'),
 
 }
