@@ -25,17 +25,17 @@ export const AddAccountHeader = ({ onPressCross }) => {
     )
 }
 
-export const RowTabs = ({ }) => {
+export const RowTabs = ({ onPressProfile, onPressSettings }) => {
     return (
         <View style={appStyles.row}>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={styles.tabBgView}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressProfile} style={styles.tabBgView}>
                 <View style={{ alignSelf: 'center' }}>
                     <Image source={Images.onePerson} resizeMode='contain' style={styles.person} />
                     <Spacer customHeight={hp(1)} />
                     <PoppinsText style={styles.profileText}>Profile</PoppinsText>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={styles.tabBgView}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressSettings} style={styles.tabBgView}>
                 <View style={{ alignSelf: 'center' }}>
                     <Image source={Images.settngs} resizeMode='contain' style={styles.settings} />
                     <Spacer customHeight={hp(1)} />

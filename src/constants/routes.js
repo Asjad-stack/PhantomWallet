@@ -74,6 +74,9 @@ export const routes = {
     adjustingLeverage: "adjustingLeverage",
     liquidation: "liquidation",
     riskTolerance: "riskTolerance",
-    allSearchTokenList: "allSearchTokenList"
+    allSearchTokenList: "allSearchTokenList",
+    addAccounts: "addAccounts",
+    createAccount: "createAccount",
+    watchAddress: "watchAddress"
 
 }

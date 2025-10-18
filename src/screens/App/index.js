@@ -44,6 +44,9 @@ import AdjustingLeverage from "./AdjustingLeverage/AdjustingLeverage";
 import Liquidation from "./Liquidation/Liquidation";
 import RiskTolerance from "./RiskTolerance/RiskTolerance";
 import AllSearchTokenList from "./AllSearchTokenList/AllSearchTokenList";
+import AddAccounts from "./AddAccounts/AddAccounts";
+import CreateAccount from "./CreateAccount/CreateAccount";
+import WatchAddress from "./WatchAddress/WatchAddress";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -74,5 +77,8 @@ export {
     AdjustingLeverage,
     Liquidation,
     RiskTolerance,
-    AllSearchTokenList
+    AllSearchTokenList,
+    AddAccounts,
+    CreateAccount,
+    WatchAddress
 }

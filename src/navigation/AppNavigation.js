@@ -21,10 +21,13 @@ import {
     Liquidation,
     RiskTolerance,
     AllSearchTokenList,
+    AddAccounts,
+    CreateAccount,
+    WatchAddress,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
-import { PinScreen } from '../screens/Auth';
+import { ImportPrivateKey, PinScreen, SeedPhrase } from '../screens/Auth';
 
 const Stack = createStackNavigator();
 
@@ -78,6 +81,13 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.liquidation} component={Liquidation} />
             <Stack.Screen name={routes.riskTolerance} component={RiskTolerance} />
             <Stack.Screen name={routes.allSearchTokenList} component={AllSearchTokenList} />
+            <Stack.Screen name={routes.addAccounts} component={AddAccounts} />
+            <Stack.Screen name={routes.createAccount} component={CreateAccount} />
+            <Stack.Screen name={routes.seedPhrase} component={SeedPhrase} />
+            <Stack.Screen name={routes.importPrivateKey} component={ImportPrivateKey} />
+            <Stack.Screen name={routes.watchAddress} component={WatchAddress} />
+
+
         </Stack.Navigator>
     );
 }

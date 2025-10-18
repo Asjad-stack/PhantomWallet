@@ -6,6 +6,8 @@ import { AccountsCard, AddAccountHeader, RowTabs } from './Components'
 import Spacer from '../../../components/Spacer'
 import PoppinsText from '../../../components/PoppinsText'
 import { routes } from '../../../constants/routes'
+import { hp } from '../../../components/ResponsiveComponent'
+import { CustomButton } from '../../../components/CustomButton'
 
 const AccountDetails = (props) => {
     return (
@@ -14,11 +16,14 @@ const AccountDetails = (props) => {
                 <Spacer />
                 <AddAccountHeader onPressCross={() => props?.navigation.goBack()} />
                 <Spacer />
-                <RowTabs />
+                <RowTabs onPressProfile={() => props?.navigation.navigate(routes.editProfile)} onPressSettings={() => { }} />
                 <Spacer />
                 <PoppinsText style={styles.title}>Your Accounts</PoppinsText>
                 <Spacer />
-                <AccountsCard onPressEdit={() => props?.navigation.navigate(routes.editProfile)} />
+                <AccountsCard onPressEdit={() => { }} />
+            </View>
+            <View style={{ paddingBottom: hp(4) }}>
+                <CustomButton title={'Add Account'} onPressBtn={() => props?.navigation.navigate(routes.addAccounts)} />
             </View>
         </AppContainer>
     )

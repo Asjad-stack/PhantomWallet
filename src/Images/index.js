@@ -120,5 +120,12 @@ export const Images = {
     swapWithRound: require('./swapWithRound.png'),
     solanaRound: require('./solanaRound.png'),
     suiRound: require('./suiRound.png'),
+    plusWithRound: require('./plusWithRound.png'),
+    connectWithRound: require('./connectWithRound.png'),
+    importWithRound: require('./importWithRound.png'),
+    arrowWithRound: require('./arrowWithRound.png'),
+    eyeWithRound: require('./eyeWithRound.png'),
+    crossWithBox: require('./crossWithBox.png'),
+    eyeWithBlackRound: require('./eyeWithBlackRound.png'),
 
 }

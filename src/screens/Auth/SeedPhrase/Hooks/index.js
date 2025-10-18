@@ -3,6 +3,8 @@ import { createMnemonic } from "../../../../utils/mnemonic"
 
 const useSeedPhrase = (props) => {
 
+    const isAddAccountFlow = props?.route?.params?.isAddAccountFlow;
+
     const [showSeed, setShowSeed] = useState(false);
     const [mnemonic, setMnemonic] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -44,7 +46,8 @@ const useSeedPhrase = (props) => {
         mnemonic,
         setMnemonic,
         isLoading,
-        generateSeedPhrase
+        generateSeedPhrase,
+        isAddAccountFlow
     }
 }
 
