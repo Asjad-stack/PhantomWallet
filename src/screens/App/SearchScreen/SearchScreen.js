@@ -19,7 +19,9 @@ const SearchScreen = (props) => {
                 <View style={appStyles.row}>
                     <Image source={Images.accountWithRoundLogo} resizeMode='contain' style={styles.accountWithRoundLogo} />
                     <CustomTextInput5 leftImage={Images.searchWhite} placeholder={'Sites, tokens, URL'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
-                    <Image source={Images.plusWithSquareBox} resizeMode='contain' style={styles.plusWithSquareBox} />
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                        <Image source={Images.plusWithSquareBox} resizeMode='contain' style={styles.plusWithSquareBox} />
+                    </TouchableOpacity>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <Spacer />
