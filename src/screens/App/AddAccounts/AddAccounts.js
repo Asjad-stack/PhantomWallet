@@ -18,7 +18,7 @@ const AddAccounts = (props) => {
                 <AddAccountsList leftImage={Images.plusWithRound} title={'Create New Account'} description={'Add a new multi-chain account'} onPress={() => props?.navigation.navigate(routes.createAccount)} />
                 <Spacer customHeight={hp(1)} />
 
-                <AddAccountsList leftImage={Images.connectWithRound} title={'Connect Hardware Wallet'} description={'Use your Ledger hardware wallet'} />
+                <AddAccountsList leftImage={Images.connectWithRound} title={'Connect Hardware Wallet'} description={'Use your Ledger hardware wallet'} onPress={() => props?.navigation.navigate(routes.connectHardware)} />
                 <Spacer customHeight={hp(1)} />
 
                 <AddAccountsList leftImage={Images.importWithRound} title={'Import Recovery Phrase'} description={'Import accounts from another wallet'} onPress={() => props?.navigation.navigate(routes.seedPhrase, { isAddAccountFlow: true })} />

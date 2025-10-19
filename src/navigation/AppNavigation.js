@@ -24,6 +24,7 @@ import {
     AddAccounts,
     CreateAccount,
     WatchAddress,
+    ConnectHardware,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -86,6 +87,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.seedPhrase} component={SeedPhrase} />
             <Stack.Screen name={routes.importPrivateKey} component={ImportPrivateKey} />
             <Stack.Screen name={routes.watchAddress} component={WatchAddress} />
+            <Stack.Screen name={routes.connectHardware} component={ConnectHardware} />
 
 
         </Stack.Navigator>

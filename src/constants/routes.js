@@ -77,6 +77,7 @@ export const routes = {
     allSearchTokenList: "allSearchTokenList",
     addAccounts: "addAccounts",
     createAccount: "createAccount",
-    watchAddress: "watchAddress"
+    watchAddress: "watchAddress",
+    connectHardware: "connectHardware"
 
 }

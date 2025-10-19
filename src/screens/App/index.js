@@ -47,6 +47,7 @@ import AllSearchTokenList from "./AllSearchTokenList/AllSearchTokenList";
 import AddAccounts from "./AddAccounts/AddAccounts";
 import CreateAccount from "./CreateAccount/CreateAccount";
 import WatchAddress from "./WatchAddress/WatchAddress";
+import ConnectHardware from "./ConnectHardware/ConnectHardware";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -80,5 +81,6 @@ export {
     AllSearchTokenList,
     AddAccounts,
     CreateAccount,
-    WatchAddress
+    WatchAddress,
+    ConnectHardware
 }

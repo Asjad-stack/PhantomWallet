@@ -664,3 +664,25 @@ export const trendingTokensData = [
     },
 ];
 
+
+export const walletConnectOptions = [
+    {
+        id: 1,
+        logo: Images.oneWithCircle,
+        title: "Enable Bluetooth",
+        description: "Allow permission to use Bluetooth to connect",
+    },
+    {
+        id: 2,
+        logo: Images.twoWithCircle,
+        title: "Pair with your Ledger device",
+        description: "Keep your device nearby to get the best signal",
+    },
+    {
+        id: 3,
+        logo: Images.threeWithCircle,
+        title: "Connect accounts",
+        description: "We'll look for activity in any accounts you might have used",
+    }
+
+]

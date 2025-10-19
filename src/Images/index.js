@@ -127,5 +127,10 @@ export const Images = {
     eyeWithRound: require('./eyeWithRound.png'),
     crossWithBox: require('./crossWithBox.png'),
     eyeWithBlackRound: require('./eyeWithBlackRound.png'),
+    connectWalletLogo: require('./connectWalletLogo.png'),
+    oneWithCircle: require('./oneWithCircle.png'),
+    twoWithCircle: require('./twoWithCircle.png'),
+    threeWithCircle: require('./threeWithCircle.png'),
+
 
 }
