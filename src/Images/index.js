@@ -131,6 +131,8 @@ export const Images = {
     oneWithCircle: require('./oneWithCircle.png'),
     twoWithCircle: require('./twoWithCircle.png'),
     threeWithCircle: require('./threeWithCircle.png'),
+    accountImage: require('./accountImage.png'),
+    pencilWithBlackRound1: require('./pencilWithBlackRound1.png'),
 
 
 }

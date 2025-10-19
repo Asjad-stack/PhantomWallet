@@ -70,6 +70,7 @@ export const ManageProfileCard1 = ({ title, username, userNumber, authFactor, au
 
 
 const styles = StyleSheet.create({
+    // ManageProfileCard
     cardContainer: {
         width: wp(92),
         alignSelf: 'center',
@@ -92,6 +93,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray23,
         padding: wp(3.5)
     },
+    // ManageProfileCard1
     title: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.SemiBold,

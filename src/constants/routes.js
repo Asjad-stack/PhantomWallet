@@ -78,6 +78,9 @@ export const routes = {
     addAccounts: "addAccounts",
     createAccount: "createAccount",
     watchAddress: "watchAddress",
-    connectHardware: "connectHardware"
+    connectHardware: "connectHardware",
+    editAccount: "editAccount",
+    accountName: "accountName",
+    receiveAccountAddress: "receiveAccountAddress",
 
 }

@@ -13,7 +13,7 @@ import { CustomButton } from '../../../components/CustomButton'
 const ConnectHardware = (props) => {
     return (
         <AppContainer>
-            <View>
+            <View style={styles.mainView}>
                 <AppHeader leftImage={Images.backArrow} title={'Connect Ledger'} rightImage={Images.questionMark} onPressBack={() => props?.navigation.goBack()} />
                 <Spacer customHeight={hp(3)} />
                 <Image source={Images.connectWalletLogo} resizeMode='contain' style={styles.connectWalletLogo} />
@@ -22,7 +22,7 @@ const ConnectHardware = (props) => {
                 <Spacer customHeight={hp(4)} />
                 <WalletConnetOptions />
             </View>
-            <View style={{ paddingHorizontal: wp(4) }}>
+            <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton title={'Connect your Ledger device'} onPressBtn={() => { }} />
             </View>
         </AppContainer>

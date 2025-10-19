@@ -48,6 +48,9 @@ import AddAccounts from "./AddAccounts/AddAccounts";
 import CreateAccount from "./CreateAccount/CreateAccount";
 import WatchAddress from "./WatchAddress/WatchAddress";
 import ConnectHardware from "./ConnectHardware/ConnectHardware";
+import EditAccount from "./EditAccount/EditAccount";
+import AccountName from "./AccountName/AccountName";
+import ReceiveAccountAddress from "./ReceiveAccountAddress/ReceiveAccountAddress";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -82,5 +85,8 @@ export {
     AddAccounts,
     CreateAccount,
     WatchAddress,
-    ConnectHardware
+    ConnectHardware,
+    EditAccount,
+    AccountName,
+    ReceiveAccountAddress
 }

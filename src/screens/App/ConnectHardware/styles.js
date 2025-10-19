@@ -6,7 +6,6 @@ import { colors } from '../../../constants/colors'
 export const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        paddingHorizontal: wp(4)
     },
     connectWalletLogo: {
         width: wp(37.25),

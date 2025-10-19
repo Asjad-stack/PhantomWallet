@@ -20,7 +20,7 @@ const AccountDetails = (props) => {
                 <Spacer />
                 <PoppinsText style={styles.title}>Your Accounts</PoppinsText>
                 <Spacer />
-                <AccountsCard onPressEdit={() => { }} />
+                <AccountsCard onPressEdit={() => props?.navigation.navigate(routes.editAccount)} />
             </View>
             <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton title={'Add Account'} onPressBtn={() => props?.navigation.navigate(routes.addAccounts)} />
