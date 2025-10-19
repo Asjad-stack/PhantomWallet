@@ -12,7 +12,7 @@ const ReceiveAccountAddress = (props) => {
             <View>
                 <AppHeader leftImage={Images.backArrow} title={'Receive Account Address'} onPressBack={() => props?.navigation.goBack()} />
                 <Spacer />
-                <ReceiveTokensList />
+                <ReceiveTokensList onPressToken={() => { }} onPressScanner={() => { }} onPressCopy={() => { }} />
             </View>
         </AppContainer>
     )

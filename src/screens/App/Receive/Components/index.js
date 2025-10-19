@@ -8,13 +8,6 @@ import PoppinsText from '../../../../components/PoppinsText'
 import { colors } from '../../../../constants/colors'
 import { Fonts } from '../../../../constants/fonts'
 import { tokensData } from '../../../../components/dummyData'
-// import { Images } from '../../../../Images'
-// import { appStyles } from '../../../../utilities/appStyles'
-// import { Fonts } from '../../../../constants/fonts'
-// import { colors } from '../../../../constants/colors'
-// import { tokensData } from '../../../../components/dummyData'
-// import PoppinsText from '../../../../components/PoppinsText'
-// import Spacer from '../../../../components/Spacer'
 
 export const ReceiveTokensList = ({ onPressToken, onPressScanner, onPressCopy }) => {
     return (

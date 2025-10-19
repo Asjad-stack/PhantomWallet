@@ -24,7 +24,7 @@ const EditAccount = (props) => {
                 <Spacer customHeight={hp(3)} />
                 <EditAccountCard leftText={'Account Name'} leftText1={'Account Addresses'} rightText={'Account 1'} onPressUserName={() => props?.navigation.navigate(routes.accountName)} onPressAddress={() => props?.navigation.navigate(routes.receiveAccountAddress)} />
                 <Spacer />
-                <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={[styles.notificationCard, appStyles.row]}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.notifications)} style={[styles.notificationCard, appStyles.row]}>
                     <PoppinsText style={styles.notificationText}>Notifications</PoppinsText>
                     <Image source={Images.arrowRight} resizeMode='contain' style={styles.arrowRight} />
                 </TouchableOpacity>
