@@ -28,6 +28,8 @@ import {
     EditAccount,
     AccountName,
     ReceiveAccountAddress,
+    ShowSeedPhrase,
+    ShowPrivateKey,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -94,6 +96,8 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.editAccount} component={EditAccount} />
             <Stack.Screen name={routes.accountName} component={AccountName} />
             <Stack.Screen name={routes.receiveAccountAddress} component={ReceiveAccountAddress} />
+            <Stack.Screen name={routes.showSeedPhrase} component={ShowSeedPhrase} />
+            <Stack.Screen name={routes.showPrivateKey} component={ShowPrivateKey} />
 
 
         </Stack.Navigator>

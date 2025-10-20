@@ -22,7 +22,7 @@ const EditAccount = (props) => {
                     <Image source={Images.pencilWithBlackRound1} resizeMode='contain' style={styles.pencilWithBlackRound1} />
                 </TouchableOpacity>
                 <Spacer customHeight={hp(3)} />
-                <EditAccountCard leftText={'Account Name'} leftText1={'Account Addresses'} rightText={'Account 1'} onPressUserName={() => props?.navigation.navigate(routes.accountName)} onPressAddress={() => props?.navigation.navigate(routes.receiveAccountAddress)} />
+                <EditAccountCard leftText={'Account Name'} leftText1={'Account Addresses'} rightText={'Account 1'} onPressTitle={() => props?.navigation.navigate(routes.accountName)} onPressDesc={() => props?.navigation.navigate(routes.receiveAccountAddress)} />
                 <Spacer />
                 <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.notifications)} style={[styles.notificationCard, appStyles.row]}>
                     <PoppinsText style={styles.notificationText}>Notifications</PoppinsText>
@@ -30,7 +30,7 @@ const EditAccount = (props) => {
                 </TouchableOpacity>
 
                 <Spacer />
-                <EditAccountCard leftText={'Show Recovery Phrase'} leftText1={'Show Private Key'} onPressUserName={() => { }} onPressAddress={() => { }} />
+                <EditAccountCard leftText={'Show Recovery Phrase'} leftText1={'Show Private Key'} onPressTitle={() => props?.navigation.navigate(routes.showSeedPhrase)} onPressDesc={() => props?.navigation.navigate(routes.showPrivateKey)} />
             </View>
         </AppContainer>
     )

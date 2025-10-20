@@ -8,10 +8,10 @@ import { colors } from "../../../../constants/colors"
 import { Fonts } from "../../../../constants/fonts"
 
 
-export const EditAccountCard = ({ leftText, leftText1, rightText, onPressUserName, onPressAddress }) => {
+export const EditAccountCard = ({ leftText, leftText1, rightText, onPressTitle, onPressDesc }) => {
     return (
         <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={onPressUserName} style={styles.cardContainer}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressTitle} style={styles.cardContainer}>
                 <View style={appStyles.row}>
                     <PoppinsText style={styles.leftText}>{leftText}</PoppinsText>
                     <View style={appStyles.rowBasic}>
@@ -21,7 +21,7 @@ export const EditAccountCard = ({ leftText, leftText1, rightText, onPressUserNam
                 </View>
             </TouchableOpacity>
             <Spacer customHeight={hp(0.2)} />
-            <TouchableOpacity activeOpacity={0.8} onPress={onPressAddress} style={[appStyles.row, styles.cardContainer1]}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressDesc} style={[appStyles.row, styles.cardContainer1]}>
                 <PoppinsText style={styles.leftText}>{leftText1}</PoppinsText>
                 <View style={appStyles.rowBasic}>
                     <Image source={Images.arrowRight} resizeMode='contain' style={styles.arrowRight} />

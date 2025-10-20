@@ -51,6 +51,8 @@ import ConnectHardware from "./ConnectHardware/ConnectHardware";
 import EditAccount from "./EditAccount/EditAccount";
 import AccountName from "./AccountName/AccountName";
 import ReceiveAccountAddress from "./ReceiveAccountAddress/ReceiveAccountAddress";
+import ShowSeedPhrase from "./ShowSeedPhrase/ShowSeedPhrase";
+import ShowPrivateKey from "./ShowPrivateKey/ShowPrivateKey";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -88,5 +90,7 @@ export {
     ConnectHardware,
     EditAccount,
     AccountName,
-    ReceiveAccountAddress
+    ReceiveAccountAddress,
+    ShowSeedPhrase,
+    ShowPrivateKey
 }

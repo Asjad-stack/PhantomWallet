@@ -82,5 +82,7 @@ export const routes = {
     editAccount: "editAccount",
     accountName: "accountName",
     receiveAccountAddress: "receiveAccountAddress",
+    showSeedPhrase: "showSeedPhrase",
+    showPrivateKey: "showPrivateKey",
 
 }
