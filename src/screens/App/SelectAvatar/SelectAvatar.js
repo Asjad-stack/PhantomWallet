@@ -6,9 +6,10 @@ import { AppHeader } from '../../../components/AppHeader'
 import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
 import { hp, wp } from '../../../components/ResponsiveComponent'
-import { RowTabs } from './Components'
+import { CollectiblesList, EmojisList, RowTabs } from './Components'
 import { CustomTextInput5 } from '../../../components/CustomTextInput'
 import { CustomButton } from '../../../components/CustomButton'
+import PoppinsText from '../../../components/PoppinsText'
 
 const SelectAvatar = (props) => {
     const [selectedTab, setSelectedTab] = useState('Emojis')
@@ -25,6 +26,15 @@ const SelectAvatar = (props) => {
                 <View style={{ paddingHorizontal: wp(4) }}>
                     <CustomTextInput5 leftImage={Images.searchWhite} placeholder={'Search...'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
                 </View>
+                <Spacer />
+                {selectedTab === 'Emojis' ?
+                    <>
+                        <PoppinsText style={styles.suggestedText}>Suggested</PoppinsText>
+                        <Spacer customHeight={hp(1)} />
+                        <EmojisList />
+                    </>
+                    :
+                    <CollectiblesList />}
             </View>
             <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton title={'Save'} onPress={() => { }} />

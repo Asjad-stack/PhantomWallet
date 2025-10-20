@@ -1,6 +1,7 @@
 import { Platform, StyleSheet } from 'react-native'
 import { hp, wp } from '../../../components/ResponsiveComponent'
 import { colors } from '../../../constants/colors'
+import { Fonts } from '../../../constants/fonts'
 
 export const styles = StyleSheet.create({
     mainView: {
@@ -23,4 +24,10 @@ export const styles = StyleSheet.create({
         textAlign: 'left',
         paddingHorizontal: wp(3)
     },
+    suggestedText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray47,
+        paddingHorizontal: wp(4)
+    }
 })

@@ -1,10 +1,12 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
 import { Fonts } from '../../../../constants/fonts'
 import { colors } from '../../../../constants/colors'
-import { wp } from '../../../../components/ResponsiveComponent'
+import { hp, wp } from '../../../../components/ResponsiveComponent'
+import { emojis } from '../../../../components/dummyData'
+import Spacer, { HorizontalSpacer } from '../../../../components/Spacer'
 
 export const RowTabs = ({ selectedTab, setSelectedTab }) => {
     return (
@@ -25,10 +27,63 @@ export const RowTabs = ({ selectedTab, setSelectedTab }) => {
     )
 }
 
+export const EmojisList = () => {
+    return (
+        <FlatList
+            data={emojis}
+            showsVerticalScrollIndicator={false}
+            numColumns={8}
+            removeClippedSubviews={false}
+            renderItem={({ item }) => {
+                return (
+                    <TouchableOpacity activeOpacity={0.8} style={{ flex: 1, }}>
+                        <PoppinsText style={styles.emojiImage}>{item?.emoji}</PoppinsText>
+                    </TouchableOpacity>
+                )
+            }}
+        />
+    )
+}
+
+export const CollectiblesList = () => {
+    return (
+        <FlatList
+            data={null}
+            showsVerticalScrollIndicator={false}
+            removeClippedSubviews={false}
+            ItemSeparatorComponent={() => <Spacer />}
+            ListEmptyComponent={() => {
+                return (
+                    <View style={{ flex: 1, justifyContent: 'center', height: hp(40) }}>
+                        <PoppinsText style={styles.emptyText}>No collectibles</PoppinsText>
+                    </View>
+                )
+            }}
+            renderItem={({ item }) => {
+                return (
+                    <TouchableOpacity activeOpacity={0.8}>
+                    </TouchableOpacity>
+                )
+            }}
+        />
+    )
+}
+
 
 const styles = StyleSheet.create({
     tabText: {
         fontSize: 16,
         fontFamily: Fonts.Poppins.SemiBold,
+    },
+    emojiImage: {
+        width: wp(6),
+        height: wp(7.5),
+        alignSelf: 'center',
+    },
+    emptyText: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.Medium,
+        color: colors.gray108,
+        textAlign: 'center'
     }
 })
