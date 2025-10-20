@@ -12,6 +12,7 @@ import LineBreak from '../../../components/LineBreak'
 import { appStyles } from '../../../utilities/appStyles'
 import { CustomButton } from '../../../components/CustomButton'
 import useShowPrivateKey from './Hooks'
+import { routes } from '../../../constants/routes'
 
 const ShowPrivateKey = (props) => {
     const { isChecked, setIsChecked, showPrivateKey, setShowPrivateKey } = useShowPrivateKey()
@@ -32,7 +33,7 @@ const ShowPrivateKey = (props) => {
                         <View style={{ paddingHorizontal: wp(4) }}>
                             <PoppinsText style={styles.selectAccountText}>Select your account</PoppinsText>
                             <Spacer />
-                            <SelectTokenList />
+                            <SelectTokenList onPressToken={(item) => props?.navigation.navigate(routes.copyPrivateKey, { token: item })} />
                         </View>
                     </>
                     :
@@ -53,7 +54,8 @@ const ShowPrivateKey = (props) => {
             </View>
             <View style={{ paddingBottom: hp(4) }}>
                 {showPrivateKey ?
-                    <CustomButton title={showPrivateKey ? 'Done' : 'Continue'} disabled={!isChecked} titleStyles={!isChecked ? styles.disabledTitle : styles.btnEnableTitle} onPressBtn={() => setShowPrivateKey(true)} />
+                    null
+                    // <CustomButton title={showPrivateKey ? 'Done' : 'Continue'} disabled={!isChecked} titleStyles={!isChecked ? styles.disabledTitle : styles.btnEnableTitle} onPressBtn={() => setShowPrivateKey(true)} />
                     :
                     <>
                         <LineBreak />

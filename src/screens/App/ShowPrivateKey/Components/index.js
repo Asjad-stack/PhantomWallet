@@ -17,7 +17,7 @@ export const RowView = ({ leftImage, title }) => {
     )
 }
 
-export const SelectTokenList = ({ }) => {
+export const SelectTokenList = ({ onPressToken }) => {
     return (
         <FlatList
             data={tokensData}
@@ -27,7 +27,7 @@ export const SelectTokenList = ({ }) => {
             contentContainerStyle={{ paddingBottom: hp(40) }}
             renderItem={({ item }) => {
                 return (
-                    <TouchableOpacity activeOpacity={0.8} style={[styles.tokensDataBgView, appStyles.rowBasic]}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => onPressToken(item)} style={[styles.tokensDataBgView, appStyles.rowBasic]}>
                         <Image source={item?.tokenLogo} resizeMode="contain" style={styles.tokenLogo} />
                         <View>
                             <PoppinsText style={styles.tokenName}>{item?.tokenName}</PoppinsText>

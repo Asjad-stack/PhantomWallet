@@ -1,0 +1,30 @@
+import { Image, View } from 'react-native'
+import React from 'react'
+import { AppContainer } from '../../../components/MainContainer'
+import { styles } from './styles'
+import { AppHeader } from '../../../components/AppHeader'
+import { Images } from '../../../Images'
+import Spacer from '../../../components/Spacer'
+import { hp, wp } from '../../../components/ResponsiveComponent'
+import { RowTabs } from './Components'
+import { CustomTextInput5 } from '../../../components/CustomTextInput'
+
+const SelectAvatar = (props) => {
+    return (
+        <AppContainer>
+            <View style={styles.mainView}>
+                <AppHeader leftImage={Images.backArrow} title={'Select Avatar'} onPressBack={() => props?.navigation.goBack()} />
+                <Spacer customHeight={hp(3)} />
+                <Image source={Images.profile1} resizeMode='contain' style={styles.profile1} />
+                <Spacer customHeight={hp(4)} />
+                <RowTabs />
+                <Spacer />
+                <View style={{ paddingHorizontal: wp(4) }}>
+                    <CustomTextInput5 leftImage={Images.searchWhite} placeholder={'Search...'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
+                </View>
+            </View>
+        </AppContainer>
+    )
+}
+
+export default SelectAvatar

@@ -17,7 +17,7 @@ const EditAccount = (props) => {
             <View style={styles.mainView}>
                 <AppHeader leftImage={Images.backArrow} title={'Edit Account'} onPressBack={() => props?.navigation.goBack()} />
                 <Spacer customHeight={hp(3)} />
-                <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.selectAvatar)} style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
                     <Image source={Images.accountImage} resizeMode='contain' style={styles.accountImage} />
                     <Image source={Images.pencilWithBlackRound1} resizeMode='contain' style={styles.pencilWithBlackRound1} />
                 </TouchableOpacity>

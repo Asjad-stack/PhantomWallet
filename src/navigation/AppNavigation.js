@@ -30,6 +30,8 @@ import {
     ReceiveAccountAddress,
     ShowSeedPhrase,
     ShowPrivateKey,
+    CopyPrivateKey,
+    SelectAvatar,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -98,6 +100,9 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.receiveAccountAddress} component={ReceiveAccountAddress} />
             <Stack.Screen name={routes.showSeedPhrase} component={ShowSeedPhrase} />
             <Stack.Screen name={routes.showPrivateKey} component={ShowPrivateKey} />
+            <Stack.Screen name={routes.copyPrivateKey} component={CopyPrivateKey} />
+            <Stack.Screen name={routes.selectAvatar} component={SelectAvatar} />
+
 
 
         </Stack.Navigator>
