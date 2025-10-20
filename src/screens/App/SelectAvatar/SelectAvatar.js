@@ -1,5 +1,5 @@
 import { Image, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
 import { AppHeader } from '../../../components/AppHeader'
@@ -8,8 +8,11 @@ import Spacer from '../../../components/Spacer'
 import { hp, wp } from '../../../components/ResponsiveComponent'
 import { RowTabs } from './Components'
 import { CustomTextInput5 } from '../../../components/CustomTextInput'
+import { CustomButton } from '../../../components/CustomButton'
 
 const SelectAvatar = (props) => {
+    const [selectedTab, setSelectedTab] = useState('Emojis')
+
     return (
         <AppContainer>
             <View style={styles.mainView}>
@@ -17,11 +20,14 @@ const SelectAvatar = (props) => {
                 <Spacer customHeight={hp(3)} />
                 <Image source={Images.profile1} resizeMode='contain' style={styles.profile1} />
                 <Spacer customHeight={hp(4)} />
-                <RowTabs />
+                <RowTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
                 <Spacer />
                 <View style={{ paddingHorizontal: wp(4) }}>
                     <CustomTextInput5 leftImage={Images.searchWhite} placeholder={'Search...'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
                 </View>
+            </View>
+            <View style={{ paddingBottom: hp(4) }}>
+                <CustomButton title={'Save'} onPress={() => { }} />
             </View>
         </AppContainer>
     )

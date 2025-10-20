@@ -1,16 +1,15 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
 import { Fonts } from '../../../../constants/fonts'
 import { colors } from '../../../../constants/colors'
 import { wp } from '../../../../components/ResponsiveComponent'
 
-export const RowTabs = () => {
-    const [selectedTab, setSelectedTab] = useState('Emojis')
+export const RowTabs = ({ selectedTab, setSelectedTab }) => {
     return (
         <View style={{ ...appStyles.row, paddingHorizontal: wp(5), width: wp(60) }}>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('')}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('Emojis')}>
                 <PoppinsText style={{
                     ...styles.tabText,
                     color: selectedTab === 'Emojis' ? colors.lightPurple8 : colors.gray28
