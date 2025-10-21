@@ -17,7 +17,7 @@ const TokenDetailSettings = (props) => {
                 <Spacer customHeight={hp(1)} />
                 <View style={appStyles.row}>
                     <PoppinsText style={styles.title}>Settings</PoppinsText>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
                         <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
                     </TouchableOpacity>
                 </View>

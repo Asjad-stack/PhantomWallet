@@ -21,13 +21,13 @@ const BuyMain = (props) => {
                 <Spacer />
                 <EnterAmount
                     tokenLogo={Images.tokenLogo} chainLogo={Images.solanaRound}
-                    tokenName={'Pay USDC'} dropDown={Images.arrowDown}
+                    tokenName={sellTokenFlow ? 'Receive USDC' : 'Pay USDC'} dropDown={Images.arrowDown}
                     dollarAmount={'$0.00 ↑↓'}
                     feeDollarAmmount={'$0.03 +0.85%'}
                     details={'Details'}
                     arrowDown={Images.arrowDown}
                     customCenterButton={true}
-                    btnTitle={'Buy now'}
+                    btnTitle={sellTokenFlow ? 'Sell now' : 'Buy now'}
                     onPressDetails={() => buyTokenDetailsBottomSheetRef.current?.open()}
                 />
             </View>
