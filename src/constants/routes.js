@@ -87,5 +87,6 @@ export const routes = {
     copyPrivateKey: "copyPrivateKey",
     selectAvatar: "selectAvatar",
     buyMain: "buyMain",
+    tokenDetailSettings: "tokenDetailSettings",
 
 }

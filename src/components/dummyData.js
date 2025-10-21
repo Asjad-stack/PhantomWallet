@@ -832,12 +832,5 @@ export const buyTokenDetailsOptions = [
         rightText: "Auto-1.1%",
         rightArrow: Images.arrowRight
     },
-    // {
-    //     id: 3,
-    //     title: "Price Impact",
-    //     infoLogo: Images.infoLogo,
-    //     rightText: "",
-    //     rightArrow: '--'
-    // },
 ]
 

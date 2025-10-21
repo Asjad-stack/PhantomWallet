@@ -33,6 +33,7 @@ import {
     CopyPrivateKey,
     SelectAvatar,
     BuyMain,
+    TokenDetailSettings,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -104,6 +105,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.copyPrivateKey} component={CopyPrivateKey} />
             <Stack.Screen name={routes.selectAvatar} component={SelectAvatar} />
             <Stack.Screen name={routes.buyMain} component={BuyMain} />
+            <Stack.Screen name={routes.tokenDetailSettings} component={TokenDetailSettings} />
 
         </Stack.Navigator>
     );

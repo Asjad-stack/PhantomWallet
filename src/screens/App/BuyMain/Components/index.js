@@ -12,7 +12,7 @@ import { buyTokenDetailsOptions } from '../../../../components/dummyData'
 
 export const BuyTokenDetailsBottomSheet = ({ buyTokenDetailsBottomSheetRef }) => {
     return (
-        <SimpleRBSheet refRBSheet={buyTokenDetailsBottomSheetRef} height={hp(50)}>
+        <SimpleRBSheet refRBSheet={buyTokenDetailsBottomSheetRef} height={hp(45)}>
             <View style={appStyles.row}>
                 <PoppinsText style={styles.detailsText}>Details</PoppinsText>
                 <TouchableOpacity activeOpacity={0.8} onPress={() => buyTokenDetailsBottomSheetRef.current?.close()}>
@@ -64,8 +64,8 @@ export const BuyTokenDetailsBottomSheet = ({ buyTokenDetailsBottomSheetRef }) =>
                 </View>
             </View>
             <Spacer />
-            <View style={appStyles.rowBasic}>
-                <PoppinsText style={{ ...styles.titleText }}>Quote includes a 0.85% Phantom fee</PoppinsText>
+            <View style={[appStyles.rowBasic, { paddingHorizontal: wp(4) }]}>
+                <PoppinsText style={{ ...styles.quoteText }}>Quote includes a 0.85% Phantom fee</PoppinsText>
                 <Image source={Images.infoLogo} resizeMode='contain' style={styles.infoLogo} />
             </View>
         </SimpleRBSheet>
@@ -119,5 +119,10 @@ const styles = StyleSheet.create({
         width: wp(2),
         height: wp(2.5),
         marginLeft: wp(2)
+    },
+    quoteText: {
+        fontSize: 11,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray6
     }
 })

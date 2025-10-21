@@ -56,6 +56,7 @@ import ShowPrivateKey from "./ShowPrivateKey/ShowPrivateKey";
 import CopyPrivateKey from "./CopyPrivateKey/CopyPrivateKey";
 import SelectAvatar from "./SelectAvatar/SelectAvatar";
 import BuyMain from "./BuyMain/BuyMain";
+import TokenDetailSettings from "./TokenDetailsSettings/TokenDetailSettings";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -99,4 +100,5 @@ export {
     CopyPrivateKey,
     SelectAvatar,
     BuyMain,
+    TokenDetailSettings,
 }

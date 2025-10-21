@@ -9,6 +9,7 @@ import { hp } from '../../../components/ResponsiveComponent'
 import EnterAmount from '../../../components/EnterAmount/EnterAmount'
 import useBuyMain from './Hooks'
 import { BuyTokenDetailsBottomSheet } from './Components'
+import { routes } from '../../../constants/routes'
 
 const BuyMain = (props) => {
     const { buyTokenDetailsBottomSheetRef } = useBuyMain()
@@ -16,7 +17,7 @@ const BuyMain = (props) => {
         <AppContainer>
             <View style={styles.mainView}>
                 <Spacer customHeight={hp(1)} />
-                <BuyAndSellHeader leftImage={Images.backArrow} tokenLogo={Images.tokenLogo} tokenName={'Solana'} status={'421 people here'} rightImage={Images.slippage} onPressBackArrow={() => props?.navigation.goBack()} />
+                <BuyAndSellHeader leftImage={Images.backArrow} tokenLogo={Images.tokenLogo} tokenName={'Solana'} status={'421 people here'} rightImage={Images.slippage} onPressBackArrow={() => props?.navigation.goBack()} onPressRightImage={() => props?.navigation.navigate(routes.tokenDetailSettings)} />
                 <Spacer />
                 <EnterAmount
                     tokenLogo={Images.tokenLogo} chainLogo={Images.solanaRound}

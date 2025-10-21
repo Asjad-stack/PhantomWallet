@@ -5,7 +5,7 @@ import { wp } from "./ResponsiveComponent"
 import { Fonts } from "../constants/fonts"
 import { colors } from "../constants/colors"
 
-export const BuyAndSellHeader = ({ leftImage, tokenLogo, tokenName, status, rightImage, onPressBackArrow }) => {
+export const BuyAndSellHeader = ({ leftImage, tokenLogo, tokenName, status, rightImage, onPressBackArrow, onPressRightImage }) => {
     return (
         <View style={appStyles.row}>
             <View style={appStyles.rowBasic}>
@@ -20,7 +20,7 @@ export const BuyAndSellHeader = ({ leftImage, tokenLogo, tokenName, status, righ
                     </View>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity activeOpacity={0.8}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPressRightImage}>
                 <Image source={rightImage} resizeMode='contain' style={styles.rightImage} />
             </TouchableOpacity>
         </View >
