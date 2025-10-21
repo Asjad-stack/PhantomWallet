@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useEnterSendingAmount = () => {
+const useEnterStakeSolAmount = () => {
 
     const [enteredAmount, setEnteredAmount] = useState(0)
     const [errormsg, seterrormsg] = useState('')
@@ -30,4 +30,4 @@ const useEnterSendingAmount = () => {
     }
 }
 
-export default useEnterSendingAmount
+export default useEnterStakeSolAmount

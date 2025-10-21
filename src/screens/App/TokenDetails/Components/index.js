@@ -1,6 +1,6 @@
 import { FlatList, Image, ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { HomeTabs, tokenDetailsInfoData, TokenDetailsRowTabs } from '../../../../components/dummyData'
+import { stakeOptionData, tokenDetailsInfoData, TokenDetailsRowTabs } from '../../../../components/dummyData'
 import Spacer, { HorizontalSpacer } from '../../../../components/Spacer'
 import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
@@ -8,6 +8,7 @@ import { colors } from '../../../../constants/colors'
 import { hp, wp } from '../../../../components/ResponsiveComponent'
 import { Fonts } from '../../../../constants/fonts'
 import { Images } from '../../../../Images'
+import { SimpleRBSheet } from '../../../../components/SImpleBottomSheet'
 
 export const TokenDetailsHeader = ({ leftImage, tokenLogo, tokenName, status, rightImage, onPressBackArrow }) => {
     return (
@@ -302,6 +303,30 @@ export const PerformanceCard = ({ }) => {
     )
 }
 
+export const StakeOptionRBSheet = ({ stakeOptionBottomSheet, onPress }) => {
+    return (
+        <SimpleRBSheet refRBSheet={stakeOptionBottomSheet} height={hp(30)}>
+            <FlatList
+                data={stakeOptionData}
+                showsVerticalScrollIndicator={false}
+                ItemSeparatorComponent={() => <Spacer />}
+                removeClippedSubviews={false}
+                renderItem={({ item }) => {
+                    return (
+                        <>
+                            <Spacer customHeight={hp(1)} />
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => onPress(item)} style={{ ...appStyles.rowBasic, paddingHorizontal: wp(3) }}>
+                                <Image source={item?.logo} resizeMode='contain' style={styles.stakeLogo} />
+                                <PoppinsText style={styles.stakeTitle}>{item?.title}</PoppinsText>
+                            </TouchableOpacity>
+                        </>
+                    )
+                }}
+            />
+        </SimpleRBSheet>
+    )
+}
+
 
 const styles = StyleSheet.create({
     //TokenDetailsHeader
@@ -522,4 +547,15 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.Regular,
         color: colors.green12
     },
+    // StakeOptionRBSheet
+    stakeLogo: {
+        width: wp(3.5),
+        height: wp(2.5),
+        marginRight: wp(3)
+    },
+    stakeTitle: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray88
+    }
 })

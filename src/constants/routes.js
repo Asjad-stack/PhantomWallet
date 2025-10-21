@@ -91,6 +91,9 @@ export const routes = {
     slippage: "slippage",
     priorityFee: "priorityFee",
     tipScreen: "tipScreen",
-    youPay: "youPay"
+    youPay: "youPay",
+    stakeTokensEarnAwards: "stakeTokensEarnAwards",
+    enterStakeSolAmount: "enterStakeSolAmount",
+    sendConfirmationScreen: "sendConfirmationScreen"
 
 }

@@ -62,7 +62,6 @@ export const styles = StyleSheet.create({
         color: colors.gray77,
         textAlign: 'center',
         width: wp(30),
-        // backgroundColor: 'green',
     },
     inputContainer1: {
         width: wp(30),
@@ -79,8 +78,6 @@ export const styles = StyleSheet.create({
     switchWithRound: {
         width: wp(7),
         height: wp(7),
-        // marginRight: wp(3)
-
     },
     dollarAmount: {
         fontSize: 18,

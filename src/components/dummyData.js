@@ -881,4 +881,27 @@ export const youPayTokensData = [
     },
 ]
 
+export const stakeOptionData = [
+    {
+        id: 1,
+        logo: Images.stakeSol,
+        title: "Stake SOL",
+    },
+    {
+        id: 2,
+        logo: Images.mintPsol,
+        title: "Mint PSOL",
+    },
+    {
+        id: 3,
+        logo: Images.viewSolscan,
+        title: "View on Solscan",
+    },
+    {
+        id: 4,
+        logo: Images.share,
+        title: "Share",
+    },
+]
+
 

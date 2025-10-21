@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useFocusEffect } from "@react-navigation/native";
 import database from "../../../../services/database";
 import { ethers } from "ethers";
@@ -11,16 +11,15 @@ const useTokenDetails = (props) => {
 
     const previousTokenData = props?.route?.params?.tokenData;
 
-    console.log(previousTokenData, 'previousTokenDatapreviousTokenDatapreviousTokenData');
-
+    const stakeOptionBottomSheet = useRef(null)
 
     const [allTransactions, setAllTransactions] = useState([])
     const [loading, setLoading] = useState(false)
+    const [selectedTab, setSelectedTab] = useState('1H')
     const [activeWallet, setActiveWallet] = useState({
         publicAddress: '',
         solanaAddress: ''
     })
-    const [selectedTab, setSelectedTab] = useState('1H')
 
     // Fetch wallet addresses from database
     useFocusEffect(
@@ -310,7 +309,8 @@ const useTokenDetails = (props) => {
         loading,
         previousTokenData,
         sortedTransactions,
-        selectedTab, setSelectedTab
+        selectedTab, setSelectedTab,
+        stakeOptionBottomSheet,
     }
 }
 

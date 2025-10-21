@@ -147,5 +147,13 @@ export const Images = {
     twitter: require('./twitter.png'),
     slippage: require('./slippage.png'),
     autoSlippageImage: require('./autoSlippageImage.png'),
+    stakeSol: require('./stakeSol.png'),
+    mintPsol: require('./mintPsol.png'),
+    viewSolscan: require('./viewSolscan.png'),
+    share: require('./share.png'),
+    stakeStartWithRound: require('./stakeStartWithRound.png'),
+    stakingWithGreenRound: require('./stakingWithGreenRound.png'),
+    suiWithGreenRound: require('./suiWithGreenRound.png'),
+    recomended: require('./recomended.png'),
 
 }

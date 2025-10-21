@@ -61,6 +61,9 @@ import Slippage from "./Slippage/Slippage";
 import PriorityFee from "./PriorityFee/PriorityFee";
 import TipScreen from "./TipScreen/TipScreen";
 import YouPay from "./YouPay/YouPay";
+import StakeTokensEarnAwards from "./StakeTokensEarnAwards/StakeTokensEarnAwards";
+import EnterStakeSolAmount from "./EnterStakeSolAmount/EnterStakeSolAmount";
+import SendConfirmationScreen from "./SendConfirmationScreen/SendConfirmationScreen";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -109,4 +112,7 @@ export {
     PriorityFee,
     TipScreen,
     YouPay,
+    StakeTokensEarnAwards,
+    EnterStakeSolAmount,
+    SendConfirmationScreen,
 }
