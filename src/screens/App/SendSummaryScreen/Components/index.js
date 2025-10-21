@@ -7,8 +7,6 @@ import PoppinsText from "../../../../components/PoppinsText"
 import Spacer from "../../../../components/Spacer"
 
 
-
-
 export const SummaryCard = ({ }) => {
     return (
         <View>
@@ -36,6 +34,7 @@ export const SummaryCard = ({ }) => {
 }
 
 const styles = StyleSheet.create({
+    //SummaryCard
     cardContainer: {
         width: wp(92),
         alignSelf: 'center',

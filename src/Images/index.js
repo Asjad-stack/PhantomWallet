@@ -137,5 +137,13 @@ export const Images = {
     keyWithRound: require('./keyWithRound.png'),
     eyeSlashWithRound: require('./eyeSlashWithRound.png'),
     infoWithRound: require('./infoWithRound.png'),
+    followImage: require('./followImage.png'),
+    cashByTab: require('./cashByTab.png'),
+    moreTab: require('./moreTab.png'),
+    twoRoundsWithCircle: require('./twoRoundsWithCircle.png'),
+    graphDotLines: require('./graphDotLines.png'),
+    website: require('./website.png'),
+    telegram: require('./telegram.png'),
+    twitter: require('./twitter.png'),
 
 }

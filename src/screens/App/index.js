@@ -55,6 +55,7 @@ import ShowSeedPhrase from "./ShowSeedPhrase/ShowSeedPhrase";
 import ShowPrivateKey from "./ShowPrivateKey/ShowPrivateKey";
 import CopyPrivateKey from "./CopyPrivateKey/CopyPrivateKey";
 import SelectAvatar from "./SelectAvatar/SelectAvatar";
+import BuyMain from "./BuyMain/BuyMain";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -96,5 +97,6 @@ export {
     ShowSeedPhrase,
     ShowPrivateKey,
     CopyPrivateKey,
-    SelectAvatar
+    SelectAvatar,
+    BuyMain
 }

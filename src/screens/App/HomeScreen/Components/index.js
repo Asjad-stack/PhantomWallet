@@ -111,9 +111,8 @@ export const TokensCard = ({ tokenData, isLoading, onPressToken }) => {
             showsVerticalScrollIndicator={false}
             removeClippedSubviews={false}
             ItemSeparatorComponent={() => <Spacer customHeight={hp(1.5)} />}
-            contentContainerStyle={{ paddingBottom: hp(70) }}
+            contentContainerStyle={{ paddingBottom: hp(20) }}
             renderItem={({ item, index }) => {
-
 
                 return (
                     <TouchableOpacity activeOpacity={0.8} onPress={() => onPressToken(item)} style={{ ...styles.tokenCardBgView, }}>

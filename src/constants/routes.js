@@ -85,6 +85,7 @@ export const routes = {
     showSeedPhrase: "showSeedPhrase",
     showPrivateKey: "showPrivateKey",
     copyPrivateKey: "copyPrivateKey",
-    selectAvatar: "selectAvatar"
+    selectAvatar: "selectAvatar",
+    buyMain: "buyMain"
 
 }

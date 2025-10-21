@@ -1,14 +1,35 @@
 import { FlatList, Image, ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { tokenDetailsInfoData } from '../../../../components/dummyData'
-import Spacer from '../../../../components/Spacer'
+import { HomeTabs, tokenDetailsInfoData, TokenDetailsRowTabs } from '../../../../components/dummyData'
+import Spacer, { HorizontalSpacer } from '../../../../components/Spacer'
 import { appStyles } from '../../../../utilities/appStyles'
 import PoppinsText from '../../../../components/PoppinsText'
 import { colors } from '../../../../constants/colors'
 import { hp, wp } from '../../../../components/ResponsiveComponent'
 import { Fonts } from '../../../../constants/fonts'
 import { Images } from '../../../../Images'
-import LinearGradient from 'react-native-linear-gradient'
+
+export const TokenDetailsHeader = ({ leftImage, tokenLogo, tokenName, status, rightImage, onPressBackArrow }) => {
+    return (
+        <View style={appStyles.row}>
+            <View style={appStyles.rowBasic}>
+                <TouchableOpacity activeOpacity={0.8} onPress={onPressBackArrow}>
+                    <Image source={leftImage} resizeMode='contain' style={styles.backArrow} />
+                </TouchableOpacity>
+                <TouchableOpacity style={appStyles.rowBasic}>
+                    <Image source={tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
+                    <View style={{ marginLeft: wp(3) }}>
+                        <PoppinsText style={styles.tokenName}>{tokenName}</PoppinsText>
+                        <PoppinsText style={styles.tokenDetailsStatus}>{status}</PoppinsText>
+                    </View>
+                </TouchableOpacity>
+            </View>
+            <TouchableOpacity activeOpacity={0.8}>
+                <Image source={rightImage} resizeMode='contain' style={styles.rightImage} />
+            </TouchableOpacity>
+        </View >
+    )
+}
 
 export const InfoCard = ({ }) => {
     return (
@@ -121,143 +142,193 @@ export const HistoryCard = ({ onPressToken, transactions = [] }) => {
 
 export const RowTimeIntervals = ({ selectedTab, setSelectedTab }) => {
     return (
-        <ImageBackground
-            source={Images.tokenDetailsTimeBgImage}
-            style={styles.backgroundImage}
-            imageStyle={styles.backgroundImageStyle}>
-            <View style={styles.tabsContainer}>
-                {/* 1H Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === '1H' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('1H')}
-                >
-                    {selectedTab === '1H' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                1H
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>1H</PoppinsText>
-                    )}
-                </TouchableOpacity>
 
-                {/* 1D Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === '1D' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('1D')}
-                >
-                    {selectedTab === '1D' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                1D
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>1D</PoppinsText>
-                    )}
-                </TouchableOpacity>
+        <View style={styles.tabsContainer}>
+            {/* 1H Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === '1H' && styles.selectedTab]}
+                onPress={() => setSelectedTab('1H')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === '1H' ? colors.lightPurple9 : colors.gray53,
 
-                {/* 1W Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === '1W' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('1W')}
-                >
-                    {selectedTab === '1W' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                1W
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>1W</PoppinsText>
-                    )}
-                </TouchableOpacity>
+                }}>1H</PoppinsText>
+            </TouchableOpacity>
 
-                {/* 1M Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === '1M' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('1M')}
-                >
-                    {selectedTab === '1M' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                1M
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>1M</PoppinsText>
-                    )}
-                </TouchableOpacity>
+            {/* 1D Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === '1D' && styles.selectedTab]}
+                onPress={() => setSelectedTab('1D')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === '1D' ? colors.lightPurple9 : colors.gray53,
+                }}>1D</PoppinsText>
+            </TouchableOpacity>
 
-                {/* 1Y Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === '1Y' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('1Y')}
-                >
-                    {selectedTab === '1Y' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                1Y
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>1Y</PoppinsText>
-                    )}
-                </TouchableOpacity>
+            {/* 1W Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === '1W' && styles.selectedTab]}
+                onPress={() => setSelectedTab('1W')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === '1W' ? colors.lightPurple9 : colors.gray53,
+                }}>1W</PoppinsText>
+            </TouchableOpacity>
 
-                {/* ALL Tab */}
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === 'ALL' && styles.selectedTab]}
-                    onPress={() => setSelectedTab('ALL')}
-                >
-                    {selectedTab === 'ALL' ? (
-                        <LinearGradient
-                            colors={['#0EDDEF', '#9F13D3']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            style={styles.gradientText}
-                        >
-                            <PoppinsText style={styles.selectedText}>
-                                ALL
-                            </PoppinsText>
-                        </LinearGradient>
-                    ) : (
-                        <PoppinsText style={styles.tabText}>ALL</PoppinsText>
-                    )}
-                </TouchableOpacity>
+            {/* 1M Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === '1M' && styles.selectedTab]}
+                onPress={() => setSelectedTab('1M')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === '1M' ? colors.lightPurple9 : colors.gray53,
+                }}>1M</PoppinsText>
+            </TouchableOpacity>
+
+            {/* 1Y Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === '1Y' && styles.selectedTab]}
+                onPress={() => setSelectedTab('1Y')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === '1Y' ? colors.lightPurple9 : colors.gray53,
+                }}>1Y</PoppinsText>
+            </TouchableOpacity>
+
+            {/* ALL Tab */}
+            <TouchableOpacity
+                style={[styles.tab, selectedTab === 'ALL' && styles.selectedTab]}
+                onPress={() => setSelectedTab('ALL')}
+            >
+                <PoppinsText style={{
+                    ...styles.tabText,
+                    color: selectedTab === 'ALL' ? colors.lightPurple9 : colors.gray53,
+                }}>ALL</PoppinsText>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+export const RowTabs = ({ onPressTab }) => {
+    return (
+        <FlatList
+            data={TokenDetailsRowTabs}
+            keyExtractor={(item) => item.id.toString()}
+            horizontal
+            removeClippedSubviews={false}
+
+            ItemSeparatorComponent={() => <HorizontalSpacer customWidth={wp(1)} />}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{}}
+            renderItem={({ item }) => {
+                return (
+                    <TouchableOpacity activeOpacity={0.8} style={{}} onPress={() => onPressTab(item)}>
+                        <Image source={item?.tabLogo} resizeMode='contain' style={styles.tabLogo} />
+                    </TouchableOpacity>
+                )
+            }}
+        />
+    )
+}
+
+export const TokenDetailsInfoCard = ({ }) => {
+    return (
+        <View>
+            <View style={styles.cardContainer}>
+                <View style={appStyles.row}>
+                    <PoppinsText style={styles.leftText}>{'Name'}</PoppinsText>
+                    <PoppinsText style={styles.rightText}>{'Solana'}</PoppinsText>
+                </View>
             </View>
-        </ImageBackground>
+            <Spacer customHeight={hp(0.2)} />
+            <View style={[appStyles.row, styles.cardContainer2]}>
+                <PoppinsText style={styles.leftText}>{'Symbol'}</PoppinsText>
+                <PoppinsText style={styles.rightText}>{'SOL'}</PoppinsText>
+            </View>
+            <Spacer customHeight={hp(0.2)} />
+            <View style={[appStyles.row, styles.cardContainer2]}>
+                <PoppinsText style={styles.leftText}>{'Network'}</PoppinsText>
+                <PoppinsText style={styles.rightText}>{'Solana'}</PoppinsText>
+            </View>
+            <Spacer customHeight={hp(0.2)} />
+            <View style={[appStyles.row, styles.cardContainer2]}>
+                <PoppinsText style={styles.leftText}>{'Market Cap'}</PoppinsText>
+                <PoppinsText style={styles.rightText}>{'$122.5B'}</PoppinsText>
+            </View>
+            <Spacer customHeight={hp(0.2)} />
+            <View style={[appStyles.row, styles.cardContainer2]}>
+                <PoppinsText style={styles.leftText}>{'Total Supply'}</PoppinsText>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.rightText}>{'611.5M'}</PoppinsText>
+                </View>
+            </View>
+            <Spacer customHeight={hp(0.2)} />
+            <View style={[appStyles.row, styles.cardContainer1]}>
+                <PoppinsText style={styles.leftText}>{'Circulating Supply'}</PoppinsText>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.rightText}>{'546.21M'}</PoppinsText>
+                </View>
+            </View>
+        </View>
+    )
+}
+
+export const PerformanceCard = ({ }) => {
+    return (
+        <View>
+            <View style={styles.cardContainer}>
+                <View style={appStyles.row}>
+                    <PoppinsText style={styles.leftText}>{'Volume'}</PoppinsText>
+                    <View style={appStyles.rowBasic}>
+                        <PoppinsText style={styles.performaceRightText}>{'$15.49B'}</PoppinsText>
+                        <PoppinsText style={styles.performaceRightText1}>{'+5.22%'}</PoppinsText>
+                    </View>
+                </View>
+                <Spacer customHeight={hp(0.2)} />
+                <View style={[appStyles.row, styles.cardContainer1]}>
+                    <PoppinsText style={styles.leftText}>{'Volume'}</PoppinsText>
+                    <View style={appStyles.rowBasic}>
+                        <PoppinsText style={styles.performaceRightText}>{'$15.49B'}</PoppinsText>
+                        <PoppinsText style={styles.performaceRightText1}>{'+5.22%'}</PoppinsText>
+                    </View>
+                </View>
+            </View>
+        </View>
     )
 }
 
 
 const styles = StyleSheet.create({
+    //TokenDetailsHeader
+    backArrow: {
+        width: wp(3),
+        height: wp(4),
+        marginRight: wp(3)
+    },
+    tokenLogo: {
+        width: wp(9),
+        height: wp(9),
+        borderRadius: 100
+    },
+    tokenName: {
+        fontSize: 17,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray63
+    },
+    tokenDetailsStatus: {
+        fontSize: 11,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray109
+    },
+    rightImage: {
+        width: wp(13),
+        height: wp(6)
+    },
     // InfoCard
     container: {
         borderWidth: 1,
@@ -351,46 +422,6 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: Fonts.Poppins.Regular,
     },
-
-    // RowTimeIntervals
-    // backgroundImage: {
-    //     width: '100%',
-    //     height: 50,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    // backgroundImageStyle: {
-    //     resizeMode: 'stretch',
-    // },
-    // tabsContainer: {
-    //     flexDirection: 'row',
-    //     borderRadius: 8,
-    //     backgroundColor: 'transparent',
-    //     overflow: 'hidden',
-    // },
-    // tab: {
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     paddingVertical: 10,
-    // },
-    // tabText: {
-    //     fontSize: 14,
-    //     color: colors.gray8,
-    // },
-    // selectedText: {
-    //     // backgroundColor: 'transparent',
-    //     // borderRadius: 20,
-    // },
-    // gradientText: {
-    //     paddingVertical: 5,
-    //     paddingHorizontal: wp(3),
-    //     borderRadius: 8,
-    //     backgroundColor: 'transparent',
-    // },
-
-
-
     backgroundImage: {
         width: '100%',
         height: 50,
@@ -402,23 +433,26 @@ const styles = StyleSheet.create({
     },
     tabsContainer: {
         flexDirection: 'row',
-        borderRadius: 8,
         backgroundColor: 'transparent',
         overflow: 'hidden',
     },
     tab: {
         flex: 1,
+        height: wp(6),
+        borderRadius: 7.5,
+        paddingVertical: wp(1),
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 10,
     },
     tabText: {
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray8,
     },
     selectedTab: {
-        backgroundColor: 'transparent',
+        height: wp(6),
+        borderRadius: 7.5,
+        paddingVertical: wp(1),
+        backgroundColor: colors.bottomSheetBgColor
     },
     gradientText: {
         paddingVertical: 5,
@@ -432,5 +466,60 @@ const styles = StyleSheet.create({
         color: colors.white,
         backgroundClip: 'text',
         WebkitBackgroundClip: 'text',
+    },
+    // RowTabs
+    tabLogo: {
+        width: wp(22),
+        height: hp(9),
+    },
+    // TokenDetailsInfoCard
+    cardContainer: {
+        width: wp(92),
+        alignSelf: 'center',
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
+        backgroundColor: colors.gray23,
+        padding: wp(3.5)
+    },
+    cardContainer1: {
+        width: wp(92),
+        alignSelf: 'center',
+        borderBottomLeftRadius: 12,
+        borderBottomRightRadius: 12,
+        backgroundColor: colors.gray23,
+        padding: wp(3.5)
+    },
+    cardContainer2: {
+        width: wp(92),
+        alignSelf: 'center',
+        backgroundColor: colors.gray23,
+        padding: wp(3.5)
+    },
+    title: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray53
+    },
+    leftText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray26
+    },
+    rightText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray50
+    },
+    // PerformanceCard
+    performaceRightText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray108,
+        marginRight: wp(3)
+    },
+    performaceRightText1: {
+        fontSize: 10,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.green12
     },
 })

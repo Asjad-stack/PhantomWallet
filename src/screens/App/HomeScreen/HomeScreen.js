@@ -106,11 +106,11 @@ const HomeScreen = (props) => {
                 <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
                 <Spacer />
-                {/* <TokensCard
+                <TokensCard
                     tokenData={tokenData}
                     isLoading={isLoading}
                     onPressToken={(item) => props?.navigation.navigate(routes.tokenDetails, { tokenData: item })}
-                /> */}
+                />
             </View>
         </MainContainerApp>
     )

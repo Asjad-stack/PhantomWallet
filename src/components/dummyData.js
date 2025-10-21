@@ -796,3 +796,23 @@ export const emojis = [
     { emoji: "🖤", name: "Black Heart" },
     { emoji: "🤍", name: "White Heart" }
 ];
+
+export const TokenDetailsRowTabs = [
+    {
+        id: 1,
+        tabLogo: Images.receiveTab,
+    },
+    {
+        id: 2,
+        tabLogo: Images.sendTab,
+    },
+    {
+        id: 3,
+        tabLogo: Images.cashByTab,
+    },
+    {
+        id: 4,
+        tabLogo: Images.moreTab,
+    },
+
+]

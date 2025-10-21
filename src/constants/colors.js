@@ -119,6 +119,11 @@ export const colors = {
     gray106: "#2D2D2D",
     gray107: "#0F0F0E",
     gray108: "#979797",
+    gray109: "#878787",
+    gray110: "#E2E2E2",
+    gray111: "#A3A3A3",
+    gray112: "#848484",
+    gray113: "#36334A",
 
     lineColor: "#454545",
 
@@ -133,6 +138,15 @@ export const colors = {
     green2: "#31A46D",
     green3: "#2D875C",
     green4: "#287F56",
+    green5: "#30A36B",
+    green6: "#163425",
+    green7: "#2C9161",
+    green8: "#2F9564",
+    green9: "#2E9363",
+    green10: "#2D885C",
+    green11: "#163123",
+    green12: "#2E8D60",
+    green13: "#2D8C5F",
     greenShadow: "#14271D",
 
     purple: "#9288C1",
@@ -145,4 +159,7 @@ export const colors = {
     lightPurple6: "#8980B2",
     lightPurple7: "#8F85B8",
     lightPurple8: "#D0C1FF",
+    lightPurple9: "#948AC3",
+    lightPurple10: "#8980B1",
+    lightPurple11: "#9E93D4",
 }
