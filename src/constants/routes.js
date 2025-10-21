@@ -88,5 +88,9 @@ export const routes = {
     selectAvatar: "selectAvatar",
     buyMain: "buyMain",
     tokenDetailSettings: "tokenDetailSettings",
+    slippage: "slippage",
+    priorityFee: "priorityFee",
+    tipScreen: "tipScreen",
+    youPay: "youPay"
 
 }

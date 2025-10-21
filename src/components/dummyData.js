@@ -834,3 +834,51 @@ export const buyTokenDetailsOptions = [
     },
 ]
 
+export const tokenTabsSelectionData = [
+    {
+        id: 1,
+        title: "All",
+    },
+    {
+        id: 2,
+        title: "Solana",
+    },
+    {
+        id: 3,
+        title: "Ethereum",
+    },
+    {
+        id: 4,
+        title: "Base",
+    },
+    {
+        id: 5,
+        title: "Sui",
+    },
+    {
+        id: 6,
+        title: "Polygon",
+    },
+]
+
+export const youPayTokensData = [
+    {
+        id: 1,
+        tokenLogo: Images.solanaLogo,
+        tokenName: 'Solana',
+        cryptoAmount: '0.01103 SOL',
+        dollarAmont: '$10',
+        change24Value: "+2.20%",
+    },
+
+    {
+        id: 2,
+        tokenLogo: Images.solanaLogo,
+        tokenName: 'Solana',
+        cryptoAmount: '0.01103 SOL',
+        dollarAmont: '$10',
+        change24Value: "+2.20%",
+    },
+]
+
+

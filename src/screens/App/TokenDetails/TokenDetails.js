@@ -174,7 +174,7 @@ const TokenDetails = (props) => {
                 </ScrollView>
             </View>
             <View style={{ paddingBottom: hp(4), backgroundColor: colors.black, alignSelf: 'center' }}>
-                <RowButtons titlebtn1={'Buy'} titlebtn2={'Sell'} titleColor1={colors.gray113} titleColor2={colors.gray113} onPressBtn1={() => props?.navigation.navigate(routes.buyMain)} onPressBtn2={() => props?.navigation.navigate(routes.buyFromHome)} style={styles.bottomBtn1} styleBtn={styles.bottomBtn2} />
+                <RowButtons titlebtn1={'Buy'} titlebtn2={'Sell'} titleColor1={colors.gray113} titleColor2={colors.gray113} onPressBtn1={() => props?.navigation.navigate(routes.buyMain)} onPressBtn2={() => props?.navigation.navigate(routes.buyMain, { sellTokenFlow: true })} style={styles.bottomBtn1} styleBtn={styles.bottomBtn2} />
             </View>
         </MainContainerApp>
     )

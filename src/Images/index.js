@@ -146,5 +146,6 @@ export const Images = {
     telegram: require('./telegram.png'),
     twitter: require('./twitter.png'),
     slippage: require('./slippage.png'),
+    autoSlippageImage: require('./autoSlippageImage.png'),
 
 }

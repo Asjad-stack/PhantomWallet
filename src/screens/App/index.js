@@ -57,6 +57,10 @@ import CopyPrivateKey from "./CopyPrivateKey/CopyPrivateKey";
 import SelectAvatar from "./SelectAvatar/SelectAvatar";
 import BuyMain from "./BuyMain/BuyMain";
 import TokenDetailSettings from "./TokenDetailsSettings/TokenDetailSettings";
+import Slippage from "./Slippage/Slippage";
+import PriorityFee from "./PriorityFee/PriorityFee";
+import TipScreen from "./TipScreen/TipScreen";
+import YouPay from "./YouPay/YouPay";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -101,4 +105,8 @@ export {
     SelectAvatar,
     BuyMain,
     TokenDetailSettings,
+    Slippage,
+    PriorityFee,
+    TipScreen,
+    YouPay,
 }

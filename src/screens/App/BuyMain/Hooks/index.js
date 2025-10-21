@@ -1,12 +1,14 @@
 import { useRef } from "react"
 
 
-const useBuyMain = () => {
+const useBuyMain = (props) => {
 
+    const sellTokenFlow = props?.route?.params?.sellTokenFlow
     const buyTokenDetailsBottomSheetRef = useRef(null)
 
     return {
-        buyTokenDetailsBottomSheetRef
+        sellTokenFlow,
+        buyTokenDetailsBottomSheetRef,
     }
 
 }

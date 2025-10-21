@@ -8,13 +8,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: wp(4)
     },
-    title: {
-        fontSize: 17,
-        fontFamily: Fonts.Poppins.SemiBold,
-        color: colors.gray44
-    },
-    cross: {
-        width: wp(3.5),
+    backArrow: {
+        width: wp(2.5),
         height: wp(3.5),
+        marginRight: wp(2)
+    },
+    title: {
+        fontSize: 16,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray63
+    },
+    desc: {
+        fontSize: 11,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray117
     }
 })

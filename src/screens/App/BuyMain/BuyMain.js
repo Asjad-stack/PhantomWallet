@@ -12,12 +12,12 @@ import { BuyTokenDetailsBottomSheet } from './Components'
 import { routes } from '../../../constants/routes'
 
 const BuyMain = (props) => {
-    const { buyTokenDetailsBottomSheetRef } = useBuyMain()
+    const { sellTokenFlow, buyTokenDetailsBottomSheetRef } = useBuyMain(props)
     return (
         <AppContainer>
             <View style={styles.mainView}>
                 <Spacer customHeight={hp(1)} />
-                <BuyAndSellHeader leftImage={Images.backArrow} tokenLogo={Images.tokenLogo} tokenName={'Solana'} status={'421 people here'} rightImage={Images.slippage} onPressBackArrow={() => props?.navigation.goBack()} onPressRightImage={() => props?.navigation.navigate(routes.tokenDetailSettings)} />
+                <BuyAndSellHeader leftImage={Images.backArrow} tokenLogo={Images.tokenLogo} tokenName={sellTokenFlow ? 'Sell Solana' : 'Buy Solana'} status={'421 people here'} rightImage={Images.slippage} onPressBackArrow={() => props?.navigation.goBack()} onPressRightImage={() => props?.navigation.navigate(routes.tokenDetailSettings)} />
                 <Spacer />
                 <EnterAmount
                     tokenLogo={Images.tokenLogo} chainLogo={Images.solanaRound}

@@ -34,6 +34,10 @@ import {
     SelectAvatar,
     BuyMain,
     TokenDetailSettings,
+    Slippage,
+    PriorityFee,
+    TipScreen,
+    YouPay,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -106,6 +110,10 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.selectAvatar} component={SelectAvatar} />
             <Stack.Screen name={routes.buyMain} component={BuyMain} />
             <Stack.Screen name={routes.tokenDetailSettings} component={TokenDetailSettings} />
+            <Stack.Screen name={routes.slippage} component={Slippage} />
+            <Stack.Screen name={routes.priorityFee} component={PriorityFee} />
+            <Stack.Screen name={routes.tipScreen} component={TipScreen} />
+            <Stack.Screen name={routes.youPay} component={YouPay} />
 
         </Stack.Navigator>
     );
