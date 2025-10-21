@@ -2,7 +2,7 @@ import { Image, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import CustomKeyboard from '../CustomKeyBoard'
 import { MainContainerApp } from '../MainContainer'
-import { hp } from '../ResponsiveComponent'
+import { hp, wp } from '../ResponsiveComponent'
 import { CustomButton } from '../CustomButton'
 import useEnterAmount from './Hooks'
 import PoppinsText from '../PoppinsText'
@@ -13,7 +13,8 @@ import { Images } from '../../Images'
 import Spacer from '../Spacer'
 
 
-const EnterAmount = ({ props, tokenLogo, tokenName, dollarAmount, infoLogo, feeDollarAmmount, onPressInfo }) => {
+const EnterAmount = ({ props, tokenLogo, chainLogo, tokenName, dropDown, dollarAmount, infoLogo,
+    feeDollarAmmount, details, arrowDown, btnTitle, onPressInfo, customCenterButton, customButton, onPressDetails }) => {
     const {
         selectedToken,
         enteredAmount, setEnteredAmount,
@@ -121,17 +122,25 @@ const EnterAmount = ({ props, tokenLogo, tokenName, dollarAmount, infoLogo, feeD
 
             <View style={{ paddingBottom: hp(3) }}>
 
-
-
-
                 {tokenLogo ?
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.row, }}>
-                        <View style={appStyles.rowBasic}>
-                            <Image source={tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
-                            <PoppinsText style={styles.tokenName}>{tokenName}</PoppinsText>
-                        </View>
-                        <PoppinsText style={styles.dollarAmount}>{dollarAmount}</PoppinsText>
-                    </TouchableOpacity>
+                    <View style={{ ...appStyles.row, }}>
+                        <TouchableOpacity activeOpacity={0.8} style={appStyles.rowBasic}>
+                            <View style={{ marginRight: wp(1) }}>
+                                <Image source={tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
+                                <Image source={chainLogo} resizeMode='contain' style={styles.chainLogo} />
+                            </View>
+                            <View style={appStyles.rowBasic}>
+                                <PoppinsText style={styles.tokenName}>{tokenName}</PoppinsText>
+                                {dropDown ?
+                                    <Image source={dropDown} resizeMode='contain' style={styles.dropDown} />
+                                    : null}
+
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                            <PoppinsText style={styles.dollarAmount}>{dollarAmount}</PoppinsText>
+                        </TouchableOpacity>
+                    </View>
                     :
                     <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={{ ...appStyles.rowBasic, }}>
                         <Image source={Images.cardWithRound} resizeMode='contain' style={styles.cardWithRound} />
@@ -142,7 +151,13 @@ const EnterAmount = ({ props, tokenLogo, tokenName, dollarAmount, infoLogo, feeD
                 }
 
                 <Spacer />
-                <RowTabsView selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+                {enteredAmount <= 0 ?
+                    <RowTabsView selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+                    :
+                    customCenterButton ?
+                        <CustomButton title={btnTitle ? btnTitle : 'Continue'} onPress={() => { }} />
+                        : null
+                }
 
                 <CustomKeyboard
                     enteKey={enterkey}
@@ -186,12 +201,20 @@ const EnterAmount = ({ props, tokenLogo, tokenName, dollarAmount, infoLogo, feeD
                         <TouchableOpacity activeOpacity={0.8} onPress={onPressInfo} style={{ ...appStyles.rowBasic, justifyContent: 'center' }}>
                             <PoppinsText style={styles.feeDollarAmmount}>{feeDollarAmmount} fee</PoppinsText>
                             <Image source={infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                            {details ?
+                                <TouchableOpacity activeOpacity={0.8} onPress={onPressDetails} style={appStyles.rowBasic}>
+                                    <PoppinsText style={styles.feeDollarAmmount}>{details}</PoppinsText>
+                                    <Image source={arrowDown} resizeMode='contain' style={styles.arrowDown} />
+                                </TouchableOpacity>
+                                : null}
                         </TouchableOpacity>
                         <Spacer customHeight={hp(1)} />
 
                     </>
                     :
-                    <CustomButton title={'Continue'} onPress={() => { }} />
+                    customButton && enteredAmount > 0 ?
+                        <CustomButton title={btnTitle ? btnTitle : 'Continue'} onPress={() => { }} />
+                        : null
                 }
 
             </View>

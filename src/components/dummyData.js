@@ -816,3 +816,28 @@ export const TokenDetailsRowTabs = [
     },
 
 ]
+
+export const buyTokenDetailsOptions = [
+    {
+        id: 1,
+        title: "Pricing",
+        infoLogo: Images.infoLogo,
+        rightText: "1SOL219.49 USDC",
+        rightArrow: Images.arrowRight
+    },
+    {
+        id: 2,
+        title: "Slippage",
+        infoLogo: Images.infoLogo,
+        rightText: "Auto-1.1%",
+        rightArrow: Images.arrowRight
+    },
+    // {
+    //     id: 3,
+    //     title: "Price Impact",
+    //     infoLogo: Images.infoLogo,
+    //     rightText: "",
+    //     rightArrow: '--'
+    // },
+]
+

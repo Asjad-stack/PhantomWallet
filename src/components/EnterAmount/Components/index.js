@@ -77,17 +77,17 @@ export const EnterAmountView = ({
     );
 };
 
-export const RowTabsView = ({ selectedTab, setSelectedTab }) => {
+export const RowTabsView = ({ setSelectedTab }) => {
     return (
         <View style={appStyles.row}>
             <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('$25')} style={styles.tabBgView}>
-                <PoppinsText style={styles.tabText}>$25</PoppinsText>
+                <PoppinsText style={styles.tabText}>{'$25'}</PoppinsText>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('$50')} style={styles.tabBgView}>
-                <PoppinsText style={styles.tabText}>$50</PoppinsText>
+                <PoppinsText style={styles.tabText}>{'$50'}</PoppinsText>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('$100')} style={styles.tabBgView}>
-                <PoppinsText style={styles.tabText}>$100</PoppinsText>
+                <PoppinsText style={styles.tabText}>{'$100'}</PoppinsText>
             </TouchableOpacity>
         </View>
     )

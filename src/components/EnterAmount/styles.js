@@ -51,14 +51,26 @@ export const styles = StyleSheet.create({
         height: wp(2.5),
     },
     tokenLogo: {
-        width: wp(6),
-        height: wp(6),
-        marginRight: wp(3)
+        width: wp(8),
+        height: wp(8),
+        marginRight: wp(2)
+    },
+    chainLogo: {
+        width: wp(4),
+        height: wp(4),
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
     },
     tokenName: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray88,
+    },
+    dropDown: {
+        width: wp(2),
+        height: wp(1.5),
+        marginLeft: wp(2)
     },
     dollarAmount: {
         fontSize: 13,
@@ -75,5 +87,10 @@ export const styles = StyleSheet.create({
         width: wp(4),
         height: wp(3),
         marginLeft: wp(2)
-    }
+    },
+    arrowDown: {
+        width: wp(2.5),
+        height: wp(1.5),
+        marginLeft: wp(2)
+    },
 });

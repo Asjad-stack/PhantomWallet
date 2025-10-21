@@ -105,8 +105,6 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.selectAvatar} component={SelectAvatar} />
             <Stack.Screen name={routes.buyMain} component={BuyMain} />
 
-
-
         </Stack.Navigator>
     );
 }

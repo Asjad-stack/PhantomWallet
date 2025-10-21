@@ -26,7 +26,7 @@ const BuyTokenAmount = (props) => {
                     </TouchableOpacity>
                 </View>
                 <Spacer />
-                <EnterAmount />
+                <EnterAmount customButton={true} />
             </View>
         </AppContainer>
     )
