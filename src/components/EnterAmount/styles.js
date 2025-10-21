@@ -35,6 +35,12 @@ export const styles = StyleSheet.create({
         includeFontPadding: false,
         textAlign: 'center',
     },
+    dollarCurrentAmoun: {
+        fontSize: 12,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray24,
+        textAlign: 'center',
+    },
     cardWithRound: {
         width: wp(7),
         height: wp(7),

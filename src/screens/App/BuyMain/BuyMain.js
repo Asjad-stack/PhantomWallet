@@ -22,7 +22,7 @@ const BuyMain = (props) => {
                 <EnterAmount
                     tokenLogo={Images.tokenLogo} chainLogo={Images.solanaRound}
                     tokenName={sellTokenFlow ? 'Receive USDC' : 'Pay USDC'} dropDown={Images.arrowDown}
-                    dollarAmount={'$0.00 ↑↓'}
+                    dollarAmount={'$0.00'}
                     feeDollarAmmount={'$0.03 +0.85%'}
                     details={'Details'}
                     arrowDown={Images.arrowDown}

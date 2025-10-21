@@ -115,7 +115,7 @@ const EnterAmount = ({ props, tokenLogo, chainLogo, tokenName, dropDown, dollarA
                                 </PoppinsText>
                             </View>
                         </View>
-
+                        <PoppinsText style={styles.dollarCurrentAmoun}>0 SOL</PoppinsText>
                     </View>
                 </View>
             </View>
