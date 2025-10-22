@@ -905,3 +905,29 @@ export const stakeOptionData = [
 ]
 
 
+export const trendingTokensTabsOptions = [
+    {
+        id: 1,
+        title: 'Rank',
+        dropDown: Images.arrowDown,
+    },
+    {
+        id: 2,
+        title: 'Solana',
+        dropDown: Images.arrowDown,
+    },
+    {
+        id: 3,
+        title: '24h',
+        dropDown: Images.arrowDown,
+    },
+]
+
+export const trendingTokenHoldersData = [
+    { id: 1, name: 'SOLHolder', mc: '$412K MC', price: '$0.00041166', change: '+5,826.10%', logo: Images.solHolder },
+    { id: 2, name: 'HISS', mc: '$552K MC', price: '$0.00000147', change: '+11.71%', logo: Images.hiss },
+    { id: 3, name: 'PANDU', mc: '$15M MC', price: '$0.00015074', change: '-8.96%', logo: Images.pandu },
+    { id: 4, name: 'VWA', mc: '$7.5M MC', price: '$0.00751935', change: '+2.22%', logo: Images.vwa },
+    { id: 5, name: 'Anon', mc: '$1.2M MC', price: '$0.00027636', change: '+0.00%', logo: Images.pandu },
+]
+

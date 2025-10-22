@@ -155,5 +155,14 @@ export const Images = {
     stakingWithGreenRound: require('./stakingWithGreenRound.png'),
     suiWithGreenRound: require('./suiWithGreenRound.png'),
     recomended: require('./recomended.png'),
+    solHolder: require('./solHolder.png'),
+    hiss: require('./hiss.png'),
+    pandu: require('./pandu.png'),
+    vwa: require('./vwa.png'),
+    badgeFirst: require('./badgeFirst.png'),
+    badgeSecond: require('./badgeSecond.png'),
+    badgeThird: require('./badgeThird.png'),
+    swapLogo: require('./swapLogo.png'),
+    swapActiveBtn: require('./swapActiveBtn.png'),
 
 }

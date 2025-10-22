@@ -64,6 +64,7 @@ import YouPay from "./YouPay/YouPay";
 import StakeTokensEarnAwards from "./StakeTokensEarnAwards/StakeTokensEarnAwards";
 import EnterStakeSolAmount from "./EnterStakeSolAmount/EnterStakeSolAmount";
 import SendConfirmationScreen from "./SendConfirmationScreen/SendConfirmationScreen";
+import SwapMain from "./SwapMain/SwapMain";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -115,4 +116,5 @@ export {
     StakeTokensEarnAwards,
     EnterStakeSolAmount,
     SendConfirmationScreen,
+    SwapMain,
 }

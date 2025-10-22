@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HistoryScreen, HomeScreen, Reward, SearchScreen, Settings } from '../screens/App';
+import { HistoryScreen, HomeScreen, SearchScreen, Settings, SwapMain } from '../screens/App';
 import { routes } from '../constants/routes';
 import { StyleSheet, TouchableOpacity, View, Image, Platform, } from 'react-native';
 import { hp, wp } from '../components/ResponsiveComponent';
@@ -87,8 +87,8 @@ function BottomTabBarNav({ navigation }) {
         />
 
         <Tab.Screen
-          name={routes.rewardScreen}
-          component={Reward}
+          name={routes.swapMain}
+          component={SwapMain}
           options={{
             tabBarButton: (props) => (
               <TouchableOpacity
@@ -103,7 +103,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.swapUnActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.swapActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}

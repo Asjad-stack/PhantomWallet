@@ -41,6 +41,7 @@ import {
     StakeTokensEarnAwards,
     EnterStakeSolAmount,
     SendConfirmationScreen,
+    SwapMain,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -120,6 +121,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.stakeTokensEarnAwards} component={StakeTokensEarnAwards} />
             <Stack.Screen name={routes.enterStakeSolAmount} component={EnterStakeSolAmount} />
             <Stack.Screen name={routes.sendConfirmationScreen} component={SendConfirmationScreen} />
+            <Stack.Screen name={routes.swapMain} component={SwapMain} />
 
         </Stack.Navigator>
     );

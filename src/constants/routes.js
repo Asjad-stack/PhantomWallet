@@ -22,7 +22,7 @@ export const routes = {
 
     // AppNavigation
     historyScreen: "historyScreen",
-    rewardScreen: "rewardScreen",
+    swapMain: "swapMain",
     settingScreen: "settingScreen",
     historyDetails: "historyDetails",
     rewardInfoScreen: "rewardInfoScreen",

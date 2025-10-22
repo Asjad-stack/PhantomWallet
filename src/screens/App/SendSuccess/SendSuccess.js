@@ -9,7 +9,9 @@ import PoppinsText from '../../../components/PoppinsText'
 import { CustomButton } from '../../../components/CustomButton'
 import { colors } from '../../../constants/colors'
 
-const SendSuccess = () => {
+const SendSuccess = (props) => {
+    const previousScreen = props?.route?.params?.screenName
+    console.log(previousScreen, 'previousScreenpreviousScreenpreviousScreen');
     return (
         <MainContainerApp>
             <Spacer customHeight={hp(6)} />
@@ -17,9 +19,9 @@ const SendSuccess = () => {
                 <View style={{ flex: 1, justifyContent: 'center' }}>
                     <Image source={Images.tickGreenCircle} resizeMode='contain' style={styles.tickGreenCircle} />
                     <Spacer customHeight={hp(1)} />
-                    <PoppinsText style={styles.sentText}>{'Sent'}</PoppinsText>
+                    <PoppinsText style={styles.sentText}>{previousScreen === 'Swap' ? 'Swap!' : 'Sent'}</PoppinsText>
                     <Spacer customHeight={hp(0.5)} />
-                    <PoppinsText style={styles.sentText1}>{'0.011030096 SOL was successfully sent to EXrs...P4ok'}</PoppinsText>
+                    <PoppinsText style={styles.sentText1}>{previousScreen === 'Swap' ? '0.011030096 SOL was successfully swap to EXrs...P4ok' : '0.011030096 SOL was successfully sent to EXrs...P4ok'}</PoppinsText>
                     <Spacer customHeight={hp(1)} />
                     <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
                         <PoppinsText style={styles.viewTransactionText}>{'View transaction'}</PoppinsText>
