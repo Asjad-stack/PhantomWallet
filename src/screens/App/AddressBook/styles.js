@@ -23,5 +23,18 @@ export const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.Regular,
         color: colors.gray6,
         textAlign: 'center'
+    },
+    addAddressButton: {
+        width: wp(22.5),
+        borderRadius: 8.75,
+        padding: wp(1.5),
+        backgroundColor: colors.gray23,
+        alignSelf: 'center'
+    },
+    addAddressText: {
+        fontSize: 11,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray36,
+        textAlign: 'center'
     }
 })

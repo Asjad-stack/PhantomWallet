@@ -22,6 +22,10 @@ const AddressBook = (props) => {
                     <Spacer customHeight={hp(1)} />
                     <PoppinsText style={styles.description}>Click the "+" or "Add Address" buttons to add your
                         favorite addresses</PoppinsText>
+                    <Spacer />
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={styles.addAddressButton}>
+                        <PoppinsText style={styles.addAddressText}>Add Address</PoppinsText>
+                    </TouchableOpacity>
                 </View>
             </View>
         </AppContainer>
