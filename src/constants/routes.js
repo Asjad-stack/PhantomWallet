@@ -101,6 +101,7 @@ export const routes = {
     appIcon: "appIcon",
     preferedBitcoinAddress: "preferedBitcoinAddress",
     motionLevel: "motionLevel",
-    addressBook: "addressBook"
+    addressBook: "addressBook",
+    connectedApps: "connectedApps"
 
 }

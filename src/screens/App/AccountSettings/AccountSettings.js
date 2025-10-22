@@ -57,7 +57,7 @@ const AccountSettings = (props) => {
                         title3={'Connected Apps'}
                         onPress1={() => { }}
                         onPress2={() => props?.navigation.navigate(routes.addressBook)}
-                        onPress3={() => { }}
+                        onPress3={() => props?.navigation.navigate(routes.connectedApps)}
                     />
                     <Spacer />
                     <View style={[styles.bgView, appStyles.row]}>

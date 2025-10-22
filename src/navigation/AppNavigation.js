@@ -49,6 +49,7 @@ import {
     PreferedBitcoinAddress,
     MotionLevel,
     AddressBook,
+    ConnectedApps,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -136,6 +137,7 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.preferedBitcoinAddress} component={PreferedBitcoinAddress} />
             <Stack.Screen name={routes.motionLevel} component={MotionLevel} />
             <Stack.Screen name={routes.addressBook} component={AddressBook} />
+            <Stack.Screen name={routes.connectedApps} component={ConnectedApps} />
         </Stack.Navigator>
     );
 }

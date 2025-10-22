@@ -72,7 +72,7 @@ import AppIcon from "./AppIcon/AppIcon";
 import PreferedBitcoinAddress from "./PreferedBitcoinAddress/PreferedBitcoinAddress";
 import MotionLevel from "./MotionLevel/MotionLevel";
 import AddressBook from "./AddressBook/AddressBook";
-
+import ConnectedApps from "./ConnectedApps/ConnectedApps";
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
     Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
@@ -130,5 +130,7 @@ export {
     AppIcon,
     PreferedBitcoinAddress,
     MotionLevel,
-    AddressBook
+    AddressBook,
+    ConnectedApps
+
 }
