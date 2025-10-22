@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HistoryScreen, HomeScreen, SearchScreen, Settings, SwapMain } from '../screens/App';
+import { Activities, HistoryScreen, HomeScreen, SearchScreen, Settings, SwapMain } from '../screens/App';
 import { routes } from '../constants/routes';
 import { StyleSheet, TouchableOpacity, View, Image, Platform, } from 'react-native';
 import { hp, wp } from '../components/ResponsiveComponent';
@@ -80,7 +80,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.wifiUnActiveBtn : Images.wifiUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.wifiUnActiveBtn : Images.wifiUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}
@@ -110,8 +110,8 @@ function BottomTabBarNav({ navigation }) {
         />
 
         <Tab.Screen
-          name={routes.settingScreen}
-          component={Settings}
+          name={routes.activities}
+          component={Activities}
           options={{
             tabBarButton: (props) => (
               <TouchableOpacity
@@ -127,7 +127,7 @@ function BottomTabBarNav({ navigation }) {
             tabBarIcon: ({ focused }) =>
               <View style={{}}>
                 <View style={{}}>
-                  <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                  <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}
