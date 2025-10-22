@@ -65,6 +65,10 @@ import StakeTokensEarnAwards from "./StakeTokensEarnAwards/StakeTokensEarnAwards
 import EnterStakeSolAmount from "./EnterStakeSolAmount/EnterStakeSolAmount";
 import SendConfirmationScreen from "./SendConfirmationScreen/SendConfirmationScreen";
 import SwapMain from "./SwapMain/SwapMain";
+import AccountSettings from "./AccountSettings/AccountSettings";
+import Preferences from "./Preferences/Preferences";
+import PreferedExplorer from "./PreferedExplorer/PreferedExplorer";
+import AppIcon from "./AppIcon/AppIcon";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -117,4 +121,8 @@ export {
     EnterStakeSolAmount,
     SendConfirmationScreen,
     SwapMain,
+    AccountSettings,
+    Preferences,
+    PreferedExplorer,
+    AppIcon,
 }

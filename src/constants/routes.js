@@ -94,6 +94,10 @@ export const routes = {
     youPay: "youPay",
     stakeTokensEarnAwards: "stakeTokensEarnAwards",
     enterStakeSolAmount: "enterStakeSolAmount",
-    sendConfirmationScreen: "sendConfirmationScreen"
+    sendConfirmationScreen: "sendConfirmationScreen",
+    accountSettings: "accountSettings",
+    preferences: "preferences",
+    preferedExplorer: "preferedExplorer",
+    appIcon: "appIcon"
 
 }

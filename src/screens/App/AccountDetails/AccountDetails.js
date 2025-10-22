@@ -16,7 +16,7 @@ const AccountDetails = (props) => {
                 <Spacer />
                 <AddAccountHeader onPressCross={() => props?.navigation.goBack()} />
                 <Spacer />
-                <RowTabs onPressProfile={() => props?.navigation.navigate(routes.editProfile)} onPressSettings={() => { }} />
+                <RowTabs onPressProfile={() => props?.navigation.navigate(routes.editProfile)} onPressSettings={() => props?.navigation.navigate(routes.accountSettings)} />
                 <Spacer />
                 <PoppinsText style={styles.title}>Your Accounts</PoppinsText>
                 <Spacer />

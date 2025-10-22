@@ -42,6 +42,10 @@ import {
     EnterStakeSolAmount,
     SendConfirmationScreen,
     SwapMain,
+    AccountSettings,
+    Preferences,
+    PreferedExplorer,
+    AppIcon,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -122,6 +126,10 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.enterStakeSolAmount} component={EnterStakeSolAmount} />
             <Stack.Screen name={routes.sendConfirmationScreen} component={SendConfirmationScreen} />
             <Stack.Screen name={routes.swapMain} component={SwapMain} />
+            <Stack.Screen name={routes.accountSettings} component={AccountSettings} />
+            <Stack.Screen name={routes.preferences} component={Preferences} />
+            <Stack.Screen name={routes.preferedExplorer} component={PreferedExplorer} />
+            <Stack.Screen name={routes.appIcon} component={AppIcon} />
 
         </Stack.Navigator>
     );
