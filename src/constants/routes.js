@@ -98,6 +98,9 @@ export const routes = {
     accountSettings: "accountSettings",
     preferences: "preferences",
     preferedExplorer: "preferedExplorer",
-    appIcon: "appIcon"
+    appIcon: "appIcon",
+    preferedBitcoinAddress: "preferedBitcoinAddress",
+    motionLevel: "motionLevel",
+    addressBook: "addressBook"
 
 }

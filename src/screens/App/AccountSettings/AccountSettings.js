@@ -56,7 +56,7 @@ const AccountSettings = (props) => {
                         leftImage3={Images.triangles}
                         title3={'Connected Apps'}
                         onPress1={() => { }}
-                        onPress2={() => { }}
+                        onPress2={() => props?.navigation.navigate(routes.addressBook)}
                         onPress3={() => { }}
                     />
                     <Spacer />

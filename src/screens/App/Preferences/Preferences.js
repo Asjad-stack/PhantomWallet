@@ -27,9 +27,9 @@ const Preferences = (props) => {
                     <Spacer />
                     <RowView title={'App Icon'} rightImage={Images.arrowRight} onPress={() => props?.navigation.navigate(routes.appIcon)} />
                     <Spacer />
-                    <RowView title={'Preferred Bitcoin Address'} rightImage={Images.arrowRight} onPress={() => { }} />
+                    <RowView title={'Preferred Bitcoin Address'} rightImage={Images.arrowRight} onPress={() => props?.navigation.navigate(routes.preferedBitcoinAddress)} />
                     <Spacer />
-                    <RowView title={'Motion Level'} rightText={'Auto (Full)'} rightImage={Images.arrowRight} onPress={() => { }} />
+                    <RowView title={'Motion Level'} rightText={'Auto (Full)'} rightImage={Images.arrowRight} onPress={() => props?.navigation.navigate(routes.motionLevel)} />
                     <Spacer />
                 </View>
             </View>

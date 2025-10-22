@@ -178,5 +178,7 @@ export const Images = {
     defaultAppIcon: require('./defaultAppIcon.png'),
     lightAppIcon: require('./lightAppIcon.png'),
     darkAppIcon: require('./darkAppIcon.png'),
+    simplePlus: require('./simplePlus.png'),
+    plusWithBlackRound: require('./plusWithBlackRound.png'),
 
 }

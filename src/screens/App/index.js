@@ -69,6 +69,9 @@ import AccountSettings from "./AccountSettings/AccountSettings";
 import Preferences from "./Preferences/Preferences";
 import PreferedExplorer from "./PreferedExplorer/PreferedExplorer";
 import AppIcon from "./AppIcon/AppIcon";
+import PreferedBitcoinAddress from "./PreferedBitcoinAddress/PreferedBitcoinAddress";
+import MotionLevel from "./MotionLevel/MotionLevel";
+import AddressBook from "./AddressBook/AddressBook";
 
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
@@ -125,4 +128,7 @@ export {
     Preferences,
     PreferedExplorer,
     AppIcon,
+    PreferedBitcoinAddress,
+    MotionLevel,
+    AddressBook
 }
