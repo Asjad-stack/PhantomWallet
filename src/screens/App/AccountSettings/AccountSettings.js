@@ -44,7 +44,7 @@ const AccountSettings = (props) => {
                         title3={'Security & Privacy'}
                         onPress1={() => { }}
                         onPress2={() => props?.navigation.navigate(routes.preferences)}
-                        onPress3={() => { }}
+                        onPress3={() => props?.navigation.navigate(routes.securityAndPrivacy)}
                     />
                     <Spacer />
                     <AccountSettingCard
@@ -55,18 +55,18 @@ const AccountSettings = (props) => {
                         title2={'Address Book'}
                         leftImage3={Images.triangles}
                         title3={'Connected Apps'}
-                        onPress1={() => { }}
+                        onPress1={() => props?.navigation.navigate(routes.activeNetworks)}
                         onPress2={() => props?.navigation.navigate(routes.addressBook)}
                         onPress3={() => props?.navigation.navigate(routes.connectedApps)}
                     />
                     <Spacer />
-                    <View style={[styles.bgView, appStyles.row]}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.developerSettings)} style={[styles.bgView, appStyles.row]}>
                         <View style={appStyles.rowBasic}>
                             <Image source={Images.arrowWithLine} resizeMode='contain' style={styles.arrowWithLine} />
                             <PoppinsText style={styles.developerText}>{'Developer Settings'}</PoppinsText>
                         </View>
                         <Image source={Images.arrowRight} resizeMode='contain' style={styles.arrowRight} />
-                    </View>
+                    </TouchableOpacity>
                     <Spacer />
                     <AccountSettingCard
                         leftImage1={Images.purpleQuestionMark}
@@ -80,7 +80,7 @@ const AccountSettings = (props) => {
                         rightImage2={Images.inviteLogo}
                         onPress1={() => { }}
                         onPress2={() => { }}
-                        onPress3={() => { }}
+                        onPress3={() => props?.navigation.navigate(routes.aboutPhantom)}
                     />
                     <Spacer customHeight={hp(5)} />
                 </ScrollView>

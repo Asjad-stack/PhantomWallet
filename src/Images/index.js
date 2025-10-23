@@ -180,5 +180,8 @@ export const Images = {
     darkAppIcon: require('./darkAppIcon.png'),
     simplePlus: require('./simplePlus.png'),
     plusWithBlackRound: require('./plusWithBlackRound.png'),
+    phantomWhiteLogo: require('./phantomWhiteLogo.png'),
+    colorFullArrowWithRound: require('./colorFullArrowWithRound.png'),
+    deleteWithRedRound: require('./deleteWithRedRound.png'),
 
 }

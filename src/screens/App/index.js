@@ -73,6 +73,18 @@ import PreferedBitcoinAddress from "./PreferedBitcoinAddress/PreferedBitcoinAddr
 import MotionLevel from "./MotionLevel/MotionLevel";
 import AddressBook from "./AddressBook/AddressBook";
 import ConnectedApps from "./ConnectedApps/ConnectedApps";
+import DeveloperSettings from "./DeveloperSettings/DeveloperSettings";
+import AboutPhantom from "./AboutPhantom/AboutPhantom";
+import DisplayLanguages from "./DisplayLanguages/DisplayLanguages";
+import Currencies from "./Currencies/Currencies";
+import SecurityAndPrivacy from "./SecurityAndPrivacy/SecurityAndPrivacy";
+import ResetPin from "./ResetPin/ResetPin";
+import RequireAuthentication from "./RequireAuthentication/RequireAuthentication";
+import BlockedAccounts from "./BlockedAccounts/BlockedAccounts";
+import DownloadAppLogs from "./DownloadAppLogs/DownloadAppLogs";
+import DeleteWallet from "./DeleteWallet/DeleteWallet";
+import ActiveNetworks from "./ActiveNetworks/ActiveNetworks";
+
 export {
     HistoryScreen, Settings, Reward, HistoryDetails, RewardInfo, Security, TermsAndServices, DeleteAccount, WalletConnect,
     Notifications, ImportTokens, Receive, TokenAddress, SendTokens, SendTokenAddress, SendTokensAmount, SendConfirmation, TokenDetails,
@@ -131,6 +143,17 @@ export {
     PreferedBitcoinAddress,
     MotionLevel,
     AddressBook,
-    ConnectedApps
+    ConnectedApps,
+    DeveloperSettings,
+    AboutPhantom,
+    DisplayLanguages,
+    Currencies,
+    SecurityAndPrivacy,
+    ResetPin,
+    RequireAuthentication,
+    BlockedAccounts,
+    DownloadAppLogs,
+    DeleteWallet,
+    ActiveNetworks
 
 }

@@ -35,7 +35,7 @@ const SplashScreen = ({ navigation }) => {
           console.log('Existing user found - wallet and PIN exist');
           // User exists with wallet and PIN, navigate to PIN verification screen
           // navigation.replace(routes.pinVerificationScreen);
-          navigation.replace(routes.appStack);
+          navigation.replace(routes.authStack);
         } else {
           console.log('New user - wallet or PIN missing');
           // New user, navigate to onboarding

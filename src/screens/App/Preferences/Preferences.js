@@ -16,8 +16,8 @@ const Preferences = (props) => {
                 <AppHeader leftImage={Images.backArrow} title={'Preferences'} onPressBack={() => props?.navigation.goBack()} />
                 <Spacer customHeight={hp(4)} />
                 <PreferencesCard
-                    title1={'Preferences'} rightText1={'Preferences'} onPress1={() => { }}
-                    tittle2={'Currency'} rightText2={'United States Dollar'} onPress2={() => { }}
+                    title1={'Display Language'} rightText1={'English'} onPress1={() => props.navigation.navigate(routes.displayLanguages)}
+                    tittle2={'Currency'} rightText2={'United States Dollar'} onPress2={() => props.navigation.navigate(routes.currencies)}
                 />
                 <Spacer />
                 <View style={{ paddingHorizontal: wp(4) }}>

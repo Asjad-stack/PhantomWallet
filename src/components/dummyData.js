@@ -931,3 +931,104 @@ export const trendingTokenHoldersData = [
     { id: 5, name: 'Anon', mc: '$1.2M MC', price: '$0.00027636', change: '+0.00%', logo: Images.pandu },
 ]
 
+export const languages = [
+    { id: 1, name: 'English', code: 'en' },
+    { id: 2, name: 'Español', code: 'es' },
+    { id: 3, name: 'Deutsch', code: 'de' },
+    { id: 4, name: 'Français', code: 'fr' },
+    { id: 5, name: 'Italiano', code: 'it' },
+    { id: 6, name: '中文(简体)', code: 'zh-Hans' },
+    { id: 7, name: '中文(繁體)', code: 'zh-Hant' },
+    { id: 8, name: 'गाएला', code: 'ne' },
+    { id: 9, name: '日本語', code: 'ja' },
+    { id: 10, name: '한국어', code: 'ko' },
+    { id: 11, name: 'Русский', code: 'ru' },
+    { id: 12, name: 'हिंदी', code: 'hi' },
+    { id: 13, name: 'Indonesia', code: 'id' },
+    { id: 14, name: 'Melayu', code: 'ms' },
+    { id: 15, name: 'ไทย', code: 'th' },
+];
+
+export const currencies = [
+    { id: 1, name: 'USD - United States Dollar ($)', code: 'USD', symbol: '$' },
+    { id: 2, name: 'EUR - Euro (€)', code: 'EUR', symbol: '€' },
+    { id: 3, name: 'DZD - Algerian Dinar (دج)', code: 'DZD', symbol: 'دج' },
+    { id: 4, name: 'ARS - Argentine Peso (AR$)', code: 'ARS', symbol: 'AR$' },
+    { id: 5, name: 'AUD - Australian Dollar (A$)', code: 'AUD', symbol: 'A$' },
+    { id: 6, name: 'BRL - Brazilian Real (R$)', code: 'BRL', symbol: 'R$' },
+    { id: 7, name: 'GBP - British Pound (£)', code: 'GBP', symbol: '£' },
+    { id: 8, name: 'BGN - Bulgarian Lev (лв)', code: 'BGN', symbol: 'лв' },
+    { id: 9, name: 'CAD - Canadian Dollar (CA$)', code: 'CAD', symbol: 'CA$' },
+    { id: 10, name: 'CNY - Chinese Renminbi Yuan (¥)', code: 'CNY', symbol: '¥' },
+    { id: 11, name: 'COP - Colombian Peso ($)', code: 'COP', symbol: '$' },
+    { id: 12, name: 'CZK - Czech Koruna (Kč)', code: 'CZK', symbol: 'Kč' },
+    { id: 13, name: 'DKK - Danish Krone (kr)', code: 'DKK', symbol: 'kr' },
+    { id: 14, name: 'EGP - Egyptian Pound (E£)', code: 'EGP', symbol: 'E£' },
+    { id: 15, name: 'HKD - Hong Kong Dollar (HK$)', code: 'HKD', symbol: 'HK$' },
+];
+
+export const notificationTimes = [
+    { id: 1, label: 'Immediately', value: 0 },
+    { id: 2, label: '1 minute', value: 1 },
+    { id: 3, label: '5 minutes', value: 5 },
+    { id: 4, label: '10 minutes', value: 10 },
+    { id: 5, label: '15 minutes', value: 15 },
+    { id: 6, label: '30 minutes', value: 30 },
+    { id: 7, label: '1 hour', value: 60 },
+    { id: 8, label: '4 hours', value: 240 },
+    { id: 9, label: '8 hours', value: 480 },
+    { id: 10, label: '1 day', value: 1440 },
+];
+
+export const networks = [
+    {
+        id: 1,
+        name: 'Solana',
+        symbol: 'SOL',
+        logo: Images.solanaLogo,
+        isSelected: true,
+    },
+    {
+        id: 2,
+        name: 'Ethereum',
+        symbol: 'ETH',
+        logo: Images.ethereumLogo,
+        isSelected: true,
+    },
+    {
+        id: 3,
+        name: 'Monad',
+        symbol: 'MON',
+        logo: Images.monadLogo,
+        isSelected: false,
+        testnet: true,
+    },
+    {
+        id: 4,
+        name: 'Base',
+        symbol: 'BASE',
+        logo: Images.baseLogo,
+        isSelected: false,
+    },
+    {
+        id: 5,
+        name: 'Sui',
+        symbol: 'SUI',
+        logo: Images.suiLogo,
+        isSelected: true,
+    },
+    {
+        id: 6,
+        name: 'Polygon',
+        symbol: 'MATIC',
+        logo: Images.polygonLogo,
+        isSelected: true,
+    },
+    {
+        id: 7,
+        name: 'Bitcoin',
+        symbol: 'BTC',
+        logo: Images.bitcoinLogo,
+        isSelected: false,
+    },
+];

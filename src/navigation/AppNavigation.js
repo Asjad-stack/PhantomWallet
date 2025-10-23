@@ -50,10 +50,22 @@ import {
     MotionLevel,
     AddressBook,
     ConnectedApps,
+    DeveloperSettings,
+    AboutPhantom,
+    DisplayLanguages,
+    Currencies,
+    SecurityAndPrivacy,
+    ResetPin,
+    RequireAuthentication,
+    BlockedAccounts,
+    DownloadAppLogs,
+    DeleteWallet,
+    ActiveNetworks,
 } from '../screens/App';
 import BottomTabBarNav from './BottomTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ImportPrivateKey, PinScreen, SeedPhrase } from '../screens/Auth';
+import ResetApp from '../screens/App/ResetApp/ResetApp';
 
 const Stack = createStackNavigator();
 
@@ -138,6 +150,18 @@ const AppNavigator = () => {
             <Stack.Screen name={routes.motionLevel} component={MotionLevel} />
             <Stack.Screen name={routes.addressBook} component={AddressBook} />
             <Stack.Screen name={routes.connectedApps} component={ConnectedApps} />
+            <Stack.Screen name={routes.developerSettings} component={DeveloperSettings} />
+            <Stack.Screen name={routes.aboutPhantom} component={AboutPhantom} />
+            <Stack.Screen name={routes.displayLanguages} component={DisplayLanguages} />
+            <Stack.Screen name={routes.currencies} component={Currencies} />
+            <Stack.Screen name={routes.securityAndPrivacy} component={SecurityAndPrivacy} />
+            <Stack.Screen name={routes.resetPin} component={ResetPin} />
+            <Stack.Screen name={routes.requireAuthentication} component={RequireAuthentication} />
+            <Stack.Screen name={routes.blockedAccounts} component={BlockedAccounts} />
+            <Stack.Screen name={routes.downloadAppLogs} component={DownloadAppLogs} />
+            <Stack.Screen name={routes.deleteWallet} component={DeleteWallet} />
+            <Stack.Screen name={routes.resetApp} component={ResetApp} />
+            <Stack.Screen name={routes.activeNetworks} component={ActiveNetworks} />
         </Stack.Navigator>
     );
 }

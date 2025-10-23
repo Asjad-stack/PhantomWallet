@@ -102,6 +102,17 @@ export const routes = {
     preferedBitcoinAddress: "preferedBitcoinAddress",
     motionLevel: "motionLevel",
     addressBook: "addressBook",
-    connectedApps: "connectedApps"
-
+    connectedApps: "connectedApps",
+    developerSettings: "developerSettings",
+    aboutPhantom: "aboutPhantom",
+    displayLanguages: "displayLanguages",
+    currencies: "currencies",
+    securityAndPrivacy: "securityAndPrivacy",
+    resetPin: "resetPin",
+    requireAuthentication: "requireAuthentication",
+    blockedAccounts: "blockedAccounts",
+    downloadAppLogs: "downloadAppLogs",
+    deleteWallet: "deleteWallet",
+    resetApp: "resetApp",
+    activeNetworks: "activeNetworks"
 }
