@@ -62,18 +62,20 @@ function BottomTabBarNav({ navigation }) {
           }}
         />
 
-        <Tab.Screen
+        {/* <Tab.Screen
           name={routes.historyScreen}
           component={HistoryScreen}
           options={{
             tabBarButton: (props) => (
+              console.log(props, 'propspropspropspropspropspropspropspropsprops'),
               <TouchableOpacity
                 {...props}
                 activeOpacity={1}
                 style={{
                   padding: wp(4),
                   alignSelf: 'center',
-
+                  // borderTopWidth: focused ? 1 : 0,
+                  // borderTopColor: focused ? colors.lightPurple17 : 'transparent'
                 }}
               />
             ),
@@ -84,7 +86,7 @@ function BottomTabBarNav({ navigation }) {
                 </View>
               </View>
           }}
-        />
+        /> */}
 
         <Tab.Screen
           name={routes.swapMain}
@@ -185,3 +187,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   }
 });
+
+
+
+

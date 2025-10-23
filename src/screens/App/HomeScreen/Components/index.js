@@ -1,4 +1,4 @@
-import { FlatList, Image, ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Images } from '../../../../Images'
 import { hp, wp } from '../../../../components/ResponsiveComponent'
@@ -54,7 +54,7 @@ export const RowTabs = ({ onPressTab, }) => {
             removeClippedSubviews={false}
             ItemSeparatorComponent={() => <HorizontalSpacer customWidth={wp(1)} />}
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{}}
+            contentContainerStyle={{ width: wp(92) }}
             renderItem={({ item }) => {
                 return (
                     <TouchableOpacity activeOpacity={0.8} style={{}} onPress={() => onPressTab(item)}>
@@ -71,6 +71,7 @@ export const HorizontalSrcoll = ({ onPress, onPressCross }) => {
         <FlatList
             data={HorizontalSrcollList}
             horizontal
+            showsHorizontalScrollIndicator={false}
             ItemSeparatorComponent={() => <HorizontalSpacer customWidth={wp(2)} />}
             removeClippedSubviews={false}
             renderItem={({ item, index }) => {
@@ -100,33 +101,35 @@ export const PrepView = ({ }) => {
 }
 
 export const TokensCard = ({ tokenData, isLoading, onPressToken }) => {
-    // Show loading state or fallback to dummy data if no token data
-    const dataToShow = tokenData && tokenData.length > 0 ? tokenData : tokensData;
 
-    console.log('TokensCard tokenData:', tokenData);
+    const dataToShow = tokenData && tokenData.length > 0 ? tokenData : tokensData;
 
     return (
         <FlatList
             data={dataToShow}
             showsVerticalScrollIndicator={false}
             removeClippedSubviews={false}
-            ItemSeparatorComponent={() => <Spacer customHeight={hp(1.5)} />}
-            contentContainerStyle={{ paddingBottom: hp(20) }}
+            ItemSeparatorComponent={() => <Spacer customHeight={hp(1)} />}
+            contentContainerStyle={{ paddingBottom: hp(5) }}
             renderItem={({ item, index }) => {
+
+                console.log(item, 'iitemitemitemtem');
+
 
                 return (
                     <TouchableOpacity activeOpacity={0.8} onPress={() => onPressToken(item)} style={{ ...styles.tokenCardBgView, }}>
                         <View style={appStyles.row}>
                             <View style={appStyles.rowBasic}>
-                                <Image source={{ uri: String(item?.tokenLogo) }} resizeMode='contain' style={styles.tokenLogo} />
+                                {/* <Image source={{ uri: String(item?.tokenLogo) }} resizeMode='contain' style={styles.tokenLogo} /> */}
+                                <Image source={item?.tokenLogo} resizeMode='contain' style={styles.tokenLogo} />
                                 <View>
                                     <PoppinsText style={styles.tokenName}>{item?.tokenName}</PoppinsText>
-                                    <PoppinsText style={styles.tokenSymbol}>{item?.tokenSymbol}</PoppinsText>
+                                    <PoppinsText style={styles.tokenSymbol}>{item?.tokenSymbol ?? 'ETH'}</PoppinsText>
                                 </View>
                             </View>
                             <View>
-                                <PoppinsText style={styles.tokenPrice}>{item?.currentPrice}</PoppinsText>
-                                <PoppinsText style={styles.dollarPrice}>{item?.dollarPrice}</PoppinsText>
+                                <PoppinsText style={styles.tokenPrice}>{item?.currentPrice ?? '$2.46'}</PoppinsText>
+                                <PoppinsText style={styles.dollarPrice}>{item?.dollarPrice ?? '+0.10%'}</PoppinsText>
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -134,7 +137,6 @@ export const TokensCard = ({ tokenData, isLoading, onPressToken }) => {
                 )
             }}
         />
-
     )
 }
 
@@ -228,7 +230,7 @@ const styles = StyleSheet.create({
     },
     // TokensCard
     tokenCardBgView: {
-        width: wp(90),
+        width: wp(92),
         paddingHorizontal: wp(3),
         backgroundColor: colors.gray23,
         paddingVertical: hp(1.2),
@@ -251,20 +253,20 @@ const styles = StyleSheet.create({
         color: colors.gray7
     },
     tokenPrice: {
-        fontSize: 14,
-        fontFamily: Fonts.Poppins.Regular,
-        color: colors.white,
+        fontSize: 16,
+        fontFamily: Fonts.Poppins.Bold,
+        color: colors.gray87,
         textAlign: 'right'
     },
     dollarPrice: {
-        fontSize: 12,
+        fontSize: 11,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray7,
+        color: colors.green13,
         textAlign: 'right'
     },
     // HorizontalSrcoll
     horizontalBgView: {
-        width: wp(90),
+        width: wp(92),
         height: hp(8),
         backgroundColor: colors.gray40,
         borderRadius: 12,

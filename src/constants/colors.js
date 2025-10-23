@@ -193,4 +193,5 @@ export const colors = {
     lightPurple14: "#B6A9F2",
     lightPurple15: "#43405B",
     lightPurple16: "#AEA1E6",
+    lightPurple17: "#A3A6FC",
 }

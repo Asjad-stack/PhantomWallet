@@ -2,20 +2,34 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { BiometricPopup, CongratulationScreen, ImportWalletScreen, OnboardingScreen, FaceIdEnable, PinScreen, PinVerificationScreen, SeedPhrase, SplashScreen, ConfirmSeedPhrase, CreateWallet, ProtectWallet, ImportAccounts, ImportPrivateKey } from '../screens/Auth';
 import { routes } from '../constants/routes';
+import { colors } from '../constants/colors';
 
 const Stack = createStackNavigator();
 
 const AuthNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName={routes.splashScreen}
+      initialRouteName={routes.onBoarding}
       screenOptions={{
         headerShown: false,
+        cardStyle: { backgroundColor: colors.bgColor },
+        cardStyleInterpolator: ({ current, next, layouts }) => {
+          return {
+            cardStyle: {
+              transform: [
+                {
+                  translateX: current.progress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [layouts.screen.width, 0],
+                  }),
+                },
+              ],
+            },
+          };
+        },
       }}
     >
-      {/* <Stack.Screen name={routes.splashScreen} component={SplashScreen} />
-      <Stack.Screen name={routes.onBoarding} component={OnboardingScreen} /> */}
-      {/* <Stack.Screen name={routes.pinScreen} component={PinScreen} /> */}
+
       <Stack.Screen name={routes.pinVerificationScreen} component={PinVerificationScreen} />
       <Stack.Screen name={routes.importWallet} component={ImportWalletScreen} />
       <Stack.Screen name={routes.biometricPopup} component={BiometricPopup} />

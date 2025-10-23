@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 import { hp, wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
 import { colors } from '../../../constants/colors'
@@ -25,6 +25,14 @@ export const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.Regular,
         color: colors.yellow,
         textAlign: 'center'
+    },
+    inputContainer: {
+        width: wp(92),
+        borderRadius: 10,
+        alignSelf: 'center',
+        paddingVertical: Platform.OS === 'ios' ? hp(1.2) : hp(0.3),
+        backgroundColor: colors.gray23,
+        justifyContent: 'center',
     },
     btnView: {
         paddingHorizontal: wp(4),

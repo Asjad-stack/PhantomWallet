@@ -31,7 +31,7 @@ const OnboardingScreen = (props) => {
       </View>
       <View style={styles.btnView}>
         <TouchableOpacity activeOpacity={0.8} style={{ ...appStyles.rowBasic, alignSelf: 'center' }} onPress={() => setIsTermsAccepted(!isTermsAccepted)}>
-          <Image source={isTermsAccepted ? Images.radioUnFill : Images.radioUnFill} resizeMode='contain' style={styles.radioBtn} />
+          <Image source={isTermsAccepted ? Images.radioCheckRound : Images.radioUnFill} resizeMode='contain' style={styles.radioBtn} />
           <PoppinsText style={styles.termsText}>I agree to the{' '}
             <PoppinsText style={styles.termsText1}>Terms and Privacy Policy.</PoppinsText>
           </PoppinsText>

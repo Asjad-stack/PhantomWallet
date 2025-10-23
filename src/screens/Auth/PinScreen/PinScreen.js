@@ -29,7 +29,7 @@ const PinScreen = (props) => {
           <PoppinsText style={styles.pinDesc1}>This cannot be recovered.</PoppinsText>
         </PoppinsText>
         <Spacer />
-        <CustomTextInput placeholder={'....'} value={newPin} onChangeText={(text) => setNewPin(text)} />
+        <CustomTextInput placeholder={'....'} value={newPin} onChangeText={(text) => setNewPin(text)} containerStyle={styles.inputContainer} />
       </View>
       <View style={styles.btnView}>
         {errorTitle && (

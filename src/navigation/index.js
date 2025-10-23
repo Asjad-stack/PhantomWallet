@@ -14,7 +14,7 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <Navigator screenOptions={{
-                headerShown: false, navigationBarColor: "#100D26", contentStyle: { backgroundColor: colors.blueBgColor }, // prevent white flash
+                headerShown: false, navigationBarColor: "#100D26", contentStyle: { backgroundColor: colors.bgColor },
                 animationEnabled: true,
             }}
                 initialRouteName={routes.authStack}>

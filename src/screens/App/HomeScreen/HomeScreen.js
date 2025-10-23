@@ -2,7 +2,7 @@ import { TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
-import { hp } from '../../../components/ResponsiveComponent'
+import { hp, wp } from '../../../components/ResponsiveComponent'
 import { MainContainerApp } from '../../../components/MainContainer'
 import { AccountCard, BalanceCard, HorizontalSrcoll, PrepView, RowTabs, TokensCard, TokensTabs } from './Components'
 import { routes } from '../../../constants/routes'
@@ -61,18 +61,18 @@ const HomeScreen = (props) => {
     })}`;
 
     return (
-        <MainContainerApp>
+        <MainContainerApp style={{ paddingHorizontal: wp(4) }}>
             <Spacer customHeight={hp(6)} />
-            <View style={styles.mainView}>
-                <Spacer />
-                <AccountCard
-                    profile={Images.profile1}
-                    accountName="@FreshWallet7" accountNumber={'Account 1'}
-                    rightImage1={Images.clock} rightImage2={Images.searchWhite}
-                    onPressRightImage1={() => props?.navigation.navigate(routes.activities)} onPressRightImage2={() => { }}
-                    onPressAccount={() => props?.navigation.navigate(routes.accountDetails)}
-                />
+            <AccountCard
+                profile={Images.profile1}
+                accountName="@FreshWallet7" accountNumber={'Account 1'}
+                rightImage1={Images.clock} rightImage2={Images.searchWhite}
+                onPressRightImage1={() => { }}
+                onPressRightImage2={() => { }}
+                onPressAccount={() => props?.navigation.navigate(routes.accountDetails)}
+            />
 
+            <View>
                 <Spacer />
                 <BalanceCard />
 
@@ -91,27 +91,29 @@ const HomeScreen = (props) => {
 
                 <Spacer />
                 <HorizontalSrcoll onPress={(item) => { }} onPressCross={(item) => { }} />
-
-                <Spacer />
-                <View style={appStyles.row}>
-                    <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)}>
-                        <PoppinsText style={styles.manageText}>Manage</PoppinsText>
-                    </TouchableOpacity>
-                </View>
-                <Spacer customHeight={hp(1)} />
-                <PrepView />
-
-                <Spacer customHeight={hp(3)} />
-                <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-
-                <Spacer />
-                <TokensCard
-                    tokenData={tokenData}
-                    isLoading={isLoading}
-                    onPressToken={(item) => props?.navigation.navigate(routes.tokenDetails, { tokenData: item })}
-                />
             </View>
+
+            <Spacer />
+            <View style={appStyles.row}>
+                <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)}>
+                    <PoppinsText style={styles.manageText}>Manage</PoppinsText>
+                </TouchableOpacity>
+            </View>
+            <Spacer customHeight={hp(1)} />
+            <PrepView />
+
+            <Spacer customHeight={hp(3)} />
+            <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+
+            <Spacer />
+
+            <TokensCard
+                tokenData={tokenData}
+                isLoading={isLoading}
+                onPressToken={(item) => props?.navigation.navigate(routes.tokenDetails, { tokenData: item })}
+            />
+
         </MainContainerApp>
     )
 }

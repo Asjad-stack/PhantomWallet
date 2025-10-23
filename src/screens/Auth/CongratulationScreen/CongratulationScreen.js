@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ImageBackground, View } from 'react-native'
+import { ImageBackground, Platform, View } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { MainContainer } from '../../../components/MainContainer'
 import { Images } from '../../../Images'
@@ -42,7 +42,7 @@ const CongratulationScreen = (props) => {
         <MainContainer>
             <ImageBackground source={Images.bgImage} resizeMode='contain' style={styles.congratulations}>
                 <PoppinsText style={styles.desc}>@loremipsum</PoppinsText>
-                <View style={{ position: 'absolute', left: 0, right: 0, bottom: hp(6.5) }}>
+                <View style={{ position: 'absolute', left: 0, right: 0, bottom: Platform.OS === 'ios' ? hp(5.2) : hp(6.5) }}>
                     <CustomButton title={previousScreenImportFlow ? "Get Started" : "Continue"} onPressBtn={() => props?.navigation.replace(routes.appStack)} />
                 </View>
             </ImageBackground>
