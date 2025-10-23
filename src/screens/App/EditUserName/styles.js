@@ -3,7 +3,6 @@ import { wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
 import { colors } from '../../../constants/colors'
 
-
 export const styles = StyleSheet.create({
     mainView: {
         flex: 1,
@@ -23,6 +22,6 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.gray54,
         backgroundColor: colors.gray55,
-        borderRadius: 15
-    }
+        borderRadius: 15,
+    },
 })

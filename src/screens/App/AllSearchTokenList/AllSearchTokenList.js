@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native'
+import { Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import { MainContainerApp } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -17,29 +17,32 @@ const AllSearchTokenList = (props) => {
     return (
         <MainContainerApp>
             <Spacer customHeight={hp(7)} />
-            <View style={styles.mainView}>
-                <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
-                    <CustomTextInput5 value={searchText} onChangeText={(text) => setSearchText(text)} leftImage={Images.searchWhite} placeholder={'Sites, tokens, URL'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
-                        <PoppinsText style={styles.cancelText}>Cancel</PoppinsText>
-                    </TouchableOpacity>
-                </View>
-                <Spacer />
-                <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
-                    <PoppinsText style={styles.listsText}>Lists</PoppinsText>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
-                        <PoppinsText style={styles.seeMoreText}>See More</PoppinsText>
-                    </TouchableOpacity>
-                </View>
-                <Spacer />
-                <View style={{ paddingHorizontal: wp(4) }}>
-                    <SearchList />
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
+                        <CustomTextInput5 value={searchText} onChangeText={(text) => setSearchText(text)} leftImage={Images.searchWhite} placeholder={'Sites, tokens, URL'} inputStyle={styles.inputStyle} containerStyle={styles.containerInputStyle} />
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                            <PoppinsText style={styles.cancelText}>Cancel</PoppinsText>
+                        </TouchableOpacity>
+                    </View>
                     <Spacer />
-                    <PoppinsText style={styles.trendingTokensText}>Trending Tokens</PoppinsText>
+                    <View style={{ ...appStyles.row, paddingHorizontal: wp(4) }}>
+                        <PoppinsText style={styles.listsText}>Lists</PoppinsText>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                            <PoppinsText style={styles.seeMoreText}>See More</PoppinsText>
+                        </TouchableOpacity>
+                    </View>
+                    <Spacer />
+                    <View style={{ paddingHorizontal: wp(4) }}>
+                        <SearchList />
+                        <Spacer />
+                        <PoppinsText style={styles.trendingTokensText}>Trending Tokens</PoppinsText>
+                    </View>
+                    <Spacer />
+                    <TrendingTokens data={filteredTrendingTokens} />
                 </View>
-                <Spacer />
-                <TrendingTokens data={filteredTrendingTokens} />
-            </View>
+            </TouchableWithoutFeedback>
+
         </MainContainerApp>
     )
 }

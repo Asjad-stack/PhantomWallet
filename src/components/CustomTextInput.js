@@ -1,6 +1,5 @@
 import React from 'react'
 import { Image, ImageBackground, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
-import { Icon } from 'react-native-elements'
 import { width, height, totalSize } from 'react-native-dimension'
 import Spacer from './Spacer'
 import { appStyles } from '../utilities/appStyles/index'
@@ -11,31 +10,31 @@ import { Fonts } from '../constants/fonts'
 import { Images } from '../Images'
 
 
-export const CustomTextInput = ({ numberOfLines, autoCapitalize, secureTextEntry, value, onPress,
+export const CustomTextInput = ({ ref, numberOfLines, autoCapitalize, secureTextEntry, value, onPress, caretHidden,
     placeholderTextColor, editable, keyboardType, multiline, placeholder, onChangeText, containerStyle, inputStyle, }) => {
 
     return (
         <View style={{}}>
-            <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={[styles.inputContainer, containerStyle]}>
-                <View style={{ alignSelf: 'center', justifyContent: 'center' }}>
-                    <TextInput
-                        value={value}
-                        editable={editable ?? !onPress}
-                        multiline={multiline}
-                        placeholder={placeholder}
-                        onChangeText={onChangeText}
-                        keyboardType={keyboardType}
-                        cursorColor={colors.white}
-                        autoCapitalize={autoCapitalize ?? 'none'}
-                        numberOfLines={numberOfLines}
-                        secureTextEntry={secureTextEntry}
-                        style={[styles.input, inputStyle]}
-                        placeholderTextColor={placeholderTextColor ?? colors?.gray1}
-                        textAlignVertical="center"
-                        textAlign="center"
-                    />
-                </View>
-            </TouchableOpacity>
+            <View style={[styles.inputContainer, containerStyle]}>
+                <TextInput
+                    ref={ref}
+                    value={value}
+                    editable={editable ?? !onPress}
+                    multiline={multiline}
+                    placeholder={placeholder}
+                    onChangeText={onChangeText}
+                    keyboardType={keyboardType}
+                    cursorColor={colors.white}
+                    autoCapitalize={autoCapitalize ?? 'none'}
+                    numberOfLines={numberOfLines}
+                    secureTextEntry={secureTextEntry}
+                    style={[styles.input, inputStyle]}
+                    placeholderTextColor={placeholderTextColor ?? colors?.gray1}
+                    // textAlignVertical="center"
+                    textAlign="center"
+                    caretHidden={caretHidden}
+                />
+            </View>
         </View>
     )
 }

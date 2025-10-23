@@ -7,6 +7,7 @@ import { hp, wp } from '../components/ResponsiveComponent';
 import { Images } from '../Images';
 import { appStyles } from '../utilities/appStyles';
 import { colors } from '../constants/colors';
+import Spacer from '../components/Spacer';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +49,7 @@ function BottomTabBarNav({ navigation }) {
                 style={{
                   padding: wp(4),
                   alignSelf: 'center',
+                  borderTopWidth: props?.onPress ? 1 : 0, borderTopColor: props?.focused ? colors.lightPurple17 : 'transparent'
                 }}
               />
             ),

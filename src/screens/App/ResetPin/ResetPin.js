@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { Keyboard, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -15,18 +15,22 @@ const ResetPin = (props) => {
     const [pin, setPin] = useState('')
     return (
         <AppContainer>
-            <View style={styles.mainView}>
-                <AppHeader title='Reset PIN' leftImage={Images.backArrow} onPressBack={() => props?.navigation.goBack()} />
-                <Spacer customHeight={hp(3)} />
-                <View style={{ alignSelf: 'center' }}>
-                    <PoppinsText style={styles.title}>Create a new PIN</PoppinsText>
-                    <Spacer />
-                    <PoppinsText style={styles.description}>Your PIN will be used to secure this wallet on all your
-                        devices.</PoppinsText>
-                    <Spacer />
-                    <CustomTextInput5 value={pin} onChangeText={(text) => setPin(text)} inputStyle={styles.inputStyle} containerStyle={styles.inputContainer} />
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+
+                <View style={styles.mainView}>
+                    <AppHeader title='Reset PIN' leftImage={Images.backArrow} onPressBack={() => props?.navigation.goBack()} />
+                    <Spacer customHeight={hp(3)} />
+                    <View style={{ alignSelf: 'center' }}>
+                        <PoppinsText style={styles.title}>Create a new PIN</PoppinsText>
+                        <Spacer />
+                        <PoppinsText style={styles.description}>Your PIN will be used to secure this wallet on all your
+                            devices.</PoppinsText>
+                        <Spacer />
+                        <CustomTextInput5 value={pin} onChangeText={(text) => setPin(text)} inputStyle={styles.inputStyle} containerStyle={styles.inputContainer} />
+                    </View>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
+
             <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton title={'Continue'} disabled={pin?.length !== 4} titleStyles={{ color: pin?.length !== 4 ? colors.gray11 : colors.gray11 }} btnSyles={{ backgroundColor: pin?.length !== 4 ? colors.lightPurple15 : colors.purple1 }} onPress={() => { }} />
             </View>

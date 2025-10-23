@@ -29,10 +29,17 @@ export const styles = StyleSheet.create({
     inputContainer: {
         width: wp(92),
         borderRadius: 10,
-        alignSelf: 'center',
         paddingVertical: Platform.OS === 'ios' ? hp(1.2) : hp(0.3),
         backgroundColor: colors.gray23,
         justifyContent: 'center',
+        alignItems: 'center',
+    },
+    input: {
+        width: wp(90),
+        color: colors.white,
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        alignSelf: 'center',
     },
     btnView: {
         paddingHorizontal: wp(4),

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MainContainer } from '../../../components/MainContainer';
 import usePinScreen from './Hooks';
-import { View } from 'react-native';
+import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { styles } from './styles';
 import Spacer from '../../../components/Spacer';
 import { hp } from '../../../components/ResponsiveComponent';
@@ -16,39 +16,52 @@ import { colors } from '../../../constants/colors';
 const PinScreen = (props) => {
 
   const { confirm, errorTitle, newPin, setNewPin, handleRemove, HandleKeyPress } = usePinScreen(props)
+  const inputRef = useRef(null);
 
   return (
     <MainContainer>
-      <Spacer customHeight={hp(6)} />
-      <View style={styles.mainView}>
-        <MainHeader leftImage={Images.goBackArrow} centerImage={Images.slider2} onPressLeftImage={() => props?.navigation.goBack()} />
-        <Spacer customHeight={hp(3)} />
-        <PoppinsText style={styles.pinTitle}>Create a PIN</PoppinsText>
-        <Spacer customHeight={hp(0.5)} />
-        <PoppinsText style={styles.pinDesc}>This is used to secure your wallet on all your devices.
-          <PoppinsText style={styles.pinDesc1}>This cannot be recovered.</PoppinsText>
-        </PoppinsText>
-        <Spacer />
-        <CustomTextInput placeholder={'....'} value={newPin} onChangeText={(text) => setNewPin(text)} containerStyle={styles.inputContainer} />
-      </View>
-      <View style={styles.btnView}>
-        {errorTitle && (
-          <>
-            <Spacer customHeight={hp(2)} />
-            <PoppinsText style={styles.errorText}>{errorTitle}</PoppinsText>
-          </>
-        )}
-        <CustomButton
-          title={'Create PIN'}
-          titleStyles={styles.btnTitleStyles}
-          onPressBtn={() => { }}
-          disabled={newPin.length == 0} btnSyles={{
-            ...styles.btnSyles,
-            backgroundColor: newPin.length == 0 ? colors.lightPurple : colors.btnColor
-          }}
-        />
 
-      </View>
+      <TouchableWithoutFeedback onPress={() => {
+        Keyboard.dismiss();
+      }}>
+        <View style={{ flex: 1 }}>
+          <Spacer customHeight={hp(6)} />
+          <View style={styles.mainView}>
+            <MainHeader leftImage={Images.goBackArrow} centerImage={Images.slider2} onPressLeftImage={() => props?.navigation.goBack()} />
+            <Spacer customHeight={hp(3)} />
+            <PoppinsText style={styles.pinTitle}>{confirm ? 'Confirm PIN' : 'Create a PIN'}</PoppinsText>
+            <Spacer customHeight={hp(0.5)} />
+            <PoppinsText style={styles.pinDesc}>This is used to secure your wallet on all your devices.
+              <PoppinsText style={styles.pinDesc1}>This cannot be recovered.</PoppinsText>
+            </PoppinsText>
+            <Spacer />
+
+            <CustomTextInput
+              ref={inputRef} placeholder={'....'} value={newPin} onChangeText={(text) => setNewPin(text)}
+              inputStyle={styles.input} containerStyle={styles.inputContainer} caretHidden={true} keyboardType='decimal-pad'
+            />
+
+          </View>
+          <View style={styles.btnView}>
+            {errorTitle && (
+              <>
+                <Spacer customHeight={hp(2)} />
+                <PoppinsText style={styles.errorText}>{errorTitle}</PoppinsText>
+              </>
+            )}
+            <CustomButton
+              title={'Create PIN'}
+              titleStyles={styles.btnTitleStyles}
+              onPressBtn={() => { }}
+            // disabled={newPin.length == 0} btnSyles={{
+            //   ...styles.btnSyles,
+            //   backgroundColor: newPin.length == 0 ? colors.lightPurple : colors.btnColor
+            // }}
+            />
+
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
     </MainContainer>
   );
 };

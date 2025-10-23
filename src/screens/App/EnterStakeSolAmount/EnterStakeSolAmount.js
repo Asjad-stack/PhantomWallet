@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -20,22 +20,25 @@ const EnterStakeSolAmount = (props) => {
     const { enteredAmount, handleNumberPress, handleDelete, handleLanguage } = useEnterStakeSolAmount(props)
     return (
         <AppContainer>
-            <View style={styles.mainView}>
-                <AppHeader leftImage={Images.cross} title={'Stake SOL'} onPressLeftImage={() => props?.navigation.goBack()} />
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <AppHeader leftImage={Images.cross} title={'Stake SOL'} onPressLeftImage={() => props?.navigation.goBack()} />
 
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <View style={{ ...appStyles.rowBasic, overflow: 'hidden', alignSelf: 'center' }}>
-                        <CustomTextInput5
-                            placeholder={'0'}
-                            value={enteredAmount || 0} onChangeText={(text) => setEnteredAmount(text)}
-                            inputStyle={styles.inputStyle1}
-                            containerStyle={styles.inputContainer1}
-                        />
-                        <PoppinsText style={styles.symbol}>{"SOL"}</PoppinsText>
+                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                        <View style={{ ...appStyles.rowBasic, overflow: 'hidden', alignSelf: 'center' }}>
+                            <CustomTextInput5
+                                placeholder={'0'}
+                                value={enteredAmount || 0} onChangeText={(text) => setEnteredAmount(text)}
+                                inputStyle={styles.inputStyle1}
+                                containerStyle={styles.inputContainer1}
+                            />
+                            <PoppinsText style={styles.symbol}>{"SOL"}</PoppinsText>
+                        </View>
                     </View>
-                </View>
 
-            </View>
+                </View>
+            </TouchableWithoutFeedback>
+
             <View style={[styles.stakedBgView, appStyles.row]}>
                 <View style={appStyles.rowBasic}>
                     <Image source={Images.solanaLogo} resizeMode='contain' style={styles.tokenLogo} />

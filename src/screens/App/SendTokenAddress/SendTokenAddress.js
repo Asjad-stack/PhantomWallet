@@ -1,4 +1,4 @@
-import { Image, Platform, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, Platform, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -17,31 +17,34 @@ const SendTokenAddress = (props) => {
     const { tokenAddress, setTokenAddress } = useSendTokenAddress(props)
     return (
         <AppContainer>
-            <View style={styles.mainView}>
-                <View style={styles.container}>
-                    <View style={[appStyles.row,]}>
-                        <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
-                            <Image source={Images.backArrow} resizeMode='contain' style={styles.goBackArrow} />
-                        </TouchableOpacity>
-                        <PoppinsText style={styles.title}>{'Select Token'}</PoppinsText>
-                        <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
-                            <PoppinsText style={styles.nextText}>{'Next'}</PoppinsText>
-                        </TouchableOpacity>
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <View style={styles.container}>
+                        <View style={[appStyles.row,]}>
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
+                                <Image source={Images.backArrow} resizeMode='contain' style={styles.goBackArrow} />
+                            </TouchableOpacity>
+                            <PoppinsText style={styles.title}>{'Select Token'}</PoppinsText>
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
+                                <PoppinsText style={styles.nextText}>{'Next'}</PoppinsText>
+                            </TouchableOpacity>
+                        </View>
                     </View>
+                    <Spacer customHeight={hp(1)} />
+                    <View style={{ ...appStyles.rowBasic, paddingHorizontal: wp(3) }}>
+                        <PoppinsText style={styles.toText}>To:</PoppinsText>
+                        <CustomTextInput5
+                            placeholder={'username or address'}
+                            inputStyle={styles.inputStyle} containerStyle={styles.inputContainer}
+                            rightImage={Images.simpleScannerLogo} rightImageStyle={styles.rightImageStyle}
+                            onPressRightImage={() => props?.navigation.navigate(routes.scanQrCode)}
+                        />
+                    </View>
+                    <Spacer customHeight={hp(0.5)} />
+                    <LineBreak style={styles.lineBreakStyle} />
                 </View>
-                <Spacer customHeight={hp(1)} />
-                <View style={{ ...appStyles.rowBasic, paddingHorizontal: wp(3) }}>
-                    <PoppinsText style={styles.toText}>To:</PoppinsText>
-                    <CustomTextInput5
-                        placeholder={'username or address'}
-                        inputStyle={styles.inputStyle} containerStyle={styles.inputContainer}
-                        rightImage={Images.simpleScannerLogo} rightImageStyle={styles.rightImageStyle}
-                        onPressRightImage={() => props?.navigation.navigate(routes.scanQrCode)}
-                    />
-                </View>
-                <Spacer customHeight={hp(0.5)} />
-                <LineBreak style={styles.lineBreakStyle} />
-            </View>
+            </TouchableWithoutFeedback>
+
             <View style={{ paddingBottom: Platform.OS === 'ios' ? hp(4) : hp(4) }}>
                 <CustomButton title={'Next'} onPressBtn={() => { }} />
             </View>

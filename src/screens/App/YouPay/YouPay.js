@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -13,21 +13,24 @@ import { TokensList, TokenTabsSelection } from './Components'
 const YouPay = (props) => {
     return (
         <AppContainer>
-            <View style={styles.mainView}>
-                <Spacer />
-                <View style={appStyles.row}>
-                    <PoppinsText style={styles.title}>You Pay</PoppinsText>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
-                        <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
-                    </TouchableOpacity>
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <Spacer />
+                    <View style={appStyles.row}>
+                        <PoppinsText style={styles.title}>You Pay</PoppinsText>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
+                            <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
+                        </TouchableOpacity>
+                    </View>
+                    <Spacer />
+                    <CustomTextInput5 leftImage={Images.searchWhite} containerStyle={styles.containerInputStyle} inputStyle={styles.inputStyle} placeholder='Enter amount' />
+                    <Spacer />
+                    <TokenTabsSelection />
+                    <Spacer customHeight={hp(4)} />
+                    <TokensList onPressToken={() => { }} />
                 </View>
-                <Spacer />
-                <CustomTextInput5 leftImage={Images.searchWhite} containerStyle={styles.containerInputStyle} inputStyle={styles.inputStyle} placeholder='Enter amount' />
-                <Spacer />
-                <TokenTabsSelection />
-                <Spacer customHeight={hp(4)} />
-                <TokensList onPressToken={() => { }} />
-            </View>
+            </TouchableWithoutFeedback>
+
         </AppContainer>
     )
 }

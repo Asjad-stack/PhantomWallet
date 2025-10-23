@@ -1,4 +1,4 @@
-import { Image, Platform, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { AppContainer } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -15,17 +15,20 @@ const EditUserName = (props) => {
     const { isBio } = useEditUserName(props)
     return (
         <AppContainer>
-            <View style={styles.mainView}>
-                <Spacer />
-                <View style={appStyles.rowBasic}>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
-                        <Image source={Images.backArrow} resizeMode='contain' style={styles.backArrow} />
-                    </TouchableOpacity>
-                    <PoppinsText style={styles.userName}>{isBio ? 'Edit Bio' : 'Edit Username'}</PoppinsText>
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <Spacer />
+                    <View style={appStyles.rowBasic}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
+                            <Image source={Images.backArrow} resizeMode='contain' style={styles.backArrow} />
+                        </TouchableOpacity>
+                        <PoppinsText style={styles.userName}>{isBio ? 'Edit Bio' : 'Edit Username'}</PoppinsText>
+                    </View>
+                    <Spacer />
+                    <CustomTextInput1 placeholder={isBio ? 'Add a short bio to your profile' : '@loremipsum123'} containerStyle={styles.inputContainer} />
                 </View>
-                <Spacer />
-                <CustomTextInput1 placeholder={isBio ? 'Add a short bio to your profile' : '@loremipsum123'} containerStyle={styles.inputContainer} inputStyle={styles.input} />
-            </View>
+            </TouchableWithoutFeedback>
+
             <View style={{ marginBottom: hp(4) }}>
                 <CustomButton title='Save' onPress={() => { }} />
             </View>
