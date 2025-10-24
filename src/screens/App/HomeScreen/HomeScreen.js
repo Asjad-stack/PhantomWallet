@@ -84,7 +84,11 @@ const HomeScreen = (props) => {
                         props?.navigation.navigate(routes.receive)
                     } else if (item?.id === 2) {
                         props?.navigation.navigate(routes.sendTokens)
-                    } else if (item?.id === 4) {
+                    }
+                    else if (item?.id === 3) {
+                        props?.navigation.navigate(routes.swapMain)
+                    }
+                    else if (item?.id === 4) {
                         props?.navigation.navigate(routes.buyFromHome)
                     }
                 }} />

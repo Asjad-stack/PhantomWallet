@@ -6,7 +6,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { StatusBar, ActivityIndicator, View } from 'react-native';
+import { StatusBar, ActivityIndicator, View, LogBox } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     // Initialize database on app start
+    LogBox.ignoreAllLogs();
     const initDb = async () => {
       try {
         await database.initDatabase();

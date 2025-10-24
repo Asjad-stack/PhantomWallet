@@ -1,4 +1,4 @@
-package com.corewallet
+package com.phantom.production
 
 import android.app.Application
 import com.facebook.react.PackageList

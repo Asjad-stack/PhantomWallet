@@ -45,14 +45,14 @@ export const ActivitiesList = ({ onPress }) => {
                                         style={styles.icon}
                                     />
                                     <View>
-                                        <PoppinsText style={styles.title}>{item.title}</PoppinsText>
-                                        <PoppinsText style={styles.subtitle}>{item.subtitle}</PoppinsText>
+                                        <PoppinsText style={styles.title}>{item?.title}</PoppinsText>
+                                        <PoppinsText style={styles.subtitle}>{item?.subtitle}</PoppinsText>
                                     </View>
                                 </View>
 
                                 {item.amount && (
                                     <PoppinsText style={[styles.amount, { color: item.amountColor }]}>
-                                        {item.amount}
+                                        {item?.amount}
                                     </PoppinsText>
                                 )}
                             </TouchableOpacity>
