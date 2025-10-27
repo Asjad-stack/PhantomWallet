@@ -1032,3 +1032,49 @@ export const networks = [
         isSelected: false,
     },
 ];
+
+export const onBoardingData = [
+    {
+        id: 1,
+        logo: Images.onBoarding1Logo,
+        title: 'Welcome to Phantom',
+        description: 'To get started, create a new wallet or import an existing one.',
+        sliderLogo: Images.slider1,
+    },
+    {
+        id: 2,
+        logo: Images.onBoarding2,
+        title: 'Controlled by you',
+        description: 'Your wallet is secured with biometrics access, scam detection and 24/7 support.',
+        sliderLogo: Images.onBoardingSlider2,
+
+    },
+    {
+        id: 3,
+        logo: Images.onBoarding3,
+        title: 'The best home for your NFTs',
+        description: 'Manage listings, burn spam, and stay updated with helpful push notifications.',
+        sliderLogo: Images.onBoardingSlider3,
+    },
+    {
+        id: 4,
+        logo: Images.onBoarding4,
+        title: 'One wallet for everything',
+        description: 'Experience all of Solana, Ethereum, Polygon and Bitcoin in a single user-friendly interface.',
+        sliderLogo: Images.onBoardingSlider4,
+    },
+    {
+        id: 5,
+        logo: Images.onBoarding5,
+        title: 'Do more with your tokens',
+        description: 'Store, swap, stake, send, and receive - without ever leaving your wallet.',
+        sliderLogo: Images.onBoardingSlider4,
+    },
+    {
+        id: 6,
+        logo: Images.onBoarding6,
+        title: '',
+        description: '',
+        sliderLogo: '',
+    },
+]

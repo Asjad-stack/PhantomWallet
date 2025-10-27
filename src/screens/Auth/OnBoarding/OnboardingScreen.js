@@ -1,55 +1,84 @@
 import React from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity, FlatList } from 'react-native';
 import PoppinsText from '../../../components/PoppinsText';
-import { MainContainer } from '../../../components/MainContainer';
+import { MainContainerApp } from '../../../components/MainContainer';
 import { styles } from './styles';
 import { Images } from '../../../Images';
 import Spacer from '../../../components/Spacer';
-import { hp } from '../../../components/ResponsiveComponent';
+import { hp, wp } from '../../../components/ResponsiveComponent';
 import { routes } from '../../../constants/routes';
 import { CustomButton } from '../../../components/CustomButton';
 import { appStyles } from '../../../utilities/appStyles';
 import useOnBoarding from './Hooks';
 import { colors } from '../../../constants/colors';
+import { onBoardingData } from '../../../components/dummyData';
 
 const OnboardingScreen = (props) => {
-  const { isTermsAccepted, setIsTermsAccepted } = useOnBoarding();
+  const { isTermsAccepted, setIsTermsAccepted, setCurrentIndex, handleScroll } = useOnBoarding();
   return (
-    <MainContainer>
+    <MainContainerApp>
       <View style={styles.mainView}>
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Image source={Images.questionMark} resizeMode='contain' style={styles.questionMark} />
-          <Image source={Images.ethRoundWithStars} resizeMode='contain' style={styles.ethRoundWithStars} />
-          <Image source={Images.splashScreensLogo} resizeMode='contain' style={styles.splashScreensLogo} />
-          <Spacer customHeight={hp(3)} />
-          <PoppinsText style={styles.welcomeText}>Welcome to Phantom</PoppinsText>
-          <Spacer customHeight={hp(1)} />
-          <PoppinsText style={styles.startedDesc}>To get started, create a new wallet or import an{"\n"}existing one.</PoppinsText>
-          <Spacer />
-          <Image source={Images.slider1} resizeMode='contain' style={styles.slider1} />
-        </View>
+        <Spacer />
+        <Image soure={Images.questionMark} resizeMode='contain' style={styles.questionMark} />
+        <FlatList
+          data={onBoardingData}
+          keyExtractor={(item) => item?.id?.toString()}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          onScroll={handleScroll}
+          renderItem={({ item, index }) => {
+            return (
+              <View style={{ flex: 1, justifyContent: 'center', }}>
+                <Image source={item?.logo} resizeMode='contain'
+                  style={item?.id === 1 ? styles.firstOnboardingLogo :
+                    item?.id === 2 ? styles.secondOnboardingLogo :
+                      item?.id === 3 ? styles.thirdOnboardingLogo :
+                        item?.id === 4 ? styles.fourthOnboardingLogo :
+                          item?.id === 5 ? styles.fifthOnboardingLogo :
+                            item?.id === 6 ? styles.sixthOnboardingLogo :
+                              ''
+                  }
+                />
+                <Spacer customHeight={hp(2)} />
+                <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, }}>
+                  <View style={{ alignItems: 'center', justifyContent: 'flex-end', }}>
+                    <PoppinsText style={styles.welcomeText}>{item?.title}</PoppinsText>
+                    <PoppinsText style={styles.startedDesc}>{item?.description}</PoppinsText>
+                    <Spacer customHeight={hp(1)} />
+                    <Image source={item?.sliderLogo} resizeMode='contain' style={styles.slider1} />
+                  </View>
+                </View>
+              </View>
+            )
+          }}
+
+        />
       </View>
+      <Spacer />
       <View style={styles.btnView}>
         <TouchableOpacity activeOpacity={0.8} style={{ ...appStyles.rowBasic, alignSelf: 'center' }} onPress={() => setIsTermsAccepted(!isTermsAccepted)}>
-          <Image source={isTermsAccepted ? Images.radioCheckRound : Images.radioUnFill} resizeMode='contain' style={styles.radioBtn} />
-          <PoppinsText style={styles.termsText}>I agree to the{' '}
-            <PoppinsText style={styles.termsText1}>Terms and Privacy Policy.</PoppinsText>
+          <PoppinsText style={styles.termsText}>By continuing, you agree to the{' '}
+            <PoppinsText style={styles.termsText1}>Terms{' '}
+              <PoppinsText style={styles.termsText}>and{' '}</PoppinsText>
+              Privacy Policy.</PoppinsText>
           </PoppinsText>
         </TouchableOpacity>
-        <Spacer />
+        <Spacer customHeight={hp(1)} />
         <CustomButton
           title="Create a new wallet"
-          disabled={isTermsAccepted == false}
-          titleStyles={{ ...styles.btnTitleStyles, color: isTermsAccepted == false ? colors.white : colors.gray2 }}
-          btnSyles={{ ...styles.btnSyles }}
           onPressBtn={() => props?.navigation.navigate(routes.createWallet)}
         />
-        <Spacer />
-        <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => props?.navigation.navigate(routes.createWallet, { isImportFlow: true })}>
-          <PoppinsText style={styles.bottomText}>I already have a wallet</PoppinsText>
-        </TouchableOpacity>
+        <Spacer customHeight={hp(1)} />
+        <CustomButton
+          title="I already have a wallet"
+          btnSyles={{ ...styles.btnSyles, backgroundColor: colors.btnDisableColor }}
+          titleStyles={{ ...styles.btnTitleStyles, color: colors.white }}
+          onPressBtn={() => props?.navigation.navigate(routes.createWallet, { isImportFlow: true })}
+        />
+
       </View>
-    </MainContainer>
+    </MainContainerApp>
   );
 };
 

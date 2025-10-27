@@ -20,7 +20,7 @@ export const CustomButton = ({ title, leftImage, rightImage, leftImageStyle, rig
                         source={leftImage}
                         resizeMode='contain'
                         style={[{ ...styles.leftImage, tintColor: tintColor ? tintColor : colors.gray1 }, leftImageStyle]}
-                        tintColor={tintColor ? tintColor : colors.gray1}
+                        tintColor={tintColor ? tintColor : null}
                     />
                 }
                 <PoppinsText style={[styles.title, titleStyles]}>{title}</PoppinsText>

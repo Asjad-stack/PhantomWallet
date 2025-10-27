@@ -8,18 +8,17 @@ export const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: wp(4)
     },
-    congratulations: {
-        flex: 1,
-        width: wp(100),
-        height: hp(100),
-    },
-
-    desc: {
-        fontSize: 39,
-        fontFamily: Fonts.Poppins.Medium,
-        color: colors.white,
+    title: {
+        fontSize: 23,
+        fontFamily: Fonts.Poppins.Bold,
+        color: colors.gray132,
         textAlign: 'center',
-        marginTop: hp(23)
+    },
+    desc: {
+        fontSize: 15,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray120,
+        textAlign: 'center',
     },
 
 })

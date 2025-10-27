@@ -37,6 +37,7 @@ const SeedPhrase = (props) => {
                         <View style={{ alignSelf: 'center' }}>
                             <CustomTextInput1
                                 placeholder='Recovery Phrase'
+                                placeholderTextColor={colors.gray101}
                                 value={mnemonic}
                                 onChangeText={(text) => setMnemonic(text)}
                                 secureTextEntry={false}

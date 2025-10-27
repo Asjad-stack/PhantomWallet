@@ -48,9 +48,9 @@ export const CreateWalletEmailBottomSheet = ({ emailBottomSheet, onPressBtn1, on
     )
 }
 
-export const ImportOptionsBottomSheet = ({ importOptionsBottomSheet, onPressBtn1, onPressBtn2 }) => {
+export const ImportOptionsBottomSheet = ({ importOptionsBottomSheet, onPressBtn1, onPressBtn2, onPressBtn3 }) => {
     return (
-        <SimpleRBSheet refRBSheet={importOptionsBottomSheet} height={hp(30)}>
+        <SimpleRBSheet refRBSheet={importOptionsBottomSheet} height={hp(37)}>
             <PoppinsText style={styles.bottomSheetTitle}>Import Options</PoppinsText>
             <Spacer customHeight={hp(1)} />
             <PoppinsText style={styles.bottomSheetDesc}>Import an existing wallet with your email, seedphrase, private key or hardware wallet</PoppinsText>
@@ -58,6 +58,8 @@ export const ImportOptionsBottomSheet = ({ importOptionsBottomSheet, onPressBtn1
             <CustomButton leftImage={Images.plusWithBox} leftImageStyle={{ width: wp(4), height: wp(4) }} title={'Import Seed Phrase'} btnSyles={styles.btnStyles1} titleStyles={styles.btnTitleStyles} onPressBtn={onPressBtn1} />
             <Spacer customHeight={hp(1)} />
             <CustomButton leftImage={Images.key} leftImageStyle={{ width: wp(4), height: wp(4) }} title={'Import Private Key'} btnSyles={styles.btnStyles2} titleStyles={styles.btnTitleStyles} onPressBtn={onPressBtn2} />
+            <Spacer customHeight={hp(1)} />
+            <CustomButton leftImage={Images.LwithFourBorders} leftImageStyle={{ width: wp(4), height: wp(4) }} title={'Connect Hardware Wallet'} btnSyles={styles.btnStyles2} titleStyles={styles.btnTitleStyles} onPressBtn={onPressBtn3} />
         </SimpleRBSheet>
     )
 }
@@ -73,12 +75,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.SemiBold,
-        color: colors.gray7
+        color: colors.gray133
     },
     desc: {
-        fontSize: 13,
+        fontSize: 12,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray8,
+        color: colors.gray98,
         width: wp(72)
     },
     // CreateWalletEmailBottomSheet

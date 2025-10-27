@@ -14,15 +14,15 @@ export const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     importAccountsText: {
-        fontSize: 18,
+        fontSize: 22,
         fontFamily: Fonts.Poppins.Bold,
-        color: colors.gray19,
+        color: colors.gray134,
         textAlign: 'center'
     },
     importAccountsDesc: {
-        fontSize: 12,
+        fontSize: 13,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray20,
+        color: colors.gray61,
         textAlign: 'center'
     },
     tickGreenCircle: {
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     },
     centerText: {
         fontSize: 14,
-        fontFamily: Fonts.Poppins.Regular,
+        fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray7,
         textAlign: 'center'
     },

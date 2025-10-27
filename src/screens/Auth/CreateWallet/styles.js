@@ -16,13 +16,13 @@ export const styles = StyleSheet.create({
     walletTitle: {
         fontSize: 22,
         fontWeight: Fonts.Poppins.SemiBold,
-        color: colors.gray5,
+        color: colors.gray132,
         textAlign: 'center'
     },
     walletDesc: {
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: Fonts.Poppins.Regular,
-        color: colors.gray6,
+        color: colors.gray111,
         textAlign: 'center'
     },
     btnView: {
@@ -33,5 +33,16 @@ export const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray9,
         textAlign: 'center'
+    },
+    btnSyles: {
+        width: wp(92),
+        height: hp(5.5),
+        alignSelf: 'center',
+        borderRadius: 12,
+        justifyContent: 'center',
+    },
+    btnTitleStyles: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
     }
 })

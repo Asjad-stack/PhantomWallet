@@ -6,7 +6,6 @@ import { Fonts } from '../../../constants/fonts'
 export const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        paddingHorizontal: wp(4),
     },
     questionMark: {
         width: wp(4),
@@ -14,19 +13,40 @@ export const styles = StyleSheet.create({
         alignSelf: 'flex-end',
         marginRight: wp(4)
     },
-    ethRoundWithStars: {
+    firstOnboardingLogo: {
         width: wp(100),
-        height: hp(14)
+        height: hp(50),
+        alignSelf: 'center'
     },
-    splashScreensLogo: {
+    secondOnboardingLogo: {
         width: wp(100),
-        height: hp(37),
+        height: hp(33.12),
+        alignSelf: 'center'
+    },
+    thirdOnboardingLogo: {
+        width: wp(100),
+        height: hp(45),
+        alignSelf: 'center'
+    },
+    fourthOnboardingLogo: {
+        width: wp(100),
+        height: hp(29),
+        alignSelf: 'center'
+    },
+    fifthOnboardingLogo: {
+        width: wp(100),
+        height: hp(45),
+        alignSelf: 'center'
+    },
+    sixthOnboardingLogo: {
+        width: wp(100),
+        height: hp(53),
         alignSelf: 'center'
     },
     welcomeText: {
         fontSize: 23,
         fontWeight: Fonts.Poppins.Bold,
-        color: colors.white,
+        color: colors.gray80,
         textAlign: 'center',
     },
     startedDesc: {
@@ -34,6 +54,7 @@ export const styles = StyleSheet.create({
         fontWeight: Fonts.Poppins.Regular,
         color: colors.gray1,
         textAlign: 'center',
+        width: wp(75)
     },
     slider1: {
         width: wp(14),
@@ -57,28 +78,24 @@ export const styles = StyleSheet.create({
         marginRight: wp(2)
     },
     termsText: {
-        fontSize: 14,
+        fontSize: 10,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray3
+        color: colors.gray32,
+        textAlign: 'center'
     },
     termsText1: {
-        fontSize: 14,
-        fontFamily: Fonts.Poppins.SemiBold,
-        color: colors.purple
-    },
-    createButton: {
-        width: wp(92),
-        height: hp(7),
-        alignSelf: 'center'
-    },
-    btnTitleStyles: {
-        fontSize: 14,
-        fontFamily: Fonts.Poppins.SemiBold,
-        textAlign: 'center',
+        fontSize: 10,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.purple2,
+        textAlign: 'center'
     },
     bottomText: {
         fontSize: 14,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray4
+    },
+    btnTitleStyles: {
+        fontSize: 14,
+        fontFamily: Fonts.Poppins.SemiBold,
     }
 })

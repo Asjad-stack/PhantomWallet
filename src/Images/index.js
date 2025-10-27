@@ -2,8 +2,19 @@
 
 export const Images = {
     splashScreensLogo: require('./splashScreensLogo.png'),
+    onBoarding1Logo: require('./onBoarding1Logo.png'),
+    onBoarding2: require('./onBoarding2.png'),
+    onBoarding3: require('./onBoarding3.png'),
+    onBoarding4: require('./onBoarding4.png'),
+    onBoarding5: require('./onBoarding5.png'),
+    onBoarding6: require('./onBoarding6.png'),
+    onBordingBgImage2: require('./onBordingBgImage2.png'),
+
     ethRoundWithStars: require('./ethRoundWithStars.png'),
     slider1: require('./slider1.png'),
+    onBoardingSlider2: require('./onBoardingSlider2.png'),
+    onBoardingSlider3: require('./onBoardingSlider3.png'),
+    onBoardingSlider4: require('./onBoardingSlider4.png'),
     radioUnFill: require('./radioUnFill.png'),
     questionMark: require('./questionMark.png'),
     goBackArrow: require('./goBackArrow.png'),
@@ -23,6 +34,7 @@ export const Images = {
     enjoyYourWallet: require('./enjoyYourWallet.png'),
     plusWithBox: require('./plusWithBox.png'),
     key: require('./key.png'),
+    LwithFourBorders: require('./LwithFourBorders.png'),
     slideLine1: require('./slideLine1.png'),
     slideLine2: require('./slideLine2.png'),
     bgImage: require('./bgImage.png'),

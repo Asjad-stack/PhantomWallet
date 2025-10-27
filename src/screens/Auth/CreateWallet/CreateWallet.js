@@ -11,6 +11,7 @@ import { CreateWalletEmailBottomSheet, CreateWalletSetupList, ImportOptionsBotto
 import { CustomButton } from '../../../components/CustomButton'
 import useCreateWallet from './Hooks'
 import { routes } from '../../../constants/routes'
+import { colors } from '../../../constants/colors'
 
 const CreateWallet = (props) => {
 
@@ -33,10 +34,15 @@ const CreateWallet = (props) => {
             </View>
             <View style={styles.btnView}>
                 <CustomButton title={'Continue with Email'} onPressBtn={() => emailBottomSheet.current?.open()} />
-                <Spacer />
-                <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => importOptionsBottomSheet.current?.open()}>
+                <Spacer customHeight={hp(1)} />
+                {/* <TouchableOpacity activeOpacity={0.8} style={{ alignSelf: 'center' }} onPress={() => importOptionsBottomSheet.current?.open()}>
                     <PoppinsText style={styles.bottomText}>{isImportFlow ? 'Other Import Options' : "Create a seed phrase wallet"}</PoppinsText>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+                <CustomButton title={isImportFlow ? 'Other Import Options' : 'Create a seed phrase wallet'} onPressBtn={() => importOptionsBottomSheet.current?.open()}
+                    btnSyles={{ ...styles.btnSyles, backgroundColor: colors.btnDisableColor }}
+                    titleStyles={{ ...styles.btnTitleStyles, color: colors.white }}
+                />
+
             </View>
             <CreateWalletEmailBottomSheet
                 emailBottomSheet={emailBottomSheet}
