@@ -32,7 +32,7 @@ const ProtectWallet = (props) => {
             <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton
                     title={'Next'}
-                    onPressBtn={() => props?.navigation.navigate(routes.congratulationScreen)}
+                    onPressBtn={() => props?.navigation.navigate(routes.createUserName)}
                 />
             </View>
         </MainContainer>

@@ -16,7 +16,6 @@ const SendTokens = (props) => {
     return (
         <AppContainer>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-
                 <View style={styles.container}>
                     <View style={[appStyles.row,]}>
                         <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>

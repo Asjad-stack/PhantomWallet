@@ -40,7 +40,6 @@ export const BuyTokenDetailsBottomSheet = ({ buyTokenDetailsBottomSheetRef }) =>
                             </View>
                         )
                     }}
-                    r
                 />
             </View>
             <Spacer customHeight={hp(0.2)} />

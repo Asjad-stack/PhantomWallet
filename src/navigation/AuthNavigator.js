@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { BiometricPopup, CongratulationScreen, ImportWalletScreen, OnboardingScreen, FaceIdEnable, PinScreen, PinVerificationScreen, SeedPhrase, SplashScreen, ConfirmSeedPhrase, CreateWallet, ProtectWallet, ImportAccounts, ImportPrivateKey } from '../screens/Auth';
+import { BiometricPopup, CongratulationScreen, ImportWalletScreen, OnboardingScreen, FaceIdEnable, PinScreen, PinVerificationScreen, SeedPhrase, SplashScreen, ConfirmSeedPhrase, CreateWallet, ProtectWallet, ImportAccounts, ImportPrivateKey, CreateUserName } from '../screens/Auth';
 import { routes } from '../constants/routes';
 import { colors } from '../constants/colors';
 
@@ -46,6 +46,7 @@ const AuthNavigator = () => {
       <Stack.Screen name={routes.protectWallet} component={ProtectWallet} />
       <Stack.Screen name={routes.importAccounts} component={ImportAccounts} />
       <Stack.Screen name={routes.importPrivateKey} component={ImportPrivateKey} />
+      <Stack.Screen name={routes.createUserName} component={CreateUserName} />
 
 
     </Stack.Navigator>

@@ -48,6 +48,7 @@ export const routes = {
     protectWallet: "protectWallet",
     importAccounts: "importAccounts",
     importPrivateKey: "importPrivateKey",
+    createUserName: "createUserName",
 
     // New App
     homeScreen: "homeScreen",
@@ -114,5 +115,5 @@ export const routes = {
     downloadAppLogs: "downloadAppLogs",
     deleteWallet: "deleteWallet",
     resetApp: "resetApp",
-    activeNetworks: "activeNetworks"
+    activeNetworks: "activeNetworks",
 }

@@ -151,6 +151,7 @@ export const colors = {
     yellow: "#AEA622",
     yellow1: "#A69D20",
     yellow2: "#A19820",
+    yellow3: "#B3AA26",
     red: "#FF4444",
     red1: "#B74329",
     red2: "#AD422A",
@@ -175,6 +176,7 @@ export const colors = {
     green14: "#2E9262",
     green15: "#2C8158",
     green16: "#287F55",
+    green17: "#2C8F5F",
     greenShadow: "#14271D",
 
     purple: "#9288C1",

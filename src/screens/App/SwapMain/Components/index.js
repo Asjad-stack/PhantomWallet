@@ -305,6 +305,50 @@ export const LeaderBoardList = ({ }) => {
     )
 }
 
+export const AmountDetails = ({ }) => {
+    return (
+        <View>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={[appStyles.row, styles.container1]}>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.titleAmountDetals}>Pricing</PoppinsText>
+                    <Image source={Images.infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                </View>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.amountDetailsText}>1SOL204.55 USDC</PoppinsText>
+                    <Image source={Images.arrowRight} resizeMode='contain' style={styles.arrowRight} />
+                </View>
+            </TouchableOpacity>
+            <Spacer customHeight={hp(0.2)} />
+            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={[appStyles.row, styles.container2]}>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.titleAmountDetals}>Slippage</PoppinsText>
+                    <Image source={Images.infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                </View>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.amountDetailsText}>1SOL204.55 USDC</PoppinsText>
+                    <Image source={Images.arrowRight} resizeMode='contain' style={styles.arrowRight} />
+                </View>
+            </TouchableOpacity>
+            <Spacer customHeight={hp(0.2)} />
+            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={[appStyles.row, styles.container2]}>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.titleAmountDetals}>Price Impact</PoppinsText>
+                    <Image source={Images.infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                </View>
+                <PoppinsText style={styles.amountDetailsPercentage}>9.14% (High)</PoppinsText>
+            </TouchableOpacity>
+            <Spacer customHeight={hp(0.2)} />
+            <TouchableOpacity activeOpacity={0.8} onPress={() => { }} style={[appStyles.row, styles.container3]}>
+                <View style={appStyles.rowBasic}>
+                    <PoppinsText style={styles.titleAmountDetals}>Fees</PoppinsText>
+                    <Image source={Images.infoLogo} resizeMode='contain' style={styles.infoLogo} />
+                </View>
+                <PoppinsText style={styles.dolorValue}>$0.04</PoppinsText>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
 const styles = StyleSheet.create({
     // InputView
     activityIndicator: {
@@ -459,5 +503,54 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: Fonts.Poppins.Regular,
         color: colors.green16,
+    },
+    // AmountDetails
+    container1: {
+        padding: wp(3),
+        backgroundColor: colors.gray23,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12
+    },
+    titleAmountDetals: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray28,
+    },
+    infoLogo: {
+        width: wp(3),
+        height: wp(3),
+        marginLeft: wp(2)
+    },
+    amountDetailsText: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray50,
+    },
+    arrowRight: {
+        width: wp(1.5),
+        height: wp(2.5),
+        marginLeft: wp(4)
+    },
+    container2: {
+        padding: wp(3),
+        backgroundColor: colors.gray23,
+    },
+    container3: {
+        padding: wp(3),
+        backgroundColor: colors.gray23,
+        borderBottomLeftRadius: 12,
+        borderBottomRightRadius: 12
+    },
+    amountDetailsPercentage: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.yellow3,
+        textAlign: 'right'
+    },
+    dolorValue: {
+        fontSize: 13,
+        fontFamily: Fonts.Poppins.Regular,
+        color: colors.gray108,
+        textAlign: 'right'
     }
 })

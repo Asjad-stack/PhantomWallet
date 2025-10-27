@@ -51,6 +51,9 @@ export const Images = {
     sui: require('./sui.png'),
     polygon: require('./polygon.png'),
     bitcoin: require('./bitcoin.png'),
+    sliderThree: require('./sliderThree.png'),
+    atTheRate: require('./atTheRate.png'),
+    tickWithGreenHalfCircle: require('./tickWithGreenHalfCircle.png'),
 
     // BottomTabs
     homeActiveBtn: require('./homeActiveBtn.png'),

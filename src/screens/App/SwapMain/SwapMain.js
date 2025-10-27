@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { MainContainerApp } from '../../../components/MainContainer'
 import { styles } from './styles'
@@ -6,8 +6,8 @@ import { appStyles } from '../../../utilities/appStyles'
 import PoppinsText from '../../../components/PoppinsText'
 import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
-import { hp, wp } from '../../../components/ResponsiveComponent'
-import { InputView, LeaderBoardList, RowTabs, TrendingRowTabs } from './Components'
+import { hp } from '../../../components/ResponsiveComponent'
+import { AmountDetails, InputView, LeaderBoardList, RowTabs, TrendingRowTabs } from './Components'
 import useSwapMain from './Hooks'
 import { formatBalance } from '../../../constants/commonHelperFunctions/commonHelperFunction'
 import { routes } from '../../../constants/routes'
@@ -21,117 +21,131 @@ const SwapMain = (props) => {
     return (
         <MainContainerApp>
             <Spacer customHeight={hp(7)} />
-            <View style={styles.mainView}>
-                <View style={appStyles.row}>
-                    <PoppinsText style={styles.title}>Swap</PoppinsText>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate(routes.tokenDetailSettings)}>
-                        <Image source={Images.slippage} resizeMode='contain' style={styles.slippage} />
-                    </TouchableOpacity>
-                </View>
-                <Spacer />
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <View style={styles.mainView}>
+                    <View style={appStyles.row}>
+                        <PoppinsText style={styles.title}>Swap</PoppinsText>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate(routes.tokenDetailSettings)}>
+                            <Image source={Images.slippage} resizeMode='contain' style={styles.slippage} />
+                        </TouchableOpacity>
+                    </View>
+                    <Spacer />
 
-                <InputView
-                    title={'You Pay'}
-                    TitleChain={'From'}
-                    balance={
-                        selectedTokenPay?.symbol
-                            ? `${formatBalance(FromtokenBalance > 0 ? FromtokenBalance : 0) +
-                            ' ' +
+                    <InputView
+                        title={'You Pay'}
+                        TitleChain={'From'}
+                        balance={
                             selectedTokenPay?.symbol
-                            }`
-                            : 0
-                    }
-                    selectedToken={selectedTokenPay}
-                    value={enterAmountPay}
-                    selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
-                    selectedChain={selectedChainFrom}
-                    isMaxrow={true}
-
-                    disable={selectedChainFrom?.name ? false : true}
-                    onChangeText={amt => {
-
-                        if (/^\d*\.?\d*$/.test(amt)) {
-                            handleAmmount(amt);
+                                ? `${formatBalance(FromtokenBalance > 0 ? FromtokenBalance : 0) +
+                                ' ' +
+                                selectedTokenPay?.symbol
+                                }`
+                                : 0
                         }
-                    }}
-                    onpresPriceButton={response => {
+                        selectedToken={selectedTokenPay}
+                        value={enterAmountPay}
+                        selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
+                        selectedChain={selectedChainFrom}
+                        isMaxrow={true}
 
-                        console.log('FromtokenBalance', response);
-                        if (FromtokenBalance > 0) {
-                            console.log('FromtokenBalance', FromtokenBalance);
-                            let calculatedAmount = (FromtokenBalance * response) / 100;
-                            console.log('calculatedAmount', calculatedAmount);
+                        disable={selectedChainFrom?.name ? false : true}
+                        onChangeText={amt => {
 
-                            let balanceString;
-                            // If calculatedAmount is less than 1, keep up to 6 decimals, else 2 decimals
-                            if (calculatedAmount < 1) {
-                                balanceString = calculatedAmount.toFixed(6).replace(/\.?0+$/, '');
-                            } else {
-                                balanceString = calculatedAmount.toFixed(2).replace(/\.?0+$/, '');
+                            if (/^\d*\.?\d*$/.test(amt)) {
+                                handleAmmount(amt);
                             }
+                        }}
+                        onpresPriceButton={response => {
 
-                            setPriceButton(response);
-                            handleAmmount(balanceString);
-                        }
-                    }}
-                    priceButton={PriceButton}
-                    onPressChangeToken={() => {
-                        setTypePayOrReceive('From');
+                            console.log('FromtokenBalance', response);
+                            if (FromtokenBalance > 0) {
+                                console.log('FromtokenBalance', FromtokenBalance);
+                                let calculatedAmount = (FromtokenBalance * response) / 100;
+                                console.log('calculatedAmount', calculatedAmount);
 
-                    }}
-                    dolorValue={fromstateCurentPrice}
-                    onPressSelectChain={() => {
-                        setTypePayOrReceive('From');
+                                let balanceString;
+                                // If calculatedAmount is less than 1, keep up to 6 decimals, else 2 decimals
+                                if (calculatedAmount < 1) {
+                                    balanceString = calculatedAmount.toFixed(6).replace(/\.?0+$/, '');
+                                } else {
+                                    balanceString = calculatedAmount.toFixed(2).replace(/\.?0+$/, '');
+                                }
 
-                    }}
-                />
+                                setPriceButton(response);
+                                handleAmmount(balanceString);
+                            }
+                        }}
+                        priceButton={PriceButton}
+                        onPressChangeToken={() => {
+                            setTypePayOrReceive('From');
 
-                <TouchableOpacity activeOpacity={0.8} style={{}}>
-                    <Image source={Images.swapLogo} resizeMode='contain' style={styles.swapLogo} />
-                </TouchableOpacity>
+                        }}
+                        dolorValue={fromstateCurentPrice}
+                        onPressSelectChain={() => {
+                            setTypePayOrReceive('From');
 
-                <InputView
-                    title={'You Receive'}
-                    TitleChain={'To'}
-                    selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
-                    selectedChain={selectedChainTo}
-                    balance={
-                        selectedTokenReceive?.symbol
-                            ? `${formatBalance(
-                                Recivetokenbalance > 0 ? Recivetokenbalance : 0,
-                            ) +
-                            ' ' +
+                        }}
+                    />
+
+                    <TouchableOpacity activeOpacity={0.8} style={{}}>
+                        <Image source={Images.swapLogo} resizeMode='contain' style={styles.swapLogo} />
+                    </TouchableOpacity>
+
+                    <InputView
+                        title={'You Receive'}
+                        TitleChain={'To'}
+                        selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
+                        selectedChain={selectedChainTo}
+                        balance={
                             selectedTokenReceive?.symbol
-                            }`
-                            : 0
+                                ? `${formatBalance(
+                                    Recivetokenbalance > 0 ? Recivetokenbalance : 0,
+                                ) +
+                                ' ' +
+                                selectedTokenReceive?.symbol
+                                }`
+                                : 0
+                        }
+                        selectedToken={selectedTokenReceive}
+                        value={
+                            enterAmountReceive
+                                ? parseFloat(enterAmountReceive ?? 0).toFixed(5)
+                                : 0.0
+                        }
+                        Loading={FeatchLoading}
+                        disable={selectedChainTo?.name ? false : true}
+                        editable={false}
+                        dolorValue={tostateCurentPrice}
+                        onPressChangeToken={() => {
+                            setTypePayOrReceive('To');
+                        }}
+                        onPressSelectChain={() => {
+                            setTypePayOrReceive('To');
+                        }}
+                    />
+                    <Spacer customHeight={hp(3)} />
+                    <RowTabs />
+                    <Spacer />
+                    <TrendingRowTabs />
+                    {!enterAmountPay ?
+                        <>
+                            <Spacer />
+                            <LeaderBoardList />
+                        </>
+                        :
+                        <>
+                            <Spacer />
+                            <AmountDetails />
+                        </>
                     }
-                    selectedToken={selectedTokenReceive}
-                    value={
-                        enterAmountReceive
-                            ? parseFloat(enterAmountReceive ?? 0).toFixed(5)
-                            : 0.0
-                    }
-                    Loading={FeatchLoading}
-                    disable={selectedChainTo?.name ? false : true}
-                    editable={false}
-                    dolorValue={tostateCurentPrice}
-                    onPressChangeToken={() => {
-                        setTypePayOrReceive('To');
-                    }}
-                    onPressSelectChain={() => {
-                        setTypePayOrReceive('To');
-                    }}
-                />
-                <Spacer customHeight={hp(3)} />
-                <RowTabs />
-                <Spacer />
-                <TrendingRowTabs />
-                <Spacer />
-                <LeaderBoardList />
-            </View>
-            <View style={{ paddingBottom: hp(2) }}>
-                <CustomButton title='Swap Now' onPressBtn={() => props.navigation.navigate(routes.sendSuccess, { screenName: 'Swap' })} />
-            </View>
+                </View>
+            </TouchableWithoutFeedback>
+
+            {enterAmountPay ?
+                <View style={{ paddingBottom: hp(2) }}>
+                    <CustomButton title='Swap Now' onPressBtn={() => props.navigation.navigate(routes.sendSuccess, { screenName: 'Swap' })} />
+                </View>
+                : null}
         </MainContainerApp>
     )
 }
