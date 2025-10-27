@@ -19,9 +19,25 @@ export const RowView = ({ leftImage, title }) => {
 
 export const SeedPhraseCard = ({ seedPhrase, onPressCopy, isCopy }) => {
 
-    const seedWords = seedPhrase.split(' ');
-    const firstSection = seedWords.slice(0, 8);
-    const secondSection = seedWords.slice(8, 15);
+    const DUMMY_SEED = 'apple brave canyon dove escort flame galaxy hover index jazz kite lemon';
+
+    const phrase = (seedPhrase && seedPhrase.trim().length) ? seedPhrase : DUMMY_SEED;
+
+
+
+    // const seedWords = seedPhrase.split(' ');
+    // const firstSection = seedWords.slice(0, 8);
+    // const secondSection = seedWords.slice(8, 15);
+
+    const seedWords = phrase.split(' ').filter(Boolean);
+
+
+    const mid = Math.ceil(seedWords?.length / 2);
+    const firstSection = seedWords.slice(0, mid);
+    const secondSection = seedWords.slice(mid);
+
+    console.log(seedWords, 'seedWordsseedWordsseedWordsseedWords');
+
 
     return (
         <View>
