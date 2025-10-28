@@ -3,7 +3,6 @@ import React, { useRef, useState } from 'react'
 const useSwapMain = (props) => {
 
     const previousFromTokenItem = props?.route?.params?.item
-    const previousType = props?.route?.params?.type
 
     console.log(previousFromTokenItem, 'previousFromTokenItempreviousFromTokenItempreviousFromTokenItem');
     console.log(previousType, 'previousTypepreviousTypepreviousType');
@@ -20,12 +19,14 @@ const useSwapMain = (props) => {
     const [PriceButton, setPriceButton] = useState('')
     const [typePayOrReceive, setTypePayOrReceive] = useState('');
     const [fromstateCurentPrice, setfromstateCurentPrice] = useState('');
-    const [selectedChainTo, setSelectedChainTo] = useState({});
     const [selectedTokenReceive, setSelectedTokenReceive] = useState({})
     const [Recivetokenbalance, setRecivetokenbalance] = useState('');
     const [enterAmountReceive, setEnterAmountReceive] = useState('')
     const [FeatchLoading, setFeatchLoading] = useState(false);
     const [tostateCurentPrice, settostateCurentPrice] = useState('');
+
+    const [toSelectedToken, setToSelectedToken] = useState(previousFromTokenItem?.tokenName);
+    const [fromSelectedToken, setFromSelectedToken] = useState(previousFromTokenItem?.tokenName);
 
 
     const handleAmmount = text => {
@@ -49,7 +50,6 @@ const useSwapMain = (props) => {
         PriceButton, setPriceButton,
         typePayOrReceive, setTypePayOrReceive,
         fromstateCurentPrice,
-        selectedChainTo,
         selectedTokenReceive,
         Recivetokenbalance,
         enterAmountReceive,
@@ -58,7 +58,8 @@ const useSwapMain = (props) => {
         payTokenBottomSheet,
         receiveTokenBottomSheet,
         previousFromTokenItem,
-        previousType
+        fromSelectedToken, setFromSelectedToken,
+        toSelectedToken, setToSelectedToken,
     }
 }
 

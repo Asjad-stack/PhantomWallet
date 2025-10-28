@@ -32,7 +32,7 @@ const YouPay = (props) => {
                     <Spacer customHeight={hp(4)} />
                     <TokensList onPressToken={(item) => {
                         console.log(item, 'itemitemitem');
-                        props?.navigation.navigate(routes.swapMain, { item: item, type: type })
+                        props?.navigation.navigate(routes.swapMain, { item: item })
                     }} />
                 </View>
             </TouchableWithoutFeedback>

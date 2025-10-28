@@ -7,7 +7,7 @@ import PoppinsText from '../../../components/PoppinsText'
 import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
 import { hp, wp } from '../../../components/ResponsiveComponent'
-import { AmountDetails, InputView, LeaderBoardList, PayTokenBottomSheet, RowTabs, TrendingRowTabs } from './Components'
+import { AmountDetails, InputView, LeaderBoardList, RowTabs, TrendingRowTabs } from './Components'
 import useSwapMain from './Hooks'
 import { formatBalance } from '../../../constants/commonHelperFunctions/commonHelperFunction'
 import { routes } from '../../../constants/routes'
@@ -15,8 +15,9 @@ import { CustomButton } from '../../../components/CustomButton'
 
 
 const SwapMain = (props) => {
-    const { handleAmmount, selectedTokenPay, enterAmountPay, selectedChainFrom, FromtokenBalance, PriceButton, setPriceButton, typePayOrReceive, setTypePayOrReceive, fromstateCurentPrice,
-        selectedChainTo, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading, tostateCurentPrice, previousFromTokenItem, previousType,
+    const { handleAmmount, selectedTokenPay, enterAmountPay, selectedChainFrom, FromtokenBalance, PriceButton, setPriceButton,
+        setTypePayOrReceive, fromstateCurentPrice, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading,
+        tostateCurentPrice, fromSelectedToken, setFromSelectedToken, toSelectedToken, setToSelectedToken,
     } = useSwapMain(props)
     return (
         <MainContainerApp>
@@ -45,11 +46,9 @@ const SwapMain = (props) => {
                             }
                             selectedToken={selectedTokenPay}
                             value={enterAmountPay}
-                            selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
+                            // selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
                             selectedChain={selectedChainFrom}
                             isMaxrow={true}
-
-                            // disable={selectedChainFrom?.name ? false : true}
                             onChangeText={amt => {
 
                                 if (/^\d*\.?\d*$/.test(amt)) {
@@ -79,14 +78,11 @@ const SwapMain = (props) => {
                             priceButton={PriceButton}
                             onPressChangeToken={() => {
                                 setTypePayOrReceive('From');
+                                setFromSelectedToken(selectedTokenPay?.tokenName);
                                 props.navigation.navigate(routes.youPay)
                             }}
                             dolorValue={fromstateCurentPrice}
-                            onPressSelectChain={() => {
-                                setTypePayOrReceive('From');
-
-                            }}
-                            tokenSymbol={previousType == 'From' ? previousFromTokenItem?.tokenName : 'Sui'}
+                            tokenSymbol={fromSelectedToken ?? 'Sui'}
                         />
                         <Spacer customHeight={hp(0.7)} />
 
@@ -105,8 +101,7 @@ const SwapMain = (props) => {
                         <InputView
                             title={'You Receive'}
                             TitleChain={'To'}
-                            selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
-                            selectedChain={selectedChainTo}
+                            // selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
                             balance={
                                 selectedTokenReceive?.symbol
                                     ? `${formatBalance(
@@ -124,18 +119,15 @@ const SwapMain = (props) => {
                                     : 0.0
                             }
                             Loading={FeatchLoading}
-                            // disable={selectedChainTo?.name ? false : true}
                             editable={false}
                             dolorValue={tostateCurentPrice}
                             onPressChangeToken={() => {
                                 setTypePayOrReceive('To');
+                                setToSelectedToken(selectedTokenReceive?.tokenName);
                                 props.navigation.navigate(routes.youPay, { type: 'To' })
 
                             }}
-                            onPressSelectChain={() => {
-                                setTypePayOrReceive('To');
-                            }}
-                            tokenSymbol={previousType == 'To' ? previousFromTokenItem?.tokenName : 'Sui'}
+                            tokenSymbol={toSelectedToken ?? 'Sui'}
                         />
                     </View>
 
