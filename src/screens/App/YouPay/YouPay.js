@@ -10,6 +10,7 @@ import { Images } from '../../../Images'
 import { CustomTextInput5 } from '../../../components/CustomTextInput'
 import { TokensList, TokenTabsSelection } from './Components'
 import useYouPay from './Hooks'
+import { routes } from '../../../constants/routes'
 
 const YouPay = (props) => {
     const { type } = useYouPay(props)
@@ -29,10 +30,12 @@ const YouPay = (props) => {
                     <Spacer />
                     <TokenTabsSelection />
                     <Spacer customHeight={hp(4)} />
-                    <TokensList onPressToken={() => { }} />
+                    <TokensList onPressToken={(item) => {
+                        console.log(item, 'itemitemitem');
+                        props?.navigation.navigate(routes.swapMain, { item: item, type: type })
+                    }} />
                 </View>
             </TouchableWithoutFeedback>
-
         </AppContainer>
     )
 }

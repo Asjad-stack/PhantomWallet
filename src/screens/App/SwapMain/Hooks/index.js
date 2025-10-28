@@ -1,6 +1,12 @@
 import React, { useRef, useState } from 'react'
 
-const useSwapMain = () => {
+const useSwapMain = (props) => {
+
+    const previousFromTokenItem = props?.route?.params?.item
+    const previousType = props?.route?.params?.type
+
+    console.log(previousFromTokenItem, 'previousFromTokenItempreviousFromTokenItempreviousFromTokenItem');
+    console.log(previousType, 'previousTypepreviousTypepreviousType');
 
 
     const payTokenBottomSheet = useRef(null)
@@ -20,8 +26,6 @@ const useSwapMain = () => {
     const [enterAmountReceive, setEnterAmountReceive] = useState('')
     const [FeatchLoading, setFeatchLoading] = useState(false);
     const [tostateCurentPrice, settostateCurentPrice] = useState('');
-
-
 
 
     const handleAmmount = text => {
@@ -53,6 +57,8 @@ const useSwapMain = () => {
         tostateCurentPrice,
         payTokenBottomSheet,
         receiveTokenBottomSheet,
+        previousFromTokenItem,
+        previousType
     }
 }
 

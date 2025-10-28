@@ -15,9 +15,9 @@ import { CustomButton } from '../../../components/CustomButton'
 
 
 const SwapMain = (props) => {
-    const { handleAmmount, selectedTokenPay, enterAmountPay, selectedChainFrom, FromtokenBalance, PriceButton, setPriceButton, setTypePayOrReceive, fromstateCurentPrice,
-        selectedChainTo, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading, tostateCurentPrice, payTokenBottomSheet, receiveTokenBottomSheet,
-    } = useSwapMain()
+    const { handleAmmount, selectedTokenPay, enterAmountPay, selectedChainFrom, FromtokenBalance, PriceButton, setPriceButton, typePayOrReceive, setTypePayOrReceive, fromstateCurentPrice,
+        selectedChainTo, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading, tostateCurentPrice, previousFromTokenItem, previousType,
+    } = useSwapMain(props)
     return (
         <MainContainerApp>
             <Spacer customHeight={hp(7)} />
@@ -86,6 +86,7 @@ const SwapMain = (props) => {
                                 setTypePayOrReceive('From');
 
                             }}
+                            tokenSymbol={previousType == 'From' ? previousFromTokenItem?.tokenName : 'Sui'}
                         />
                         <Spacer customHeight={hp(0.7)} />
 
@@ -134,6 +135,7 @@ const SwapMain = (props) => {
                             onPressSelectChain={() => {
                                 setTypePayOrReceive('To');
                             }}
+                            tokenSymbol={previousType == 'To' ? previousFromTokenItem?.tokenName : 'Sui'}
                         />
                     </View>
 

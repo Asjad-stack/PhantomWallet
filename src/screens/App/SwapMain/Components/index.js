@@ -12,6 +12,7 @@ import { SimpleRBSheet } from "../../../../components/SImpleBottomSheet";
 import { CustomTextInput5 } from "../../../../components/CustomTextInput";
 
 export const InputView = ({
+
     title,
     editable,
     placeholder,
@@ -29,7 +30,8 @@ export const InputView = ({
     isMaxrow,
     priceButton,
     onpresPriceButton,
-    disable
+    disable,
+    tokenSymbol
 }) => {
     return (
         <View style={styles.BackgroundInputview}>
@@ -72,19 +74,11 @@ export const InputView = ({
                             }}
                         />
                         <PoppinsText style={styles.symbol}>
-
-                            Sui
+                            {tokenSymbol}
                         </PoppinsText>
-                        <Image
-                            source={Images.arrowDown}
-                            resizeMode="contain"
-                            style={styles.arrowDown}
-                        />
                     </TouchableOpacity>
-
                 </View>
             </View>
-
             <Spacer customHeight={hp(0.2)} />
             <PoppinsText
                 style={{
