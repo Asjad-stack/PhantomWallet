@@ -73,6 +73,12 @@ const CreateWallet = (props) => {
                         props?.navigation.navigate(routes.importPrivateKey)
                     }, 500);
                 }}
+                onPressBtn3={() => {
+                    importOptionsBottomSheet?.current?.close()
+                    setTimeout(() => {
+                        props?.navigation.navigate(routes.connectHardware)
+                    }, 500);
+                }}
             />
         </MainContainer>
     )

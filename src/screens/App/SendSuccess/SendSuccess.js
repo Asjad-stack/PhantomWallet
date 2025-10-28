@@ -8,6 +8,7 @@ import { Images } from '../../../Images'
 import PoppinsText from '../../../components/PoppinsText'
 import { CustomButton } from '../../../components/CustomButton'
 import { colors } from '../../../constants/colors'
+import { routes } from '../../../constants/routes'
 
 const SendSuccess = (props) => {
     const previousScreen = props?.route?.params?.screenName
@@ -29,7 +30,7 @@ const SendSuccess = (props) => {
                 </View>
             </View>
             <View style={{ paddingBottom: hp(4) }}>
-                <CustomButton title={'Close'} titleStyles={{ color: colors.gray84 }} btnSyles={{ backgroundColor: colors.btnDisableColor }} onPressBtn={() => { }} />
+                <CustomButton title={'Close'} titleStyles={{ color: colors.gray84 }} btnSyles={{ backgroundColor: colors.btnDisableColor }} onPressBtn={() => props?.navigation.replace(routes.appStack)} />
             </View>
         </MainContainerApp>
     )
