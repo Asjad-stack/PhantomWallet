@@ -27,10 +27,10 @@ const TokenDetails = (props) => {
                 <TokenDetailsHeader leftImage={Images.backArrow} tokenLogo={Images.tokenLogo} tokenName={'Solana'} status={'421 people here'} rightImage={Images.followImage} onPressBackArrow={() => props?.navigation.goBack()} />
                 <Spacer />
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <PoppinsText style={styles.tokenCurentPrice}>{previousTokenData?.currentPrice}</PoppinsText>
+                    <PoppinsText style={styles.tokenCurentPrice}>{previousTokenData?.currentPrice ?? '0.00'}</PoppinsText>
 
-                    <View style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
-                        <PoppinsText style={styles.dollarPrice}>{previousTokenData?.dollarPrice}</PoppinsText>
+                    <View style={{ ...appStyles.rowBasic, }}>
+                        <PoppinsText style={styles.dollarPrice}>{previousTokenData?.dollarPrice ?? '$0.00'}</PoppinsText>
                         <View style={styles.percentageRoundBox}>
                             <PoppinsText style={styles.percentageText}>{'+2.20%'}</PoppinsText>
                         </View>

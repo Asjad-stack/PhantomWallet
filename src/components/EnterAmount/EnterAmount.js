@@ -14,7 +14,7 @@ import Spacer from '../Spacer'
 
 
 const EnterAmount = ({ props, tokenLogo, chainLogo, tokenName, dropDown, dollarAmount, infoLogo,
-    feeDollarAmmount, details, arrowDown, btnTitle, onPressInfo, customCenterButton, customButton, onPressDetails }) => {
+    feeDollarAmmount, details, arrowDown, btnTitle, onPressInfo, customCenterButton, onPressBtn, customButton, onPressDetails }) => {
     const {
         selectedToken,
         enteredAmount, setEnteredAmount,
@@ -155,7 +155,7 @@ const EnterAmount = ({ props, tokenLogo, chainLogo, tokenName, dropDown, dollarA
                     <RowTabsView selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
                     :
                     customCenterButton ?
-                        <CustomButton title={btnTitle ? btnTitle : 'Continue'} onPress={() => { }} />
+                        <CustomButton title={btnTitle ? btnTitle : 'Continue'} onPressBtn={onPressBtn} />
                         : null
                 }
 

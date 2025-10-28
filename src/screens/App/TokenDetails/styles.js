@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
         fontSize: 42,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.gray110,
-        textAlign: 'center'
     },
     greenArrowUp: {
         width: wp(2.5),
@@ -28,7 +27,7 @@ export const styles = StyleSheet.create({
     percentageRoundBox: {
         marginLeft: wp(2),
         paddingHorizontal: wp(2),
-        paddingVertical: hp(0.2),
+        paddingVertical: hp(0.1),
         backgroundColor: colors.green5,
         borderRadius: 5
     },

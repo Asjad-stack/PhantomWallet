@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native'
+import { Image, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import Spacer from '../../../components/Spacer'
@@ -62,7 +62,7 @@ const HomeScreen = (props) => {
 
     return (
         <MainContainerApp style={{ paddingHorizontal: wp(4) }}>
-            <Spacer customHeight={hp(6)} />
+            <Spacer customHeight={hp(7)} />
             <AccountCard
                 profile={Images.profile1}
                 accountName="@FreshWallet7" accountNumber={'Account 1'}
@@ -98,12 +98,10 @@ const HomeScreen = (props) => {
             </View>
 
             <Spacer customHeight={hp(1.5)} />
-            <View style={appStyles.row}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)} style={appStyles.rowBasic}>
                 <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)}>
-                    <PoppinsText style={styles.manageText}>Manage</PoppinsText>
-                </TouchableOpacity>
-            </View>
+                <Image source={Images.arrowRight} resizeMode='contain' style={{ width: wp(2), height: wp(3), marginLeft: wp(2) }} />
+            </TouchableOpacity>
             <Spacer customHeight={hp(0.5)} />
             <PrepView />
 

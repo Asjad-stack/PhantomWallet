@@ -8,6 +8,8 @@ import { appStyles } from "../../../../utilities/appStyles";
 import { hp, wp } from "../../../../components/ResponsiveComponent";
 import { useState } from "react";
 import { trendingTokenHoldersData, trendingTokensTabsOptions } from "../../../../components/dummyData";
+import { SimpleRBSheet } from "../../../../components/SImpleBottomSheet";
+import { CustomTextInput5 } from "../../../../components/CustomTextInput";
 
 export const InputView = ({
     title,
@@ -54,7 +56,7 @@ export const InputView = ({
 
                 <View style={{}}>
                     <TouchableOpacity
-                        activeOpacity={0.9}
+                        activeOpacity={0.8}
                         disabled={disable}
                         onPress={onPressChangeToken}
                         hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
@@ -253,6 +255,20 @@ export const AmountDetails = ({ }) => {
         </View>
     )
 }
+
+// export const PayTokenBottomSheet = ({ payTokenBottomSheet, title, value, onChangeText }) => {
+//     return (
+//         <SimpleRBSheet refRBSheet={payTokenBottomSheet} height={hp(50)}>
+//             <View style={appStyles.row}>
+//                 <PoppinsText style={styles.rbsheetTitle}>{title}</PoppinsText>
+//                 <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
+//             </View>
+//             <Spacer customHeight={hp(1.5)} />
+//             <CustomTextInput5 value={value} onChangeText={onChangeText} leftImage={Images.searchWhite} placeholder={'Search'} placeholderTextColor={colors.gray4} inputStyle={styles.rbsheetInputStyle} containerStyle={styles.rbsheetInputContainer} />
+
+//         </SimpleRBSheet>
+//     )
+// }
 
 const styles = StyleSheet.create({
     // InputView
@@ -460,5 +476,24 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.Poppins.Regular,
         color: colors.gray108,
         textAlign: 'right'
+    },
+    // PayTokenBottomSheet
+    rbsheetTitle: {
+        fontSize: 17,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray83,
+    },
+    cross: {
+        width: wp(4),
+        height: wp(4),
+    },
+    rbsheetInputStyle: {
+        width: wp(72),
+        alignSelf: 'center',
+        textAlign: 'left',
+        paddingHorizontal: wp(3),
+    },
+    rbsheetInputContainer: {
+        backgroundColor: colors.gray68,
     }
 })

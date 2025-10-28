@@ -18,8 +18,8 @@ export const styles = StyleSheet.create({
         height: wp(4),
     },
     swapLogo: {
-        width: wp(7),
-        height: wp(7),
+        width: wp(8),
+        height: wp(8),
         alignSelf: 'center',
     }
 })

@@ -6,8 +6,8 @@ import { appStyles } from '../../../utilities/appStyles'
 import PoppinsText from '../../../components/PoppinsText'
 import { Images } from '../../../Images'
 import Spacer from '../../../components/Spacer'
-import { hp } from '../../../components/ResponsiveComponent'
-import { AmountDetails, InputView, LeaderBoardList, RowTabs, TrendingRowTabs } from './Components'
+import { hp, wp } from '../../../components/ResponsiveComponent'
+import { AmountDetails, InputView, LeaderBoardList, PayTokenBottomSheet, RowTabs, TrendingRowTabs } from './Components'
 import useSwapMain from './Hooks'
 import { formatBalance } from '../../../constants/commonHelperFunctions/commonHelperFunction'
 import { routes } from '../../../constants/routes'
@@ -16,7 +16,7 @@ import { CustomButton } from '../../../components/CustomButton'
 
 const SwapMain = (props) => {
     const { handleAmmount, selectedTokenPay, enterAmountPay, selectedChainFrom, FromtokenBalance, PriceButton, setPriceButton, setTypePayOrReceive, fromstateCurentPrice,
-        selectedChainTo, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading, tostateCurentPrice
+        selectedChainTo, selectedTokenReceive, Recivetokenbalance, enterAmountReceive, FeatchLoading, tostateCurentPrice, payTokenBottomSheet, receiveTokenBottomSheet,
     } = useSwapMain()
     return (
         <MainContainerApp>
@@ -31,98 +31,112 @@ const SwapMain = (props) => {
                     </View>
                     <Spacer customHeight={hp(1)} />
 
-                    <InputView
-                        title={'You Pay'}
-                        TitleChain={'From'}
-                        balance={
-                            selectedTokenPay?.symbol
-                                ? `${formatBalance(FromtokenBalance > 0 ? FromtokenBalance : 0) +
-                                ' ' +
+                    <View style={{ position: 'relative' }}>
+                        <InputView
+                            title={'You Pay'}
+                            TitleChain={'From'}
+                            balance={
                                 selectedTokenPay?.symbol
-                                }`
-                                : 0
-                        }
-                        selectedToken={selectedTokenPay}
-                        value={enterAmountPay}
-                        selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
-                        selectedChain={selectedChainFrom}
-                        isMaxrow={true}
-
-                        disable={selectedChainFrom?.name ? false : true}
-                        onChangeText={amt => {
-
-                            if (/^\d*\.?\d*$/.test(amt)) {
-                                handleAmmount(amt);
+                                    ? `${formatBalance(FromtokenBalance > 0 ? FromtokenBalance : 0) +
+                                    ' ' +
+                                    selectedTokenPay?.symbol
+                                    }`
+                                    : 0
                             }
-                        }}
-                        onpresPriceButton={response => {
+                            selectedToken={selectedTokenPay}
+                            value={enterAmountPay}
+                            selectedChainName={selectedChainFrom?.name ?? 'Select Chain'}
+                            selectedChain={selectedChainFrom}
+                            isMaxrow={true}
 
-                            console.log('FromtokenBalance', response);
-                            if (FromtokenBalance > 0) {
-                                console.log('FromtokenBalance', FromtokenBalance);
-                                let calculatedAmount = (FromtokenBalance * response) / 100;
-                                console.log('calculatedAmount', calculatedAmount);
+                            // disable={selectedChainFrom?.name ? false : true}
+                            onChangeText={amt => {
 
-                                let balanceString;
-                                // If calculatedAmount is less than 1, keep up to 6 decimals, else 2 decimals
-                                if (calculatedAmount < 1) {
-                                    balanceString = calculatedAmount.toFixed(6).replace(/\.?0+$/, '');
-                                } else {
-                                    balanceString = calculatedAmount.toFixed(2).replace(/\.?0+$/, '');
+                                if (/^\d*\.?\d*$/.test(amt)) {
+                                    handleAmmount(amt);
                                 }
+                            }}
+                            onpresPriceButton={response => {
 
-                                setPriceButton(response);
-                                handleAmmount(balanceString);
-                            }
-                        }}
-                        priceButton={PriceButton}
-                        onPressChangeToken={() => {
-                            setTypePayOrReceive('From');
+                                console.log('FromtokenBalance', response);
+                                if (FromtokenBalance > 0) {
+                                    console.log('FromtokenBalance', FromtokenBalance);
+                                    let calculatedAmount = (FromtokenBalance * response) / 100;
+                                    console.log('calculatedAmount', calculatedAmount);
 
-                        }}
-                        dolorValue={fromstateCurentPrice}
-                        onPressSelectChain={() => {
-                            setTypePayOrReceive('From');
+                                    let balanceString;
+                                    // If calculatedAmount is less than 1, keep up to 6 decimals, else 2 decimals
+                                    if (calculatedAmount < 1) {
+                                        balanceString = calculatedAmount.toFixed(6).replace(/\.?0+$/, '');
+                                    } else {
+                                        balanceString = calculatedAmount.toFixed(2).replace(/\.?0+$/, '');
+                                    }
 
-                        }}
-                    />
+                                    setPriceButton(response);
+                                    handleAmmount(balanceString);
+                                }
+                            }}
+                            priceButton={PriceButton}
+                            onPressChangeToken={() => {
+                                setTypePayOrReceive('From');
+                                props.navigation.navigate(routes.youPay)
+                            }}
+                            dolorValue={fromstateCurentPrice}
+                            onPressSelectChain={() => {
+                                setTypePayOrReceive('From');
 
-                    <TouchableOpacity activeOpacity={0.8} style={{}}>
-                        <Image source={Images.swapLogo} resizeMode='contain' style={styles.swapLogo} />
-                    </TouchableOpacity>
+                            }}
+                        />
+                        <Spacer customHeight={hp(0.7)} />
 
-                    <InputView
-                        title={'You Receive'}
-                        TitleChain={'To'}
-                        selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
-                        selectedChain={selectedChainTo}
-                        balance={
-                            selectedTokenReceive?.symbol
-                                ? `${formatBalance(
-                                    Recivetokenbalance > 0 ? Recivetokenbalance : 0,
-                                ) +
-                                ' ' +
+                        <TouchableOpacity activeOpacity={0.8} style={{
+                            position: 'absolute',
+                            alignSelf: 'center',
+                            top: '42%',
+                            zIndex: 2,
+                            borderRadius: wp(5),
+                            padding: wp(1.5),
+                            elevation: 3,
+                        }}>
+                            <Image source={Images.swapLogo} resizeMode='contain' style={styles.swapLogo} />
+                        </TouchableOpacity>
+
+                        <InputView
+                            title={'You Receive'}
+                            TitleChain={'To'}
+                            selectedChainName={selectedChainTo?.name ?? 'Select Chain'}
+                            selectedChain={selectedChainTo}
+                            balance={
                                 selectedTokenReceive?.symbol
-                                }`
-                                : 0
-                        }
-                        selectedToken={selectedTokenReceive}
-                        value={
-                            enterAmountReceive
-                                ? parseFloat(enterAmountReceive ?? 0).toFixed(5)
-                                : 0.0
-                        }
-                        Loading={FeatchLoading}
-                        disable={selectedChainTo?.name ? false : true}
-                        editable={false}
-                        dolorValue={tostateCurentPrice}
-                        onPressChangeToken={() => {
-                            setTypePayOrReceive('To');
-                        }}
-                        onPressSelectChain={() => {
-                            setTypePayOrReceive('To');
-                        }}
-                    />
+                                    ? `${formatBalance(
+                                        Recivetokenbalance > 0 ? Recivetokenbalance : 0,
+                                    ) +
+                                    ' ' +
+                                    selectedTokenReceive?.symbol
+                                    }`
+                                    : 0
+                            }
+                            selectedToken={selectedTokenReceive}
+                            value={
+                                enterAmountReceive
+                                    ? parseFloat(enterAmountReceive ?? 0).toFixed(5)
+                                    : 0.0
+                            }
+                            Loading={FeatchLoading}
+                            // disable={selectedChainTo?.name ? false : true}
+                            editable={false}
+                            dolorValue={tostateCurentPrice}
+                            onPressChangeToken={() => {
+                                setTypePayOrReceive('To');
+                                props.navigation.navigate(routes.youPay, { type: 'To' })
+
+                            }}
+                            onPressSelectChain={() => {
+                                setTypePayOrReceive('To');
+                            }}
+                        />
+                    </View>
+
 
                     <Spacer customHeight={hp(3)} />
                     <RowTabs />
@@ -147,6 +161,7 @@ const SwapMain = (props) => {
                     <CustomButton title='Swap Now' onPressBtn={() => props.navigation.navigate(routes.sendSuccess, { screenName: 'Swap' })} />
                 </View>
                 : null}
+            {/* <PayTokenBottomSheet payTokenBottomSheet={payTokenBottomSheet} title={'You Pay'} /> */}
         </MainContainerApp>
     )
 }

@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const useSwapMain = () => {
+
+
+    const payTokenBottomSheet = useRef(null)
+    const receiveTokenBottomSheet = useRef(null)
 
     const [selectedTokenPay, setSelectedTokenPay] = useState({})
     const [enterAmountPay, setEnterAmountPay] = useState('')
@@ -16,15 +20,6 @@ const useSwapMain = () => {
     const [enterAmountReceive, setEnterAmountReceive] = useState('')
     const [FeatchLoading, setFeatchLoading] = useState(false);
     const [tostateCurentPrice, settostateCurentPrice] = useState('');
-
-
-
-
-
-
-
-
-
 
 
 
@@ -56,6 +51,8 @@ const useSwapMain = () => {
         enterAmountReceive,
         FeatchLoading,
         tostateCurentPrice,
+        payTokenBottomSheet,
+        receiveTokenBottomSheet,
     }
 }
 

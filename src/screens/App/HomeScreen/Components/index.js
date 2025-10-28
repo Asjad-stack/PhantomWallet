@@ -94,8 +94,11 @@ export const HorizontalSrcoll = ({ onPress, onPressCross }) => {
 export const PrepView = ({ }) => {
     return (
         <View style={[appStyles.rowBasic, styles.horizontalBgView]}>
-            <Image source={Images.prepLogo} resizeMode='contain' style={styles.perpLogo} />
-            <PoppinsText style={styles.prepTitle}>{'Use perps to trade on an assets future price with leverage'}</PoppinsText>
+            <Image source={Images.perpLogo1} resizeMode='contain' style={styles.perpLogo} />
+            <View>
+                <PoppinsText style={styles.prepTitle}>{'More Power with Perps'}</PoppinsText>
+                <PoppinsText style={styles.prepDesc}>{'Trade with up to 40x leverage'}</PoppinsText>
+            </View>
         </View>
     )
 }
@@ -143,22 +146,13 @@ export const TokensCard = ({ tokenData, isLoading, onPressToken }) => {
 export const TokensTabs = ({ selectedTab, setSelectedTab }) => {
     return (
         <View style={appStyles.row}>
-            <View style={appStyles.rowBasic}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('tokens')}>
-                    <PoppinsText style={{
-                        ...styles.tabTitle,
-                        color: selectedTab === 'tokens' ? colors.white : colors.gray43
-                    }}>Tokens</PoppinsText>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => setSelectedTab('collectibles')} style={{ marginLeft: wp(5) }}>
-                    <PoppinsText style={{
-                        ...styles.tabTitle,
-                        color: selectedTab === 'collectibles' ? colors.white : colors.gray43
-                    }}>Collectibles</PoppinsText>
-                </TouchableOpacity>
-            </View>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => { }}>
-                <Image source={Images.horizontallyDots} resizeMode='contain' style={styles.horizontallyDots} />
+            <TouchableOpacity activeOpacity={0.8} style={appStyles.rowBasic} onPress={() => setSelectedTab('tokens')}>
+                <PoppinsText style={{
+                    ...styles.tabTitle,
+                    color: colors.gray137
+                }}>Tokens
+                </PoppinsText>
+                <Image source={Images.arrowRight} resizeMode='contain' style={{ width: wp(2), height: wp(3), marginLeft: wp(2) }} />
             </TouchableOpacity>
         </View>
     )
@@ -268,7 +262,7 @@ const styles = StyleSheet.create({
     horizontalBgView: {
         width: wp(92),
         height: hp(8),
-        backgroundColor: colors.gray40,
+        backgroundColor: colors.gray136,
         borderRadius: 12,
         paddingHorizontal: wp(4),
     },
@@ -289,19 +283,24 @@ const styles = StyleSheet.create({
     },
     // PrepView
     perpLogo: {
-        width: wp(10.5),
-        height: wp(5.5),
+        width: wp(9.5),
+        height: wp(9),
         marginRight: wp(3)
     },
     prepTitle: {
-        fontSize: 12,
+        fontSize: 16,
+        fontFamily: Fonts.Poppins.SemiBold,
+        color: colors.gray91,
+    },
+    prepDesc: {
+        fontSize: 14,
         fontFamily: Fonts.Poppins.Regular,
-        color: colors.gray41,
+        color: colors.gray135,
         width: wp(60)
     },
     // TokensTabs
     tabTitle: {
-        fontSize: 17,
+        fontSize: 21,
         fontFamily: Fonts.Poppins.SemiBold,
     },
     horizontallyDots: {

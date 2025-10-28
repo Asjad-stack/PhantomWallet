@@ -74,6 +74,7 @@ export const Images = {
     buyTab: require('./buyTab.png'),
     cross: require('./cross.png'),
     prepLogo: require('./prepLogo.png'),
+    perpLogo1: require('./perpLogo1.png'),
     horizontallyDots: require('./horizontallyDots.png'),
     onePerson: require('./onePerson.png'),
     settngs: require('./settngs.png'),

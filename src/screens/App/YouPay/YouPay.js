@@ -9,15 +9,17 @@ import PoppinsText from '../../../components/PoppinsText'
 import { Images } from '../../../Images'
 import { CustomTextInput5 } from '../../../components/CustomTextInput'
 import { TokensList, TokenTabsSelection } from './Components'
+import useYouPay from './Hooks'
 
 const YouPay = (props) => {
+    const { type } = useYouPay(props)
     return (
         <AppContainer>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <View style={styles.mainView}>
                     <Spacer />
                     <View style={appStyles.row}>
-                        <PoppinsText style={styles.title}>You Pay</PoppinsText>
+                        <PoppinsText style={styles.title}>{type === 'To' ? 'You Receive' : 'You Pay'}</PoppinsText>
                         <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.goBack()}>
                             <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
                         </TouchableOpacity>

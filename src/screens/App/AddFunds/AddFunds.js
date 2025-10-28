@@ -22,14 +22,9 @@ const AddFunds = (props) => {
                     <Image source={Images.cross} resizeMode='contain' style={styles.cross} />
                 </View>
                 <Spacer />
-                <EnterAmount tokenLogo={Images.solanaLogo} tokenName={'Pay SOL'} dollarAmount={'$2.48 available'} feeDollarAmmount={'$0.00'} infoLogo={Images.infoLogo} onPressInfo={() => InfoBottomSheet?.current?.open()} />
+                <EnterAmount tokenLogo={Images.solanaLogo} tokenName={'Pay SOL'} dollarAmount={'$2.48 available'} feeDollarAmmount={'$0.00'} infoLogo={Images.infoLogo} customCenterButton={true} btnTitle={'Continue'} onPressBtn={() => props?.navigation.navigate(routes.masterPerpetualFuture)} onPressInfo={() => InfoBottomSheet?.current?.open()} />
             </View>
-            <FeeBottomSheet InfoBottomSheet={InfoBottomSheet} onPressDone={() => {
-                InfoBottomSheet?.current?.close()
-                setTimeout(() => {
-                    props?.navigation.navigate(routes.masterPerpetualFuture)
-                }, 500);
-            }} />
+            <FeeBottomSheet InfoBottomSheet={InfoBottomSheet} onPressDone={() => InfoBottomSheet?.current?.close()} />
         </AppContainer>
     )
 }

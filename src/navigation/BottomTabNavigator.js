@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Activities, HistoryScreen, HomeScreen, SearchScreen, Settings, SwapMain } from '../screens/App';
 import { routes } from '../constants/routes';
@@ -13,6 +13,9 @@ const Tab = createBottomTabNavigator();
 
 
 function BottomTabBarNav({ navigation }) {
+
+  const [activeTab, setActiveTab] = useState()
+
   return (
     <View style={[styles.tabBarBackground, appStyles.row]}>
 
@@ -42,19 +45,23 @@ function BottomTabBarNav({ navigation }) {
           name={routes.homeScreen}
           component={HomeScreen}
           options={{
-            tabBarButton: (props) => (
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
-                  borderTopWidth: props?.onPress ? 1 : 0, borderTopColor: props?.focused ? colors.lightPurple17 : 'transparent'
-                }}
-              />
-            ),
+            // tabBarButton: ({ focused }) => (
+            //   <TouchableOpacity
+            //     activeOpacity={1}
+            //     onPress={() => {
+            //       console.log('onPressonPressonPressonPressonPressonPressonPressonPress');
+            //       setActiveTab(routes.homeScreen)
+            //     }}
+            //     style={{
+            //       padding: wp(4),
+            //       alignSelf: 'center',
+            //       // borderTopWidth: focused ? 2 : 0,
+            //       // borderTopColor: focused ? colors.lightPurple17 : 'transparent'
+            //     }}
+            //   />
+            // ),
             tabBarIcon: ({ focused }) =>
-              <View style={{}}>
+              <View style={{ borderTopWidth: focused ? 2 : 0, borderTopColor: focused ? colors.lightPurple17 : 'transparent', width: wp(18), height: wp(9), justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Image
                   source={focused ? Images.homeActiveBtn : Images.homeUnActiveBtn}
                   style={focused ? styles.activeTab : styles.unActiveTab}
@@ -64,54 +71,27 @@ function BottomTabBarNav({ navigation }) {
           }}
         />
 
-        {/* <Tab.Screen
-          name={routes.historyScreen}
-          component={HistoryScreen}
-          options={{
-            tabBarButton: (props) => (
-              console.log(props, 'propspropspropspropspropspropspropspropsprops'),
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
-                  // borderTopWidth: focused ? 1 : 0,
-                  // borderTopColor: focused ? colors.lightPurple17 : 'transparent'
-                }}
-              />
-            ),
-            tabBarIcon: ({ focused }) =>
-              <View style={{}}>
-                <View style={{}}>
-                  <Image source={focused ? Images.wifiUnActiveBtn : Images.wifiUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
-                </View>
-              </View>
-          }}
-        /> */}
-
-
         <Tab.Screen
           name={routes.activities}
           component={Activities}
           options={{
-            tabBarButton: (props) => (
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
+            // tabBarButton: (props) => (
+            //   <TouchableOpacity
+            //     {...props}
+            //     activeOpacity={1}
+            //     style={{
+            //       padding: wp(4),
+            //       alignSelf: 'center',
 
-                }}
-              />
-            ),
+            //     }}
+            //   />
+            // ),
             tabBarIcon: ({ focused }) =>
-              <View style={{}}>
-                <View style={{}}>
-                  <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
-                </View>
+
+              <View style={{ borderTopWidth: focused ? 2 : 0, borderTopColor: focused ? colors.lightPurple17 : 'transparent', width: wp(18), height: wp(9), justifyContent: 'flex-end', alignItems: 'center' }}>
+                <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
               </View>
+
           }}
         />
 
@@ -119,22 +99,22 @@ function BottomTabBarNav({ navigation }) {
           name={routes.swapMain}
           component={SwapMain}
           options={{
-            tabBarButton: (props) => (
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
-                }}
-              />
-            ),
+            // tabBarButton: (props) => (
+            //   <TouchableOpacity
+            //     {...props}
+            //     activeOpacity={1}
+            //     style={{
+            //       padding: wp(4),
+            //       alignSelf: 'center',
+            //     }}
+            //   />
+            // ),
             tabBarIcon: ({ focused }) =>
-              <View style={{}}>
-                <View style={{}}>
-                  <Image source={focused ? Images.swapActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
-                </View>
+
+              <View style={{ borderTopWidth: focused ? 2 : 0, borderTopColor: focused ? colors.lightPurple17 : 'transparent', width: wp(18), height: wp(9), justifyContent: 'flex-end', alignItems: 'center' }}>
+                <Image source={focused ? Images.swapActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
               </View>
+
           }}
         />
 
@@ -142,23 +122,23 @@ function BottomTabBarNav({ navigation }) {
           name={routes.searchScreen}
           component={SearchScreen}
           options={{
-            tabBarButton: (props) => (
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
+            // tabBarButton: (props) => (
+            //   <TouchableOpacity
+            //     {...props}
+            //     activeOpacity={1}
+            //     style={{
+            //       padding: wp(4),
+            //       alignSelf: 'center',
 
-                }}
-              />
-            ),
+            //     }}
+            //   />
+            // ),
             tabBarIcon: ({ focused }) =>
-              <View style={{}}>
-                <View style={{}}>
-                  <Image source={focused ? Images.searchActiveBtn : Images.seacrhUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
-                </View>
+
+              <View style={{ borderTopWidth: focused ? 2 : 0, borderTopColor: focused ? colors.lightPurple17 : 'transparent', width: wp(18), height: wp(9), justifyContent: 'flex-end', alignItems: 'center' }}>
+                <Image source={focused ? Images.searchActiveBtn : Images.seacrhUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
               </View>
+
           }}
         />
 
@@ -182,12 +162,14 @@ const styles = StyleSheet.create({
   activeTab: {
     width: wp(5),
     height: wp(5),
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginTop: 10
   },
   unActiveTab: {
     width: wp(5),
     height: wp(5),
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginTop: 10
   }
 });
 

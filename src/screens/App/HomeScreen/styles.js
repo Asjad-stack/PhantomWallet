@@ -25,9 +25,9 @@ export const styles = StyleSheet.create({
         marginRight: wp(3)
     },
     prepTitle: {
-        fontSize: 17,
+        fontSize: 20,
         fontFamily: Fonts.Poppins.SemiBold,
-        color: colors.gray42
+        color: colors.gray134
     },
     manageText: {
         fontSize: 12,
