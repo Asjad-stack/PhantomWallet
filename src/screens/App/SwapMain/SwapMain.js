@@ -29,7 +29,7 @@ const SwapMain = (props) => {
                             <Image source={Images.slippage} resizeMode='contain' style={styles.slippage} />
                         </TouchableOpacity>
                     </View>
-                    <Spacer />
+                    <Spacer customHeight={hp(1)} />
 
                     <InputView
                         title={'You Pay'}
@@ -123,6 +123,7 @@ const SwapMain = (props) => {
                             setTypePayOrReceive('To');
                         }}
                     />
+
                     <Spacer customHeight={hp(3)} />
                     <RowTabs />
                     <Spacer />

@@ -19,14 +19,14 @@ const ImportPrivateKey = (props) => {
         <AppContainer>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <View style={styles.mainView}>
-                    <AppHeader leftImage={Images.goBackArrow} title={'Import Private Key'} rightImage={Images.questionMark} onPressBack={() => props?.navigation.goBack()} />
-                    <Spacer customHeight={hp(3)} />
+                    <AppHeader leftImage={Images.backArrow} title={'Import Private Key'} rightImage={Images.questionMark} onPressBack={() => props?.navigation.goBack()} />
+                    <Spacer customHeight={hp(2)} />
                     <Image source={Images.arrowDownWithRound} resizeMode='contain' style={styles.arrowDownWithRound} />
                     <Spacer />
                     <NetworkCard title={'Network'} network={selectedNetwork?.title ?? 'Solana'} rightArrow={Images.arrowRight} onPress={() => setShowModal(true)} />
-                    <Spacer />
+                    <Spacer customHeight={hp(1)} />
                     <CustomTextInput3 placeholder={'Name'} placeholderTextColor={colors.gray33} value={name} onChangeText={(text) => setName(text)} inputStyle={styles.inputStyle} containerStyle={styles.containerStyle} />
-                    <Spacer />
+                    <Spacer customHeight={hp(1)} />
                     <CustomTextInput4 value={privateKey} onChangeText={(text) => setPrivateKey(text)} inputStyle={styles.inputStyle1} containerStyle={styles.containerStyle} onPressPaste={() => { }} />
                 </View>
             </TouchableWithoutFeedback>

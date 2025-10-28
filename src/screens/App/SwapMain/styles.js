@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native'
 import { wp } from '../../../components/ResponsiveComponent'
 import { Fonts } from '../../../constants/fonts'
 import { colors } from '../../../constants/colors'
-import { width } from 'react-native-dimension'
 
 export const styles = StyleSheet.create({
     mainView: {

@@ -36,7 +36,7 @@ export const BalanceCard = ({ }) => {
     return (
         <View>
             <PoppinsText style={styles.balanceText}>$2.46</PoppinsText>
-            <View style={{ ...appStyles.rowBasic, alignSelf: 'center' }}>
+            <View style={{ ...appStyles.rowBasic }}>
                 <PoppinsText style={styles.amount}>{"+$0.00242559"}</PoppinsText>
                 <View style={styles.dollarAmountBox}>
                     <PoppinsText style={styles.dollarAmount}>+0.10%</PoppinsText>
@@ -196,13 +196,13 @@ const styles = StyleSheet.create({
         fontSize: 42,
         fontFamily: Fonts.Poppins.SemiBold,
         color: colors.white,
-        textAlign: 'center'
+        // textAlign: 'center'
     },
     amount: {
         fontSize: 16,
         fontFamily: Fonts.Poppins.Bold,
         color: colors.green,
-        textAlign: 'center'
+        // textAlign: 'center'
     },
     dollarAmountBox: {
         backgroundColor: colors.greenShadow,

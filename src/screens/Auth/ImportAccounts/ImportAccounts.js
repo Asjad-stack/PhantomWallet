@@ -11,6 +11,7 @@ import PoppinsText from '../../../components/PoppinsText'
 import { CustomButton } from '../../../components/CustomButton'
 import { colors } from '../../../constants/colors'
 import { FindAccountsCard, SelectedAccountCard } from './Components'
+import { routes } from '../../../constants/routes'
 
 
 const ImportAccounts = (props) => {
@@ -45,7 +46,7 @@ const ImportAccounts = (props) => {
             <View style={{ paddingBottom: hp(4) }}>
                 <CustomButton title='View Accounts' btnSyles={{ backgroundColor: colors.gray21 }} titleStyles={{ color: colors.gray22 }} />
                 <Spacer customHeight={hp(1)} />
-                <CustomButton title='Continue' />
+                <CustomButton title='Continue' onPressBtn={() => props?.navigation.replace(routes.appStack)} />
             </View>
         </MainContainer>
     )

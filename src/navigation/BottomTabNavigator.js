@@ -31,8 +31,8 @@ function BottomTabBarNav({ navigation }) {
             shadowOpacity: 0,
             paddingHorizontal: wp(4),
             alignSelf: 'center',
-            borderTopWidth: 1,
-            borderTopColor: colors.black,
+            // borderTopWidth: 1,
+            // borderTopColor: colors.black,
             marginBottom: Platform.OS == 'android' ? hp(1.5) : 0,
             paddingBottom: hp(5),
           }
@@ -90,28 +90,6 @@ function BottomTabBarNav({ navigation }) {
           }}
         /> */}
 
-        <Tab.Screen
-          name={routes.swapMain}
-          component={SwapMain}
-          options={{
-            tabBarButton: (props) => (
-              <TouchableOpacity
-                {...props}
-                activeOpacity={1}
-                style={{
-                  padding: wp(4),
-                  alignSelf: 'center',
-                }}
-              />
-            ),
-            tabBarIcon: ({ focused }) =>
-              <View style={{}}>
-                <View style={{}}>
-                  <Image source={focused ? Images.swapActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
-                </View>
-              </View>
-          }}
-        />
 
         <Tab.Screen
           name={routes.activities}
@@ -132,6 +110,29 @@ function BottomTabBarNav({ navigation }) {
               <View style={{}}>
                 <View style={{}}>
                   <Image source={focused ? Images.historyUnActiveBtn : Images.historyUnActiveBtn} tintColor={focused ? colors.lightPurple14 : colors.gray125} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
+                </View>
+              </View>
+          }}
+        />
+
+        <Tab.Screen
+          name={routes.swapMain}
+          component={SwapMain}
+          options={{
+            tabBarButton: (props) => (
+              <TouchableOpacity
+                {...props}
+                activeOpacity={1}
+                style={{
+                  padding: wp(4),
+                  alignSelf: 'center',
+                }}
+              />
+            ),
+            tabBarIcon: ({ focused }) =>
+              <View style={{}}>
+                <View style={{}}>
+                  <Image source={focused ? Images.swapActiveBtn : Images.swapUnActiveBtn} style={focused ? styles.activeTab : styles.unActiveTab} resizeMode="contain" />
                 </View>
               </View>
           }}

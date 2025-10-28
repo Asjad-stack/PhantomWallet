@@ -73,11 +73,11 @@ const HomeScreen = (props) => {
             />
 
             <View>
-                <Spacer />
+                <Spacer customHeight={hp(1)} />
                 <BalanceCard />
 
 
-                <Spacer />
+                <Spacer customHeight={hp(1)} />
                 <RowTabs onPressTab={(item) => {
                     console.log('RowTabs item:', item);
                     if (item?.id === 1) {
@@ -97,21 +97,20 @@ const HomeScreen = (props) => {
                 <HorizontalSrcoll onPress={(item) => { }} onPressCross={(item) => { }} />
             </View>
 
-            <Spacer />
+            <Spacer customHeight={hp(1.5)} />
             <View style={appStyles.row}>
                 <PoppinsText style={styles.prepTitle}>Perps</PoppinsText>
                 <TouchableOpacity activeOpacity={0.8} onPress={() => props?.navigation.navigate(routes.prepMain)}>
                     <PoppinsText style={styles.manageText}>Manage</PoppinsText>
                 </TouchableOpacity>
             </View>
-            <Spacer customHeight={hp(1)} />
+            <Spacer customHeight={hp(0.5)} />
             <PrepView />
 
             <Spacer customHeight={hp(3)} />
             <TokensTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
-            <Spacer />
-
+            <Spacer customHeight={hp(0.8)} />
             <TokensCard
                 tokenData={tokenData}
                 isLoading={isLoading}

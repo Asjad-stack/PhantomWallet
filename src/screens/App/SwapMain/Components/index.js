@@ -30,172 +30,77 @@ export const InputView = ({
     disable
 }) => {
     return (
-        <View>
-            <View>
-                {/* <View style={styles.titleView}>
-                    <PoppinsText style={styles.titleText}>{TitleChain}</PoppinsText>
-                    <TouchableOpacity
-                        activeOpacity={0.8}
-                        hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
-                        onPress={onPressSelectChain}
-                        style={styles.chainView}>
-                        {selectedChain?.logoURI ? (
-                            <FastImage
-                                source={{ uri: selectedChain?.logoURI }}
-                                style={styles.selectedChain}
-                                resizeMode={FastImage.resizeMode.contain}
-                            />
-                        ) : null}
+        <View style={styles.BackgroundInputview}>
+            <Spacer customHeight={hp(1)} />
+            <PoppinsText style={styles.title}>{title}</PoppinsText>
+            <View style={styles.mainView}>
+                <TextInput
+                    placeholder={Loading ? '' : '0.0'}
+                    value={value}
+                    keyboardType={'decimal-pad'}
+                    placeholderTextColor={colors.gray4}
+                    onChangeText={onChangeText}
+                    editable={editable}
+                    style={styles.inputStyle}
+                />
 
-                        <PoppinsText style={styles.chainText}>
-                            {selectedChainName}
+                {Loading ? (
+                    <ActivityIndicator
+                        style={styles.activityIndicator}
+                        size="small"
+                        color={colors.white}
+                    />
+                ) : null}
+
+                <View style={{}}>
+                    <TouchableOpacity
+                        activeOpacity={0.9}
+                        disabled={disable}
+                        onPress={onPressChangeToken}
+                        hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
+                        style={[appStyles.rowBasic, styles.tokenBgView]}>
+                        <Image
+                            // source={{ uri: selectedToken?.logoURI }}
+                            source={Images.suiRound}
+                            resizeMode="contain"
+                            style={{
+                                ...styles.tokenlogo,
+                                borderRadius:
+                                    selectedToken?.symbol?.toUpperCase() == 'TRON' ? 0 : 100,
+                            }}
+                        />
+                        <PoppinsText style={styles.symbol}>
+
+                            Sui
                         </PoppinsText>
                         <Image
                             source={Images.arrowDown}
                             resizeMode="contain"
-                            style={styles.DownIcon}
+                            style={styles.arrowDown}
                         />
                     </TouchableOpacity>
-                </View> */}
-
-
-                <View style={styles.BackgroundInputview}>
-                    <Spacer customHeight={hp(1)} />
-                    <PoppinsText style={styles.title}>{title}</PoppinsText>
-                    <View style={styles.mainView}>
-                        <View style={{ alignItems: 'flex-start' }}>
-                            <TextInput
-                                placeholder={Loading ? '' : '0.0'}
-                                value={value}
-                                keyboardType={'decimal-pad'}
-                                placeholderTextColor={colors.gray4}
-                                onChangeText={onChangeText}
-                                editable={editable}
-                                style={styles.inputStyle}
-                            />
-                        </View>
-
-                        {Loading ? (
-                            <ActivityIndicator
-                                style={styles.activityIndicator}
-                                size="small"
-                                color={colors.white}
-                            />
-                        ) : null}
-
-                        <View style={{}}>
-                            <TouchableOpacity
-                                activeOpacity={0.9}
-                                disabled={disable}
-                                onPress={onPressChangeToken}
-                                hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
-                                style={[appStyles.rowBasic, styles.tokenBgView]}>
-                                {/* {selectedToken?.logoURI ? ( */}
-                                <Image
-                                    // source={{ uri: selectedToken?.logoURI }}
-                                    source={Images.suiRound}
-                                    resizeMode="contain"
-                                    style={{
-                                        ...styles.tokenlogo,
-                                        borderRadius:
-                                            selectedToken?.symbol?.toUpperCase() == 'TRON' ? 0 : 100,
-                                    }}
-                                />
-                                {/* ) : null} */}
-                                <PoppinsText style={styles.symbol}>
-                                    {/* {selectedToken?.symbol
-                                    ? selectedToken?.symbol?.toUpperCase()
-                                    : 'Select Asset'} */}
-                                    Sui
-                                </PoppinsText>
-                                <Image
-                                    source={Images.arrowDown}
-                                    resizeMode="contain"
-                                    style={styles.arrowDown}
-                                />
-                            </TouchableOpacity>
-
-                            <Spacer customHeight={hp(1)} />
-                            <PoppinsText
-                                style={{
-                                    fontSize: 12,
-                                    fontFamily: Fonts.Poppins.Regular,
-                                    color: colors.gray108,
-                                    textAlign: 'left',
-                                }}>
-                                {`∼$${(Number(dolorValue) * Number(value)).toFixed(3)}`}
-                            </PoppinsText>
-                        </View>
-
-                    </View>
 
                 </View>
-
-                {/* <PoppinsText style={styles.balance}>
-                    Balance: {balance}
-                </PoppinsText> */}
             </View>
 
-            {/* {selectedToken?.symbol && isMaxrow ? (
-                <View style={[appStyles.rowBasic, { paddingTop: hp(2) }]}>
-                    <TouchableOpacity
-                        onPress={() => onpresPriceButton(25)}
-                        style={[
-                            priceButton == 25 ? styles.btinView : styles.btinViewdisable,
-                            { width: selectedToken?.tags != 'Native' ? wp(21) : wp(29) },
-                        ]}>
-                        <PoppinsText
-                            style={
-                                priceButton == 25 ? styles.btntitle : styles.btntitledisable
-                            }>
-                            {'25%'}
-                        </PoppinsText>
-                    </TouchableOpacity>
+            <Spacer customHeight={hp(0.2)} />
+            <PoppinsText
+                style={{
+                    fontSize: 12,
+                    fontFamily: Fonts.Poppins.Regular,
+                    color: colors.gray108,
+                    textAlign: 'right',
+                    paddingRight: wp(5),
+                }}>
+                {`∼$${(Number(dolorValue) * Number(value)).toFixed(3)}`}{' '}
+                <PoppinsText style={{
+                    fontSize: 12,
+                    fontFamily: Fonts.Poppins.Regular,
+                    color: colors.gray108,
+                }}>SOL</PoppinsText>
+            </PoppinsText>
 
-                    <TouchableOpacity
-                        onPress={() => onpresPriceButton(50)}
-                        style={[
-                            priceButton == 50 ? styles.btinView : styles.btinViewdisable,
-                            { width: selectedToken?.tags != 'Native' ? wp(21) : wp(29) },
-                        ]}>
-                        <PoppinsText
-                            style={
-                                priceButton == 50 ? styles.btntitle : styles.btntitledisable
-                            }>
-                            {'50%'}
-                        </PoppinsText>
-                    </TouchableOpacity>
 
-                    <TouchableOpacity
-                        onPress={() => onpresPriceButton(75)}
-                        style={[
-                            priceButton == 75 ? styles.btinView : styles.btinViewdisable,
-                            { width: selectedToken?.tags != 'Native' ? wp(21) : wp(29) },
-                        ]}>
-                        <PoppinsText
-                            style={
-                                priceButton == 75 ? styles.btntitle : styles.btntitledisable
-                            }>
-                            {'75%'}
-                        </PoppinsText>
-                    </TouchableOpacity>
-
-                    {selectedToken?.tags != 'Native' ? (
-                        <TouchableOpacity
-                            onPress={() => onpresPriceButton(100)}
-                            style={
-                                priceButton == 100 ? styles.btinView : styles.btinViewdisable
-                            }>
-                            <PoppinsText
-                                style={
-                                    priceButton == 100 ? styles.btntitle : styles.btntitledisable
-                                }>
-                                {'MAX'}
-                            </PoppinsText>
-                        </TouchableOpacity>
-                    ) : null}
-                </View>
-            ) : null} */}
         </View>
     );
 };
@@ -401,8 +306,8 @@ const styles = StyleSheet.create({
     },
     mainView: {
         flexDirection: 'row',
-        width: wp(92),
-        paddingHorizontal: wp(3),
+        // width: wp(92),
+        paddingHorizontal: wp(1),
         justifyContent: 'space-between',
         alignItems: 'center',
     },
@@ -413,10 +318,13 @@ const styles = StyleSheet.create({
     },
     inputStyle: {
         width: wp(50),
-        height: hp(6.2),
+        height: hp(5),
         color: colors.gray122,
-        fontSize: 26,
+        fontSize: 18,
         fontFamily: Fonts.Poppins.Regular,
+        // backgroundColor: 'green',
+        textAlignVertical: 'center'
+
     },
     tokenBgView: {
         borderRadius: 18,
